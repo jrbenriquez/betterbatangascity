@@ -1,12 +1,12 @@
 {
-  "name": "bs-web",
-  "version": "1.1.19",
-  "description": "BetterSolano.org - Official Portal for LGU Solano",
+  "name": "lgu-static-template",
+  "version": "1.0.0",
+  "description": "Reusable static local government website template",
   "scripts": {
     "dev": "python3 -m http.server 8000",
-    "build": "bash build.sh",
-    "build:major": "bash scripts/version.sh major && bash build.sh --no-bump",
-    "build:minor": "bash scripts/version.sh minor && bash build.sh --no-bump",
+    "build": "node scripts/build-static.js",
+    "build:major": "node scripts/build-static.js",
+    "build:minor": "node scripts/build-static.js",
     "serve": "python3 -m http.server 8000",
     "serve:dist": "cd dist && python3 -m http.server 8080",
     "version:major": "node scripts/bump-version.js major",
@@ -20,15 +20,16 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "package": "bash scripts/package-cpanel.sh --build",
-    "package:only": "bash scripts/package-cpanel.sh"
+    "package:only": "bash scripts/package-cpanel.sh",
+    "audit:template": "node scripts/audit-template.js"
   },
   "keywords": [
-    "solano",
-    "nueva-vizcaya",
+    "template",
     "government",
-    "lgu"
+    "lgu",
+    "static"
   ],
-  "author": "Ramon Logan Jr.",
+  "author": "<placeholder>",
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.23.9",

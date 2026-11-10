@@ -1,4 +1,4 @@
-/* Better Solano - Enhanced Search Functionality */
+/* Template - Enhanced Search Functionality */
 /* Updated: 2025-12-05 */
 
 (function () {
@@ -10,8 +10,8 @@
   let searchIndex = null;
 
   // Search analytics storage
-  const ANALYTICS_KEY = 'bettersolano_search_analytics';
-  const RECENT_SEARCHES_KEY = 'bettersolano_recent_searches';
+  const ANALYTICS_KEY = 'Template_search_analytics';
+  const RECENT_SEARCHES_KEY = 'Template_recent_searches';
   const MAX_RECENT_SEARCHES = 10;
   const MAX_ANALYTICS_ENTRIES = 100;
 
@@ -209,8 +209,8 @@
         category: 'Certificates & Vital Records',
         keywords: ['birth', 'certificate'],
         office: 'Local Civil Registrar',
-        fee: '₱150',
-        processingTime: '15-30 minutes',
+        fee: '<placeholder>',
+        processingTime: '<placeholder>',
         url: '../service-details/birth-certificate.html',
       },
       {
@@ -219,8 +219,8 @@
         category: 'Business Trade & Investment',
         keywords: ['business', 'permit'],
         office: 'BPLS',
-        fee: 'Varies',
-        processingTime: '3-5 days',
+        fee: '<placeholder>',
+        processingTime: '<placeholder>',
         url: 'business.html',
       },
     ];
@@ -1297,7 +1297,7 @@
   }
 
   if (typeof window !== 'undefined') {
-    window.BetterSolanoSearch = {
+    window.TemplateSearch = {
       searchServices,
       getSuggestions,
       getPopularSearches,

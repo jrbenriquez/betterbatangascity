@@ -1,54 +1,54 @@
 {
   "mayor": {
-    "name": "Hon. Philip A. Dacayo",
-    "title": "Municipal Mayor",
-    "image": "assets/images/officials/mayor.jpg"
+    "name": "<placeholder>",
+    "title": "<placeholder>",
+    "image": "<placeholder>"
   },
   "vice_mayor": {
-    "name": "Hon. Eduardo D. Tiongson",
-    "title": "Municipal Vice Mayor",
-    "image": "assets/images/officials/vice-mayor.jpg"
+    "name": "<placeholder>",
+    "title": "<placeholder>",
+    "image": "<placeholder>"
   },
   "councilors": [
     {
-      "name": "Hon. Councilor One",
-      "title": "SB Member",
-      "image": "assets/images/officials/sb1.jpg"
+      "name": "<placeholder>",
+      "title": "<placeholder>",
+      "image": "<placeholder>"
     },
     {
-      "name": "Hon. Councilor Two",
-      "title": "SB Member",
-      "image": "assets/images/officials/sb2.jpg"
+      "name": "<placeholder>",
+      "title": "<placeholder>",
+      "image": "<placeholder>"
     },
     {
-      "name": "Hon. Councilor Three",
-      "title": "SB Member",
-      "image": "assets/images/officials/sb3.jpg"
+      "name": "<placeholder>",
+      "title": "<placeholder>",
+      "image": "<placeholder>"
     },
     {
-      "name": "Hon. Councilor Four",
-      "title": "SB Member",
-      "image": "assets/images/officials/sb4.jpg"
+      "name": "<placeholder>",
+      "title": "<placeholder>",
+      "image": "<placeholder>"
     },
     {
-      "name": "Hon. Councilor Five",
-      "title": "SB Member",
-      "image": "assets/images/officials/sb5.jpg"
+      "name": "<placeholder>",
+      "title": "<placeholder>",
+      "image": "<placeholder>"
     },
     {
-      "name": "Hon. Councilor Six",
-      "title": "SB Member",
-      "image": "assets/images/officials/sb6.jpg"
+      "name": "<placeholder>",
+      "title": "<placeholder>",
+      "image": "<placeholder>"
     },
     {
-      "name": "Hon. Councilor Seven",
-      "title": "SB Member",
-      "image": "assets/images/officials/sb7.jpg"
+      "name": "<placeholder>",
+      "title": "<placeholder>",
+      "image": "<placeholder>"
     },
     {
-      "name": "Hon. Councilor Eight",
-      "title": "SB Member",
-      "image": "assets/images/officials/sb8.jpg"
+      "name": "<placeholder>",
+      "title": "<placeholder>",
+      "image": "<placeholder>"
     }
   ]
 }

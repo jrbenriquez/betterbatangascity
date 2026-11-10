@@ -18,11 +18,12 @@ module.exports = defineConfig({
   use: {
     baseURL: process.env.BASE_URL || 'http://localhost:8321',
     trace: 'retain-on-failure',
+    launchOptions: { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined },
     screenshot: 'only-on-failure',
   },
 
   webServer: {
-    command: 'python3 -m http.server 8321',
+    command: `python3 -m http.server 8321 --directory ${process.env.STATIC_TEST_DIR || '.'}`,
     url: 'http://localhost:8321/index.html',
     reuseExistingServer: true,
     timeout: 30_000,
