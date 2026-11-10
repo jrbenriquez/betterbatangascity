@@ -10,10 +10,8 @@ test.describe('Volunteer modal — display & content', () => {
     await expect(overlay).toBeVisible();
     await expect(page.locator(SEL.title)).toHaveText('Be Part of Something Greater');
     await expect(page.locator(SEL.roles)).toHaveCount(5);
-    await expect(page.locator(SEL.cta)).toHaveAttribute(
-      'href',
-      'mailto:volunteer@bettersolano.org'
-    );
+    await expect(page.locator(SEL.cta)).not.toHaveAttribute('href');
+    await expect(page.locator(SEL.cta)).toHaveAttribute('aria-disabled', 'true');
     await expect(page.locator(SEL.close)).toBeVisible();
     await expect(page.locator(SEL.skip)).toBeVisible();
   });

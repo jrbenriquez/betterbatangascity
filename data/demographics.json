@@ -1,18 +1,18 @@
 {
-  "_schema_version": "1.0",
+  "_schema_version": "<placeholder>",
   "_status": "draft",
-  "_source": "Philippine Statistics Authority (PSA)",
-  "_note": "Awaiting official data from PSA / LGU Solano planning office",
-  "municipality": "Solano",
-  "province": "Nueva Vizcaya",
-  "region": "Region II - Cagayan Valley",
+  "_source": "<placeholder>",
+  "_note": "<placeholder>",
+  "municipality": "<placeholder>",
+  "province": "<placeholder>",
+  "region": "<placeholder>",
   "population": {
-    "total": 69296,
-    "year": 2024,
-    "source": "PSA Census"
+    "total": "<placeholder>",
+    "year": "<placeholder>",
+    "source": "<placeholder>"
   },
-  "land_area_km2": 162.7,
-  "barangay_count": 22,
-  "income_class": "1st",
+  "land_area_km2": "<placeholder>",
+  "barangay_count": "<placeholder>",
+  "income_class": "<placeholder>",
   "barangays": []
 }
