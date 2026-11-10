@@ -62,6 +62,15 @@ test('every exported page is static and free of retired local content', async ({
     await page.waitForFunction(() => document.readyState === 'complete');
     expect(await page.locator('body').textContent(), route).not.toMatch(retired);
     expect(await page.locator('placeholder').count(), route).toBe(0);
+    expect(await page.locator('[data-lang="ilo"], [hreflang="ilo"]').count(), route).toBe(0);
+    if (await page.locator('.lang-selector').count()) {
+      expect(
+        await page
+          .locator('.lang-selector [data-lang]')
+          .evaluateAll((nodes) => nodes.map((node) => node.dataset.lang)),
+        route
+      ).toEqual(['en', 'fil']);
+    }
     expect(
       await page
         .locator('a[href^="tel:"],a[href^="mailto:"],script[src*="googletagmanager"]')
@@ -96,7 +105,7 @@ test('API failures preserve explicit placeholders', async ({ page }) => {
 test('language switching and JSON rendering retain literal placeholders', async ({ page }) => {
   await prepare(page);
   await page.goto('/government/');
-  for (const lang of ['en', 'fil', 'ilo']) {
+  for (const lang of ['en', 'fil']) {
     await page.evaluate((lang) => TranslationEngine.switchLanguage(lang), lang);
     expect(await page.locator('body').innerText()).not.toMatch(retired);
     await expect(page.locator('main')).toContainText('<placeholder>');
@@ -130,4 +139,23 @@ test('first-visit volunteer popup addresses Batangueños', async ({ page }) => {
   const popup = await waitForOpen(page);
   await expect(popup.locator('.vol-popup-lead strong')).toHaveText('Batangueños');
   expect(await popup.textContent()).not.toMatch(retired);
+});
+
+test('retired language preferences fall back to a supported language', async ({ page }) => {
+  await prepare(page);
+  await page.addInitScript(() => {
+    try {
+      localStorage.setItem('selectedLang', 'ilo');
+    } catch (_) {}
+  });
+  await page.goto('/');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  expect(
+    await page.evaluate(() => TranslationEngine.getSupportedLanguages().map((lang) => lang.code))
+  ).toEqual(['en', 'fil']);
+  expect(await page.evaluate(() => TranslationEngine.switchLanguage('ilo'))).toBe(false);
+  await page.locator('.lang-selector [data-lang="fil"]').click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'fil');
+  await page.locator('.lang-selector [data-lang="en"]').click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
 });
