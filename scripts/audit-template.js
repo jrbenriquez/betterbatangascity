@@ -12,7 +12,7 @@ const excluded = new Set([
 ]);
 const blocked = new RegExp(
   [
-    'so' + 'lano',
+    'so' + 'la(?:n|en)',
     'viz' + 'caya',
     'da' + 'cayo',
     'tiong' + 'son',
@@ -38,13 +38,14 @@ function walk(dir) {
     }
     if (e.name === 'LICENSE') continue; // Original copyright notices are legally required.
     if (
-      !/\.(?:html|js|json|svg|xml|md|txt|webmanifest|yml|sh|py)$/.test(e.name) &&
+      !/\.(?:html|css|js|json|svg|xml|md|txt|webmanifest|yml|sh|py)$/.test(e.name) &&
       !e.name.startsWith('.')
     )
       continue;
     const source = fs.readFileSync(file, 'utf8');
+    const normalizedSource = source.normalize('NFKD').replace(/\p{M}/gu, '');
     count++;
-    if (blocked.test(source))
+    if (blocked.test(normalizedSource))
       problems.push(path.relative(root, file) + ': obsolete identity, record, contact or tracker');
     if (file.endsWith('.html')) {
       if (/<placeholder(?:\s|>)/i.test(source.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')))

@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const retired = new RegExp(
   [
-    'so' + 'lano',
+    'so' + 'la(?:n|en)',
     'viz' + 'caya',
     'da' + 'cayo',
     'tiong' + 'son',
@@ -60,7 +60,7 @@ test('every exported page is static and free of retired local content', async ({
     const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
     expect(response.status(), route).toBe(200);
     await page.waitForFunction(() => document.readyState === 'complete');
-    expect(await page.locator('body').innerText(), route).not.toMatch(retired);
+    expect(await page.locator('body').textContent(), route).not.toMatch(retired);
     expect(await page.locator('placeholder').count(), route).toBe(0);
     expect(
       await page
@@ -122,4 +122,12 @@ test('static navigation and mobile layout work', async ({ page }) => {
     path: '/workspace/betterbatangascity/test-results/template-mobile.png',
     fullPage: true,
   });
+});
+
+test('first-visit volunteer popup addresses Batangueños', async ({ page }) => {
+  const { gotoFresh, waitForOpen } = require('./helpers/volunteer-modal');
+  await gotoFresh(page);
+  const popup = await waitForOpen(page);
+  await expect(popup.locator('.vol-popup-lead strong')).toHaveText('Batangueños');
+  expect(await popup.textContent()).not.toMatch(retired);
 });
