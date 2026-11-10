@@ -20,7 +20,7 @@ Every literal `<placeholder>` identifies content that needs review and replaceme
 
 - Replace the two `assets/images/logo/template-logo*.svg` assets and the generic favicon.
 - Fill in page titles, descriptions, local history, addresses, contacts, official names, office schedules, fees, processing times and local guidance in the HTML pages.
-- Fill in the matching values for English, Filipino and Ilocano in `assets/js/translations.js`. Content identifiers are intentionally neutral. A language switch must not restore another municipality's records.
+- Fill in the matching values for English and Filipino in `assets/js/translations.js`. Content identifiers are intentionally neutral. A language switch must not restore another municipality's records.
 - Replace the example records in `data/` with verified local records. Statistics, financial amounts, project summaries, legislative records and competitiveness values remain placeholders. Empty charts do not depict zero-valued statistics. Wire verified numeric datasets to charts before enabling them.
 - Contact, social, donation, appointment, document and former external portal links awaiting configuration have no `href` and carry `data-placeholder="<placeholder>"` and `aria-disabled="true"`. Set a verified URL, remove those attributes, and review its label before enabling a link. Embedded social feeds show a placeholder and make no social API requests.
 - Configure a real site domain before adding canonical URLs, structured organization metadata and absolute URLs to `sitemap.xml`. No domain or government affiliation is assumed.
