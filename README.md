@@ -33,7 +33,7 @@ Every literal `<placeholder>` identifies content that needs review and replaceme
 - Fill in the matching values for English and Filipino in `assets/js/translations.js`. Content identifiers are intentionally neutral. A language switch must not restore another municipality's records.
 - Replace the example records in `data/` with verified local records. Statistics, financial amounts, project summaries, legislative records and competitiveness values remain placeholders. Empty charts do not depict zero-valued statistics. Wire verified numeric datasets to charts before enabling them.
 - Contact, social, donation, appointment, document and former external portal links awaiting configuration have no `href` and carry `data-placeholder="<placeholder>"` and `aria-disabled="true"`. Set a verified URL, remove those attributes, and review its label before enabling a link. Embedded social feeds show a placeholder and make no social API requests.
-- Configure a real site domain before adding canonical URLs, structured organization metadata and absolute URLs to `sitemap.xml`. No domain or government affiliation is assumed.
+- The planned public domain is `betterbatangascity.org`; canonical URLs and the sitemap use it. Domain configuration does not imply government affiliation.
 - Review all legal and service guidance for the target LGU before publication. General service categories are navigation examples, not a verified citizen's charter.
 
 Search for `&lt;placeholder&gt;` in HTML and `<placeholder>` in JSON/JavaScript to locate incomplete fields. Technical numbers such as CSS dimensions, versions, service step labels and API coordinates are configuration, not local records.
@@ -64,3 +64,7 @@ See [LICENSE](LICENSE). The original copyright notices are retained as required 
 Shared interface styles live in `assets/css/interface.css`. The existing blue brand and spacing scale are retained. `assets/js/interface.js` supplies keyboard-accessible FAQs/tabs, local table scrolling and readable template markers. The notice and optional local-information strip are shared templates. Missing records still display `<placeholder>`; unavailable actions stay inactive. Fonts and icons are local assets with their license notices alongside them.
 
 See [the interface review](docs/interface-review.md) for the applied skills, evidence, verified scope, test commands and screenshot reproduction. The before/after gallery is generated outside the production build.
+
+## GitHub Pages
+
+The deployment configuration targets `https://betterbatangascity.org` and publishes built `dist/` files after successful main validation. Follow [the hosting and DNS setup guide](docs/github-pages.md) before activating it. DNS and repository Pages settings are not changed by a local build.
