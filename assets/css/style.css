@@ -932,8 +932,11 @@ body.mobile-menu-open {
   background: rgba(255, 255, 255, 0.15);
   color: white;
   border: none;
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  flex-shrink: 0;
+  line-height: 1;
   border-radius: 50%;
   cursor: pointer;
   font-size: 1rem;
@@ -10348,8 +10351,11 @@ cklist with Icons - Proper Indentation */
   position: absolute;
   top: 14px;
   right: 14px;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  flex-shrink: 0;
+  line-height: 1;
   border-radius: 50%;
   border: none;
   background: rgba(255, 255, 255, 0.18);
@@ -10363,14 +10369,6 @@ cklist with Icons - Proper Indentation */
   transition:
     background 0.18s ease,
     transform 0.18s ease;
-}
-
-/* Expand the pointer target to ~46px without growing the 36px visual circle,
-   so the control clears the 44px minimum touch-target guidance on phones. */
-.vol-popup-close::before {
-  content: '';
-  position: absolute;
-  inset: -5px;
 }
 
 /* :hover and :focus-visible are kept in SEPARATE rules on purpose. Grouped in
