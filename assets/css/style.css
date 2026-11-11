@@ -478,8 +478,10 @@ body.mobile-menu-open {
   background: var(--color-primary);
   color: white;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  flex-shrink: 0;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -867,6 +869,18 @@ body.mobile-menu-open {
   .sw-update-banner button:hover {
     background: rgba(255, 255, 255, 0.35);
   }
+}
+
+/* Icon-only dismissal keeps the same 44px target as other close controls. */
+.sw-update-banner .sw-update-dismiss {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 /* PWA Install Banner */
