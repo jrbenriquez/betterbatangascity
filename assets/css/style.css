@@ -2580,7 +2580,7 @@ h6 {
 }
 
 .cost-badge::before {
-  content: '<placeholder>';
+  content: 'Cost to the People of Batangas City';
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;

@@ -3,9 +3,9 @@
   "_status": "draft",
   "_source": "<placeholder>",
   "_note": "<placeholder>",
-  "municipality": "<placeholder>",
-  "province": "<placeholder>",
-  "region": "<placeholder>",
+  "municipality": "Batangas City",
+  "province": "Batangas",
+  "region": "CALABARZON (Region IV-A)",
   "population": {
     "total": "<placeholder>",
     "year": "<placeholder>",

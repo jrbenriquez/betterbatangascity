@@ -1,6 +1,6 @@
 # Static LGU website template
 
-This template contains plain HTML, CSS, JavaScript and JSON. Serve it from any static host; it needs no backend, database, React build, credentials, analytics account or scheduled job.
+This unofficial Batangas City community portal uses plain HTML, CSS, JavaScript and JSON. It has no framework or added dependencies. Build it once and serve the resulting files from any static host; production needs no application server or database. The city name is filled in; unverified officials, contacts, fees, statistics and records remain placeholders.
 
 ## Preview and build
 
@@ -12,13 +12,23 @@ npm run serve:dist
 # Open http://localhost:8080
 ```
 
-`npm run build` audits the source and copies an explicit list of public assets into `dist/`. It does not install dependencies, change the version or merge another application. Upload the contents of `dist/` to your static host. Links include `.html` where needed, so Apache rewrite rules are optional. `npm run package` produces a cPanel archive.
+`npm run dev` previews the source locally, including the news editor at `/admin/news-editor.html`. Edit a page or shared template and reload the browser to see the change. This development server is only for local editing.
+
+`npm run build` audits the rendered pages, expands shared templates, and copies an explicit list of public assets into `dist/`. It does not install dependencies, change the version or merge another application. Upload the contents of `dist/` to your static host. Links include `.html` where needed, so Apache rewrite rules are optional. `npm run package` produces a cPanel archive. Publish the built `dist/` directory, since source pages contain template includes.
+
+## Shared header and footer
+
+Edit `templates/header.html` to change navigation, the header logo or language buttons across all 51 full pages. Edit `templates/footer.html` to change shared footer links and text. The standalone offline page keeps its compact layout.
+
+Page files contain `<!-- include:header -->` and `<!-- include:footer -->` in place of repeated markup. Four pages use `<!-- include:footer no-margin-top -->` to preserve their existing footer spacing. Each page's main content stays in its original HTML file.
+
+Within a shared template, prefix internal links and assets with `{{root}}`, for example `href="{{root}}services/"`. The renderer calculates the correct relative path for every page, including deployments in a subdirectory. Header links marked with `data-nav="services"` are highlighted automatically in the services section. These are the only template features; browser search, news JSON, styles and translations keep using the existing JavaScript.
 
 ## Fill in the template
 
 Every literal `<placeholder>` identifies content that needs review and replacement. HTML uses `&lt;placeholder&gt;` so it displays visibly. JSON and translations use the literal string. Keep placeholders as text when rendering them in JavaScript.
 
-- Replace the two `assets/images/logo/template-logo*.svg` assets and the generic favicon.
+- The two `assets/images/logo/template-logo*.svg` assets currently say Batangas City. Replace their artwork and the generic favicon when branding is ready.
 - Fill in page titles, descriptions, local history, addresses, contacts, official names, office schedules, fees, processing times and local guidance in the HTML pages.
 - Fill in the matching values for English and Filipino in `assets/js/translations.js`. Content identifiers are intentionally neutral. A language switch must not restore another municipality's records.
 - Replace the example records in `data/` with verified local records. Statistics, financial amounts, project summaries, legislative records and competitiveness values remain placeholders. Empty charts do not depict zero-valued statistics. Wire verified numeric datasets to charts before enabling them.
@@ -38,6 +48,7 @@ The site includes no analytics measurement ID, Facebook synchronization workflow
 
 ```sh
 npm run audit:template
+npm run test:layouts
 npm run build
 npx playwright test tests/template.spec.js --project=chrome
 ```

@@ -23,8 +23,11 @@ module.exports = defineConfig({
   },
 
   webServer: {
-    command: `python3 -m http.server 8321 --directory ${process.env.STATIC_TEST_DIR || '.'}`,
+    command: process.env.STATIC_TEST_DIR
+      ? `python3 -m http.server 8321 --directory ${process.env.STATIC_TEST_DIR}`
+      : 'node scripts/dev.js',
     url: 'http://localhost:8321/index.html',
+    env: { PORT: '8321' },
     reuseExistingServer: true,
     timeout: 30_000,
   },
