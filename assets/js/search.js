@@ -494,7 +494,7 @@
 
     const dropdown = document.createElement('div');
     dropdown.className = 'search-autocomplete';
-    dropdown.setAttribute('role', 'listbox');
+    dropdown.setAttribute('role', 'region');
     dropdown.setAttribute('aria-label', 'Search suggestions');
 
     input.parentElement.style.position = 'relative';
@@ -622,7 +622,7 @@
         }
 
         return `
-                <a href="${url}" class="search-result-item" role="option" data-index="${index}">
+                <a href="${url}" class="search-result-item" data-index="${index}">
                     <div class="search-result-title">
                         ${highlightMatch(result.title, result._query || '')}
                         ${result.processingTime && result.processingTime.toLowerCase().includes('same day') ? '<span class="search-result-badge">Fast</span>' : ''}
@@ -866,7 +866,7 @@
     const styles = document.createElement('style');
     styles.id = 'search-styles-v3';
     styles.textContent = `
-            .search-autocomplete {
+            .search-autocomplete{
                 position: absolute;
                 top: 100%;
                 left: 0;
@@ -880,7 +880,7 @@
                 z-index: 1000;
                 display: none;
                 margin-top: 8px;
-                animation: searchDropdownFadeIn 0.2s ease;
+                animation: none;
             }
             
             @keyframes searchDropdownFadeIn {
@@ -888,20 +888,20 @@
                 to { opacity: 1; transform: translateY(0); }
             }
             
-            .search-autocomplete::-webkit-scrollbar {
+            .search-autocomplete::-webkit-scrollbar{
                 width: 6px;
             }
             
-            .search-autocomplete::-webkit-scrollbar-track {
+            .search-autocomplete::-webkit-scrollbar-track{
                 background: transparent;
             }
             
-            .search-autocomplete::-webkit-scrollbar-thumb {
+            .search-autocomplete::-webkit-scrollbar-thumb{
                 background: rgba(0, 50, 160, 0.2);
                 border-radius: 3px;
             }
             
-            .search-loading {
+            .search-loading{
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -910,7 +910,7 @@
                 font-size: 0.875rem;
             }
             
-            .search-loading-spinner {
+            .search-loading-spinner{
                 width: 20px;
                 height: 20px;
                 border: 2px solid rgba(0, 50, 160, 0.2);
@@ -924,7 +924,7 @@
                 to { transform: rotate(360deg); }
             }
             
-            .search-filters {
+            .search-filters{
                 display: flex;
                 gap: 6px;
                 padding: 12px 14px;
@@ -935,11 +935,11 @@
                 border-radius: 16px 16px 0 0;
             }
             
-            .search-filters::-webkit-scrollbar {
+            .search-filters::-webkit-scrollbar{
                 height: 0;
             }
             
-            .search-filter-btn {
+            .search-filter-btn{
                 padding: 6px 14px;
                 border: 1px solid rgba(0, 50, 160, 0.15);
                 border-radius: 20px;
@@ -949,31 +949,31 @@
                 color: #555;
                 cursor: pointer;
                 white-space: nowrap;
-                transition: all 0.2s ease;
+                transition: background-color 150ms ease-out, color 150ms ease-out;
             }
             
-            .search-filter-btn:hover {
+            @media (hover: hover){.search-filter-btn:hover{
                 border-color: #0032a0;
                 color: #0032a0;
                 background: rgba(0, 50, 160, 0.04);
-            }
+            }}
             
-            .search-filter-btn.active {
+            .search-filter-btn.active{
                 background: linear-gradient(135deg, #0032a0 0%, #0044cc 100%);
                 border-color: #0032a0;
                 color: #fff;
                 box-shadow: 0 2px 8px rgba(0, 50, 160, 0.3);
             }
             
-            .search-section {
+            .search-section{
                 border-bottom: 1px solid rgba(0, 50, 160, 0.06);
             }
             
-            .search-section:last-child {
+            .search-section:last-child{
                 border-bottom: none;
             }
             
-            .search-section-header {
+            .search-section-header{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -985,12 +985,12 @@
                 letter-spacing: 0.5px;
             }
             
-            .search-section-header i {
+            .search-section-header i{
                 margin-right: 5px;
                 color: #0032a0;
             }
             
-            .search-clear-recent {
+            .search-clear-recent{
                 background: none;
                 border: none;
                 color: #0032a0;
@@ -1002,65 +1002,73 @@
                 transition: background 0.15s ease;
             }
             
-            .search-clear-recent:hover {
+            @media (hover: hover){.search-clear-recent:hover{
                 background: rgba(0, 50, 160, 0.08);
-            }
+            }}
             
-            .search-suggestion-item {
+            .search-suggestion-item{
                 display: flex;
                 align-items: center;
                 padding: 11px 16px;
                 text-decoration: none;
                 color: #333;
                 font-size: 0.875rem;
-                transition: all 0.15s ease;
+                transition: background-color 150ms ease-out, color 150ms ease-out;
                 text-align: left;
                 border-left: 3px solid transparent;
             }
             
-            .search-suggestion-item i {
+            .search-suggestion-item i{
                 color: #999;
                 margin-right: 10px;
                 font-size: 0.8125rem;
                 transition: color 0.15s ease;
             }
             
-            .search-suggestion-item:hover,
-            .search-suggestion-item.selected {
+            .search-suggestion-item.selected{
                 background: linear-gradient(90deg, rgba(0, 50, 160, 0.06) 0%, rgba(0, 50, 160, 0.02) 100%);
                 border-left-color: #0032a0;
                 text-decoration: none;
                 color: #0032a0;
-            }
-            
-            .search-suggestion-item:hover i,
-            .search-suggestion-item.selected i {
+            }@media (hover: hover){.search-suggestion-item:hover{
+                background: linear-gradient(90deg, rgba(0, 50, 160, 0.06) 0%, rgba(0, 50, 160, 0.02) 100%);
+                border-left-color: #0032a0;
+                text-decoration: none;
                 color: #0032a0;
-            }
+            }}
             
-            .search-result-item {
+            .search-suggestion-item.selected i{
+                color: #0032a0;
+            }@media (hover: hover){.search-suggestion-item:hover i{
+                color: #0032a0;
+            }}
+            
+            .search-result-item{
                 display: block;
                 padding: 14px 16px;
                 text-decoration: none;
                 color: #1a1a1a;
                 border-bottom: 1px solid rgba(0, 50, 160, 0.06);
-                transition: all 0.15s ease;
+                transition: background-color 150ms ease-out, color 150ms ease-out;
                 text-align: left;
                 border-left: 3px solid transparent;
             }
             
-            .search-result-item:last-child {
+            .search-result-item:last-child{
                 border-bottom: none;
             }
             
-            .search-result-item:hover,
-            .search-result-item.selected {
+            .search-result-item.selected{
                 background: linear-gradient(90deg, rgba(0, 50, 160, 0.06) 0%, rgba(0, 50, 160, 0.02) 100%);
                 border-left-color: #0032a0;
                 text-decoration: none;
-            }
+            }@media (hover: hover){.search-result-item:hover{
+                background: linear-gradient(90deg, rgba(0, 50, 160, 0.06) 0%, rgba(0, 50, 160, 0.02) 100%);
+                border-left-color: #0032a0;
+                text-decoration: none;
+            }}
             
-            .search-result-title {
+            .search-result-title{
                 font-weight: 600;
                 color: #0032a0;
                 margin-bottom: 6px;
@@ -1070,14 +1078,14 @@
                 gap: 8px;
             }
             
-            .search-result-title mark {
+            .search-result-title mark{
                 background: linear-gradient(180deg, transparent 60%, rgba(0, 50, 160, 0.15) 60%);
                 color: inherit;
                 padding: 0;
                 border-radius: 0;
             }
             
-            .search-result-badge {
+            .search-result-badge{
                 font-size: 0.625rem;
                 font-weight: 600;
                 padding: 2px 6px;
@@ -1088,7 +1096,7 @@
                 letter-spacing: 0.3px;
             }
             
-            .search-result-meta {
+            .search-result-meta{
                 display: flex;
                 flex-wrap: wrap;
                 gap: 12px;
@@ -1096,34 +1104,34 @@
                 margin-bottom: 6px;
             }
             
-            .search-result-meta span {
+            .search-result-meta span{
                 display: inline-flex;
                 align-items: center;
                 gap: 5px;
             }
             
-            .search-result-meta i {
+            .search-result-meta i{
                 font-size: 0.6875rem;
                 opacity: 0.8;
             }
             
-            .search-result-category {
+            .search-result-category{
                 color: #666;
                 background: rgba(0, 0, 0, 0.04);
                 padding: 2px 8px;
                 border-radius: 4px;
             }
             
-            .search-result-fee {
+            .search-result-fee{
                 color: #06a77d;
                 font-weight: 600;
             }
             
-            .search-result-time {
+            .search-result-time{
                 color: #0066cc;
             }
             
-            .search-result-office {
+            .search-result-office{
                 font-size: 0.75rem;
                 color: #777;
                 margin-bottom: 4px;
@@ -1131,13 +1139,13 @@
                 align-items: center;
             }
             
-            .search-result-office i {
+            .search-result-office i{
                 margin-right: 6px;
                 font-size: 0.6875rem;
                 color: #0032a0;
             }
             
-            .search-result-desc {
+            .search-result-desc{
                 font-size: 0.8125rem;
                 color: #666;
                 white-space: nowrap;
@@ -1146,31 +1154,31 @@
                 line-height: 1.4;
             }
             
-            .search-no-results {
+            .search-no-results{
                 padding: 32px 24px;
                 text-align: center;
                 color: #666;
             }
             
-            .search-no-results i {
+            .search-no-results i{
                 font-size: 2.5rem;
                 color: rgba(0, 50, 160, 0.2);
                 margin-bottom: 12px;
                 display: block;
             }
             
-            .search-no-results p {
+            .search-no-results p{
                 margin: 0 0 6px;
                 font-weight: 600;
                 color: #333;
             }
             
-            .search-no-results small {
+            .search-no-results small{
                 color: #888;
                 font-size: 0.8125rem;
             }
             
-            .search-keyboard-hint {
+            .search-keyboard-hint{
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -1183,7 +1191,7 @@
                 border-radius: 0 0 16px 16px;
             }
             
-            .search-keyboard-hint kbd {
+            .search-keyboard-hint kbd{
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -1201,7 +1209,7 @@
                 margin: 0 2px;
             }
             
-            .search-footer {
+            .search-footer{
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -1213,54 +1221,54 @@
                 border-radius: 0 0 16px 16px;
             }
             
-            .search-footer-count {
+            .search-footer-count{
                 font-weight: 500;
             }
             
-            .search-footer-powered {
+            .search-footer-powered{
                 display: flex;
                 align-items: center;
                 gap: 4px;
             }
             
-            .search-footer-powered i {
+            .search-footer-powered i{
                 color: #0032a0;
             }
             
-            @media (max-width: 575px) {
-                .search-autocomplete {
+            @media  (max-width: 575px) {
+                .search-autocomplete{
                     border-radius: 12px;
                     margin-top: 6px;
                 }
                 
-                .search-filters {
+                .search-filters{
                     padding: 10px 12px;
                     gap: 5px;
                     border-radius: 12px 12px 0 0;
                 }
                 
-                .search-filter-btn {
+                .search-filter-btn{
                     padding: 5px 12px;
                     font-size: 0.6875rem;
                 }
                 
-                .search-result-meta {
+                .search-result-meta{
                     gap: 8px;
                 }
                 
-                .search-result-item {
+                .search-result-item{
                     padding: 12px 14px;
                 }
                 
-                .search-suggestion-item {
+                .search-suggestion-item{
                     padding: 10px 14px;
                 }
                 
-                .search-keyboard-hint {
+                .search-keyboard-hint{
                     display: none;
                 }
                 
-                .search-footer {
+                .search-footer{
                     border-radius: 0 0 12px 12px;
                 }
             }

@@ -84,14 +84,21 @@
   font-size: 0.8125rem;
   color: var(--color-text-light);
   border-radius: 6px;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   text-decoration: none;
 }
 
-.legal-toc a:hover {
-  background: var(--color-bg-alt);
-  color: var(--color-primary);
-  text-decoration: none;
+@media (hover: hover) {
+  .legal-toc a:hover {
+    background: var(--color-bg-alt);
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 /* Article Content */
@@ -270,14 +277,20 @@ Contact Section */
   font-size: 0.9375rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.contact-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.25);
-  color: white;
-  text-decoration: none;
+@media (hover: hover) {
+  .contact-link:hover {
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.25);
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .contact-link i {

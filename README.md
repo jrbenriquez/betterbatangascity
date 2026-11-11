@@ -58,3 +58,9 @@ The audit checks public source for old branding, local identifiers, phone number
 ## License
 
 See [LICENSE](LICENSE). The original copyright notices are retained as required by the source license. They are legal attribution, not template contact information or a claim of government affiliation. Other personal contact information and municipality-specific records have been removed from the public template.
+
+## Interface maintenance and visual comparisons
+
+Shared interface styles live in `assets/css/interface.css`. The existing blue brand and spacing scale are retained. `assets/js/interface.js` supplies keyboard-accessible FAQs/tabs, local table scrolling and readable template markers. The notice and optional local-information strip are shared templates. Missing records still display `<placeholder>`; unavailable actions stay inactive. Fonts and icons are local assets with their license notices alongside them.
+
+See [the interface review](docs/interface-review.md) for the applied skills, evidence, verified scope, test commands and screenshot reproduction. The before/after gallery is generated outside the production build.

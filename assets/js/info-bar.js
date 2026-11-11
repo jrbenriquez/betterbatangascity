@@ -2,6 +2,32 @@
 (function () {
   'use strict';
   const config = window.SITE_CONFIG;
+  let paused = false;
+  const copy = (key, fallback) => window.TranslationEngine?.getTranslation(key) || fallback;
+  function weatherError(container) {
+    if (!container) return;
+    container.classList.add('empty-state');
+    container.replaceChildren();
+    const heading = document.createElement('h3');
+    heading.dataset.i18n = 'ui-weather-error';
+    heading.textContent = copy('ui-weather-error', 'Weather is unavailable');
+    const help = document.createElement('p');
+    help.dataset.i18n = 'ui-weather-help';
+    help.textContent = copy(
+      'ui-weather-help',
+      'Check your connection and retry. No estimated weather is shown.'
+    );
+    const value = document.createElement('span');
+    value.className = 'template-placeholder';
+    value.textContent = '<placeholder>';
+    const retry = document.createElement('button');
+    retry.type = 'button';
+    retry.className = 'btn btn-secondary';
+    retry.dataset.i18n = 'ui-weather-retry';
+    retry.textContent = copy('ui-weather-retry', 'Retry weather');
+    retry.addEventListener('click', weather);
+    container.append(heading, help, value, retry);
+  }
   const setText = (selector, value) => {
     const node = document.querySelector(selector);
     if (node) node.textContent = value;
@@ -14,7 +40,6 @@
         timeZone: config.timeZone,
         hour: 'numeric',
         minute: '2-digit',
-        second: '2-digit',
       })
     );
     setText(
@@ -31,7 +56,8 @@
     setText('.weather-temp', '<placeholder>');
     const container = document.getElementById('weather-container');
     if (container) {
-      container.textContent = '<placeholder>';
+      container.classList.add('empty-state');
+      container.textContent = 'Loading weather…';
       container.setAttribute('aria-label', 'Weather in ' + config.location.name);
     }
     try {
@@ -69,10 +95,11 @@
         source.textContent =
           'Open-Meteo · ' + current.time.replace('T', ' ') + ' (Philippine time)';
         widget.append(location, temp, details, source);
+        container.classList.remove('empty-state');
         container.replaceChildren(widget);
       }
     } catch (_) {
-      /* Keep the explicit placeholder when public data is unavailable. */
+      weatherError(container);
     }
   }
   async function exchange() {
@@ -91,7 +118,7 @@
         setText('.rate-display', '1 ' + currency + ' = ₱ ' + (1 / rates[currency]).toFixed(2));
       };
       show();
-      setInterval(show, 5000);
+      // Keep one stable rate rather than rotating information without a pause control.
     } catch (_) {
       /* No made-up exchange rate fallback. */
     }
@@ -99,10 +126,25 @@
   function init() {
     if (!config || !document.querySelector('.info-bar')) return;
     clock();
-    setInterval(clock, 1000);
+    setInterval(() => {
+      if (!paused) clock();
+    }, 60000);
     weather();
     exchange();
-    setInterval(weather, 30 * 60 * 1000);
+    setInterval(
+      () => {
+        if (!paused) weather();
+      },
+      30 * 60 * 1000
+    );
+    const toggle = document.querySelector('[data-live-toggle]');
+    toggle?.addEventListener('click', () => {
+      paused = !paused;
+      toggle.setAttribute('aria-pressed', String(paused));
+      toggle.dataset.i18n = paused ? 'ui-resume' : 'ui-pause';
+      toggle.textContent = copy(toggle.dataset.i18n, paused ? 'Resume updates' : 'Pause updates');
+      if (!paused) clock();
+    });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();

@@ -9,16 +9,37 @@
         />
       </a>
     </div>
+
+    <div class="header-actions">
+      <div class="lang-selector">
+        <button
+          aria-label="Switch to English"
+          class="btn btn-secondary btn-sm lang-btn"
+          data-lang="en"
+          type="button"
+        >
+          EN
+        </button>
+        <button
+          aria-label="Switch to Filipino"
+          class="btn btn-secondary btn-sm lang-btn"
+          data-lang="fil"
+          type="button"
+        >
+          FIL
+        </button>
+      </div>
+    </div>
     <nav aria-label="Main Navigation" class="main-nav">
       <ul>
-        <li><a data-i18n="nav-home" href="{{root}}" data-nav="home">Home</a></li>
+        <li><a data-i18n="nav-home" data-nav="home" href="{{root}}">Home</a></li>
         <li class="has-dropdown">
           <a
             aria-expanded="false"
             aria-haspopup="true"
             data-i18n="nav-services"
-            href="{{root}}services/"
             data-nav="services"
+            href="{{root}}services/"
             >Services</a
           >
           <ul class="dropdown-menu">
@@ -65,12 +86,12 @@
           </ul>
         </li>
         <li>
-          <a data-i18n="nav-government" href="{{root}}government/" data-nav="government"
+          <a data-i18n="nav-government" data-nav="government" href="{{root}}government/"
             >Government</a
           >
         </li>
         <li>
-          <a data-i18n="nav-statistics" href="{{root}}statistics/" data-nav="statistics"
+          <a data-i18n="nav-statistics" data-nav="statistics" href="{{root}}statistics/"
             >Statistics</a
           >
         </li>
@@ -79,8 +100,8 @@
             aria-expanded="false"
             aria-haspopup="true"
             data-i18n="nav-legislative"
-            href="{{root}}legislative/"
             data-nav="legislative"
+            href="{{root}}legislative/"
             >Legislative</a
           >
           <ul class="dropdown-menu">
@@ -101,32 +122,12 @@
           </ul>
         </li>
         <li>
-          <a data-i18n="nav-transparency" href="{{root}}budget/" data-nav="transparency"
+          <a data-i18n="nav-transparency" data-nav="transparency" href="{{root}}budget/"
             >Transparency</a
           >
         </li>
-        <li><a data-i18n="nav-contact" href="{{root}}contact/" data-nav="contact">Contact</a></li>
+        <li><a data-i18n="nav-contact" data-nav="contact" href="{{root}}contact/">Contact</a></li>
       </ul>
     </nav>
-    <div class="header-actions">
-      <div class="lang-selector">
-        <button
-          aria-label="Switch to English"
-          class="btn btn-secondary btn-sm lang-btn"
-          data-lang="en"
-          type="button"
-        >
-          EN
-        </button>
-        <button
-          aria-label="Switch to Filipino"
-          class="btn btn-secondary btn-sm lang-btn"
-          data-lang="fil"
-          type="button"
-        >
-          FIL
-        </button>
-      </div>
-    </div>
   </div>
 </header>

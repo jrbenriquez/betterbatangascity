@@ -25,20 +25,7 @@
     <meta content="summary_large_image" name="twitter:card" />
     <title>Birth Certificate Service Guide | Batangas City</title>
     <link href="../assets/images/logo/favicon.svg" rel="icon" type="image/svg+xml" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://cdn.jsdelivr.net" rel="preconnect" />
-    <link href="https://cdn.jsdelivr.net" rel="dns-prefetch" />
-    <link href="https://unpkg.com" rel="preconnect" />
-    <link href="https://unpkg.com" rel="dns-prefetch" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+
     <link href="../assets/css/style.css" rel="stylesheet" />
     <link href="../assets/css/responsive.css" rel="stylesheet" />
     <link href="../assets/css/accessibility.css" rel="stylesheet" />
@@ -194,8 +181,10 @@
         font-weight: 600;
         color: var(--color-text);
       }
-      .faq-question:hover {
-        background: rgba(0, 50, 160, 0.02);
+      @media (hover: hover) {
+        .faq-question:hover {
+          background: rgba(0, 50, 160, 0.02);
+        }
       }
       .faq-question i {
         color: var(--color-primary);
@@ -247,8 +236,10 @@
         color: var(--color-primary);
         text-decoration: none;
       }
-      .sidebar-card a:hover {
-        text-decoration: underline;
+      @media (hover: hover) {
+        .sidebar-card a:hover {
+          text-decoration: underline;
+        }
       }
       .sidebar-card .btn.btn-primary {
         display: block;
@@ -261,9 +252,11 @@
         border-radius: 6px;
         background: var(--color-primary);
       }
-      .sidebar-card .btn.btn-primary:hover {
-        text-decoration: none;
-        background: var(--color-primary-dark, #001a80);
+      @media (hover: hover) {
+        .sidebar-card .btn.btn-primary:hover {
+          text-decoration: none;
+          background: var(--color-primary-dark, #001a80);
+        }
       }
       @media (max-width: 992px) {
         .process-grid {
@@ -290,52 +283,9 @@
     <a class="skip-link" data-i18n="bc-skip-to-main-content" href="#main-content"
       >Skip to main content</a
     >
-    <div class="hotline-bar">
-      <div class="container">
-        <div class="hotline-inner">
-          <div class="hotline-items">
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-shield-fill"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-heart-fill"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-fire"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-building"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-exclamation-triangle-fill"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-truck"></i><span>&lt;placeholder&gt;</span></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- include:notice -->
     <!-- include:header -->
-    <div class="info-bar" role="complementary">
-      <div class="container">
-        <div class="info-bar-inner">
-          <div class="info-bar-item info-bar-rates">
-            <i class="bi bi-currency-exchange"></i
-            ><span class="rate-rotator"><span class="rate-display">&lt;placeholder&gt;</span></span>
-          </div>
-          <div aria-label="Weather in Batangas City" class="info-bar-item info-bar-weather">
-            <i class="bi bi-thermometer-half"></i><span class="weather-location">Batangas City</span
-            ><span class="weather-temp">--°C</span>
-          </div>
-          <div class="info-bar-item info-bar-datetime">
-            <i class="bi bi-calendar3"></i><span class="date-value">--- --, ----</span
-            ><span class="datetime-separator">•</span><i class="bi bi-clock"></i
-            ><span class="time-value">--:-- --</span><span class="time-label">PHT</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- include:info-bar -->
     <main id="main-content">
       <div class="container">
         <nav aria-label="Breadcrumb" class="breadcrumbs">
@@ -510,45 +460,45 @@
                 </h2>
               </div>
               <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <button aria-expanded="false" class="faq-question" type="button">
                   <span data-i18n="bc-can-i-get-a-birth-certificate-registered-in"
                     >Can I get a birth certificate registered in another municipality?</span
                   >
                   <i class="bi bi-chevron-down"></i>
-                </div>
+                </button>
                 <div class="faq-answer">&lt;placeholder&gt;</div>
               </div>
               <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <button aria-expanded="false" class="faq-question" type="button">
                   <span data-i18n="bc-what-if-i-dont-know-the-exact-date-of-birth"
                     >What if I don't know the exact date of birth?</span
                   >
                   <i class="bi bi-chevron-down"></i>
-                </div>
+                </button>
                 <div class="faq-answer">
                   Provide an approximate year and month. The staff will help search the records, but
                   this may take longer.
                 </div>
               </div>
               <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <button aria-expanded="false" class="faq-question" type="button">
                   <span data-i18n="bc-can-i-request-through-email-or-online"
                     >Can I request through email or online?</span
                   >
                   <i class="bi bi-chevron-down"></i>
-                </div>
+                </button>
                 <div class="faq-answer">
                   Currently, requests must be made in person. Online services are being planned for
                   the future.
                 </div>
               </div>
               <div class="faq-item">
-                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <button aria-expanded="false" class="faq-question" type="button">
                   <span data-i18n="bc-whats-the-difference-between-local-copy-and-psa"
                     >What's the difference between local copy and PSA copy?</span
                   >
                   <i class="bi bi-chevron-down"></i>
-                </div>
+                </button>
                 <div class="faq-answer">
                   Both are certified true copies. PSA copies are nationally-recognized and required
                   for passport/visa applications. Local copies are accepted for most local

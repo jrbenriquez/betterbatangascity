@@ -104,7 +104,8 @@ test('API failures preserve explicit placeholders', async ({ page }) => {
   await prepare(page, { failApis: true });
   await page.goto('/');
   await expect(page.locator('.weather-temp')).toHaveText('<placeholder>');
-  await expect(page.locator('#weather-container')).toHaveText('<placeholder>');
+  await expect(page.locator('#weather-container')).toContainText('<placeholder>');
+  await expect(page.getByRole('button', { name: 'Retry weather' })).toBeVisible();
   await expect(page.locator('.rate-display')).toHaveText('<placeholder>');
 });
 
@@ -134,7 +135,7 @@ test('static navigation and mobile layout work', async ({ page }) => {
   await expect(logo).toBeVisible();
   expect(await logo.evaluate((img) => img.complete && img.naturalWidth > 0)).toBe(true);
   await page.screenshot({
-    path: '/workspace/betterbatangascity/test-results/template-mobile.png',
+    path: path.resolve(__dirname, '../test-results/template-mobile.png'),
     fullPage: true,
   });
 });

@@ -74,7 +74,12 @@
   text-decoration: none;
   color: var(--color-text);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,15 +100,17 @@
   transition: transform 0.3s ease;
 }
 
-.leg-category-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgba(0, 50, 160, 0.15);
-  text-decoration: none;
-  border-color: transparent;
+@media (hover: hover) {
+  .leg-category-card:hover {
+    box-shadow: 0 16px 48px rgba(0, 50, 160, 0.15);
+    text-decoration: none;
+    border-color: transparent;
+  }
 }
 
-.leg-category-card:hover::before {
-  transform: scaleX(1);
+@media (hover: hover) {
+  .leg-category-card:hover::before {
+  }
 }
 
 .leg-category-icon {
@@ -120,8 +127,9 @@
   transition: transform 0.3s ease;
 }
 
-.leg-category-card:hover .leg-category-icon {
-  transform: scale(1.1);
+@media (hover: hover) {
+  .leg-category-card:hover .leg-category-icon {
+  }
 }
 
 .leg-category-content h2 {
@@ -148,16 +156,19 @@
   transition: gap 0.3s ease;
 }
 
-.leg-category-card:hover .leg-category-link {
-  gap: 12px;
+@media (hover: hover) {
+  .leg-category-card:hover .leg-category-link {
+    gap: 12px;
+  }
 }
 
 .leg-category-link i {
   transition: transform 0.3s ease;
 }
 
-.leg-category-card:hover .leg-category-link i {
-  transform: translateX(4px);
+@media (hover: hover) {
+  .leg-category-card:hover .leg-category-link i {
+  }
 }
 
 /* Info Section - Compact Professional Design */
@@ -212,14 +223,21 @@
   padding: 16px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   text-align: left;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   display: flex;
   flex-direction: column;
 }
 
-.leg-info-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 2px 12px rgba(0, 50, 160, 0.08);
+@media (hover: hover) {
+  .leg-info-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 12px rgba(0, 50, 160, 0.08);
+  }
 }
 
 .leg-info-card-icon {
@@ -423,7 +441,12 @@
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .leg-tab-btn i {
@@ -445,8 +468,10 @@
   border-radius: 10px;
 }
 
-.leg-tab-btn:hover {
-  border-color: var(--color-primary);
+@media (hover: hover) {
+  .leg-tab-btn:hover {
+    border-color: var(--color-primary);
+  }
 }
 
 .leg-tab-btn.active {
@@ -492,14 +517,21 @@
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 8px;
   padding: 16px 14px 14px 14px;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   display: flex;
   flex-direction: column;
 }
 
-.leg-flow-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 2px 12px rgba(0, 50, 160, 0.08);
+@media (hover: hover) {
+  .leg-flow-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 12px rgba(0, 50, 160, 0.08);
+  }
 }
 
 .leg-flow-number {
@@ -547,8 +579,10 @@
   background: rgba(16, 185, 129, 0.03);
 }
 
-.leg-flow-card-final:hover {
-  border-color: var(--color-success);
+@media (hover: hover) {
+  .leg-flow-card-final:hover {
+    border-color: var(--color-success);
+  }
 }
 
 /* Responsive */

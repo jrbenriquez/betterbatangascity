@@ -106,12 +106,19 @@
   background: transparent;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   min-width: 90px;
 }
 
-.sre-period-btn:hover {
-  background: rgba(0, 50, 160, 0.04);
+@media (hover: hover) {
+  .sre-period-btn:hover {
+    background: rgba(0, 50, 160, 0.04);
+  }
 }
 
 .sre-period-btn.active {
@@ -154,12 +161,18 @@
   gap: 14px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sre-metric-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 50, 160, 0.1);
+@media (hover: hover) {
+  .sre-metric-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 50, 160, 0.1);
+  }
 }
 
 .sre-metric-icon {
@@ -281,11 +294,18 @@
   padding: 12px;
   background: #f8fafc;
   border-radius: 10px;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sre-breakdown-item:hover {
-  background: #f1f5f9;
+@media (hover: hover) {
+  .sre-breakdown-item:hover {
+    background: #f1f5f9;
+  }
 }
 
 .sre-item-indicator {
@@ -374,14 +394,21 @@
   font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sre-download-link:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 50, 160, 0.1);
+@media (hover: hover) {
+  .sre-download-link:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 50, 160, 0.1);
+  }
 }
 
 .sre-download-link i {
@@ -442,7 +469,12 @@
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   margin-bottom: 24px;
 }
 
@@ -450,9 +482,11 @@
   margin-bottom: 0;
 }
 
-.infra-project-v5:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 8px 32px rgba(0, 50, 160, 0.1);
+@media (hover: hover) {
+  .infra-project-v5:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 32px rgba(0, 50, 160, 0.1);
+  }
 }
 
 .infra-project-main {
@@ -577,9 +611,11 @@
   transition: gap 0.2s ease;
 }
 
-.infra-link:hover {
-  gap: 10px;
-  text-decoration: none;
+@media (hover: hover) {
+  .infra-link:hover {
+    gap: 10px;
+    text-decoration: none;
+  }
 }
 
 /* Resources Section V2 */
@@ -635,14 +671,20 @@
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.resource-card-v2:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 8px 24px rgba(0, 50, 160, 0.1);
-  text-decoration: none;
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .resource-card-v2:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(0, 50, 160, 0.1);
+    text-decoration: none;
+  }
 }
 
 .resource-icon-v2 {
@@ -680,19 +722,30 @@
   font-size: 1rem;
   opacity: 0;
   transform: translateX(-4px);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.resource-card-v2:hover .resource-arrow-v2 {
-  opacity: 1;
-  transform: translateX(0);
+@media (hover: hover) {
+  .resource-card-v2:hover .resource-arrow-v2 {
+    opacity: 1;
+  }
 }
 
 /* Animations */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .animate-on-scroll.visible {
@@ -893,13 +946,20 @@
   font-weight: 500;
   color: var(--color-text-light);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.dpwh-tab:hover:not(.active) {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  background: rgba(26, 95, 42, 0.03);
+@media (hover: hover) {
+  .dpwh-tab:hover:not(.active) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(26, 95, 42, 0.03);
+  }
 }
 
 .dpwh-tab.active {
@@ -908,9 +968,11 @@
   border-color: var(--color-primary);
 }
 
-.dpwh-tab.active:hover {
-  background: var(--color-secondary);
-  border-color: var(--color-secondary);
+@media (hover: hover) {
+  .dpwh-tab.active:hover {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+  }
 }
 
 .dpwh-tab-count {
@@ -990,8 +1052,10 @@
   transition: background 0.15s ease;
 }
 
-.dpwh-row:hover {
-  background: rgba(26, 95, 42, 0.02);
+@media (hover: hover) {
+  .dpwh-row:hover {
+    background: rgba(26, 95, 42, 0.02);
+  }
 }
 
 .dpwh-row td {
@@ -1155,12 +1219,19 @@
   font-size: 0.8125rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.dpwh-load-btn:hover {
-  background: var(--color-primary);
-  color: white;
+@media (hover: hover) {
+  .dpwh-load-btn:hover {
+    background: var(--color-primary);
+    color: white;
+  }
 }
 
 .dpwh-remaining {
@@ -1288,16 +1359,19 @@
   transition: transform 0.2s ease;
 }
 
-.portal-cta-btn:hover {
-  background: #f0f5ff;
-  color: var(--color-primary);
-  text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+@media (hover: hover) {
+  .portal-cta-btn:hover {
+    background: #f0f5ff;
+    color: var(--color-primary);
+    text-decoration: none;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
 }
 
-.portal-cta-btn:hover i {
-  transform: translate(2px, -2px);
+@media (hover: hover) {
+  .portal-cta-btn:hover i {
+  }
 }
 
 /* Global a:focus-visible adds a translucent tint and 2px radius, and its ring

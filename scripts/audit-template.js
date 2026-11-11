@@ -10,6 +10,7 @@ const excluded = new Set([
   'test-results',
   'playwright-report',
   'release',
+  'review-artifacts',
 ]);
 const blocked = new RegExp(
   [

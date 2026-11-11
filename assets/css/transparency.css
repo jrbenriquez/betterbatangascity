@@ -77,7 +77,12 @@
   border: 1px solid rgba(0, 0, 0, 0.04);
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .trans-metrics .metric-card.visible {
@@ -85,9 +90,10 @@
   transform: translateY(0);
 }
 
-.trans-metrics .metric-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 50, 160, 0.12);
+@media (hover: hover) {
+  .trans-metrics .metric-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 50, 160, 0.12);
+  }
 }
 
 .trans-metrics .metric-icon {
@@ -308,12 +314,19 @@ iture Section */
   border-radius: 12px;
   padding: 16px;
   border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.expenditure-item:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.08);
+@media (hover: hover) {
+  .expenditure-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.08);
+  }
 }
 
 .expenditure-header {
@@ -507,13 +520,20 @@ ct Card */
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.report-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
-  text-decoration: none;
+@media (hover: hover) {
+  .report-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+    text-decoration: none;
+  }
 }
 
 .report-icon {
@@ -570,7 +590,12 @@ ct Card */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .animate-on-scroll.visible {
@@ -663,13 +688,20 @@ uarter Selection Tabs */
   border-radius: 12px;
   color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   min-width: 120px;
 }
 
-.quarter-tab:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.4);
+@media (hover: hover) {
+  .quarter-tab:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
 }
 
 .quarter-tab:focus {
@@ -791,12 +823,18 @@ uarter Selection Tabs */
   overflow: hidden;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sre-quarter-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 50, 160, 0.12);
+@media (hover: hover) {
+  .sre-quarter-card:hover {
+    box-shadow: 0 12px 40px rgba(0, 50, 160, 0.12);
+  }
 }
 
 .sre-quarter-header {
@@ -920,14 +958,21 @@ uarter Selection Tabs */
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sre-download-btn:hover {
-  background: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
-  text-decoration: none;
+@media (hover: hover) {
+  .sre-download-btn:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 /* Breakdown Section */
@@ -971,11 +1016,18 @@ uarter Selection Tabs */
   font-weight: 600;
   color: var(--color-text-light);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sre-tab:hover {
-  color: var(--color-text);
+@media (hover: hover) {
+  .sre-tab:hover {
+    color: var(--color-text);
+  }
 }
 
 .sre-tab.active {
