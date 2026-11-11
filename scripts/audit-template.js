@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('node:fs');
 const path = require('node:path');
+const { renderPage } = require('./render-templates');
 const root = path.resolve(__dirname, '..');
 const excluded = new Set([
   '.git',
@@ -42,7 +43,13 @@ function walk(dir) {
       !e.name.startsWith('.')
     )
       continue;
-    const source = fs.readFileSync(file, 'utf8');
+    let source;
+    try {
+      source = file.endsWith('.html') ? renderPage(file) : fs.readFileSync(file, 'utf8');
+    } catch (error) {
+      problems.push(path.relative(root, file) + ': ' + error.message);
+      continue;
+    }
     const normalizedSource = source.normalize('NFKD').replace(/\p{M}/gu, '');
     count++;
     if (blocked.test(normalizedSource))

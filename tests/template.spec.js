@@ -59,6 +59,12 @@ test('every exported page is static and free of retired local content', async ({
       '/' + path.relative(path.resolve(__dirname, '../dist'), file).split(path.sep).join('/');
     const response = await page.goto(route, { waitUntil: 'domcontentloaded' });
     expect(response.status(), route).toBe(200);
+    const html = await response.text();
+    expect(html, route).not.toMatch(/<!--\s*include:|\{\{root\}\}|data-nav=/);
+    if (!route.endsWith('/offline.html')) {
+      await expect(page.locator('header.site-header')).toHaveCount(1);
+      await expect(page.locator('footer.site-footer')).toHaveCount(1);
+    }
     await page.waitForFunction(() => document.readyState === 'complete');
     expect(await page.locator('body').textContent(), route).not.toMatch(retired);
     expect(await page.locator('placeholder').count(), route).toBe(0);
@@ -158,4 +164,36 @@ test('retired language preferences fall back to a supported language', async ({ 
   await expect(page.locator('html')).toHaveAttribute('lang', 'fil');
   await page.locator('.lang-selector [data-lang="en"]').click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+});
+
+test('Batangas City identity and shared navigation survive language changes', async ({ page }) => {
+  await prepare(page);
+  await page.goto('/');
+  for (const lang of ['en', 'fil']) {
+    await page.locator(`.lang-selector [data-lang="${lang}"]`).click();
+    await expect(page.locator('main h1')).toContainText('Batangas City');
+    await expect(page.locator('.footer-tagline')).toContainText('unofficial');
+    await expect(page.locator('.logo-img')).toHaveAttribute('alt', 'Batangas City portal');
+  }
+  await page.goto('/service-details/birth-certificate.html');
+  const active = page.locator('.main-nav a.active');
+  await expect(active).toHaveCount(1);
+  await expect(active).toHaveAttribute('href', '../services/');
+  await expect(active).toHaveAttribute('aria-current', 'location');
+  await expect(page.locator('main')).toContainText('<placeholder>');
+  await expect(page.locator('footer a[href="../privacy/"]')).toHaveCount(1);
+});
+
+test('service search still opens the existing service detail page', async ({ page }) => {
+  await prepare(page);
+  await page.goto('/');
+  await page.locator('#hero-search').fill('birth');
+  const result = page.locator(
+    '.search-result-item[href="/service-details/birth-certificate.html"]'
+  );
+  await expect(result).toBeVisible();
+  await result.click();
+  await expect(page).toHaveURL(/\/service-details\/birth-certificate\.html$/);
+  await expect(page.locator('header.site-header')).toHaveCount(1);
+  await expect(page.locator('footer.site-footer')).toHaveCount(1);
 });

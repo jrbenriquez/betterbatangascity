@@ -8,37 +8,19 @@ const output = path.join(root, 'dist');
 execFileSync(process.execPath, [path.join(__dirname, 'audit-template.js')], { stdio: 'inherit' });
 fs.rmSync(output, { recursive: true, force: true });
 fs.mkdirSync(output);
-const folders = [
-  'assets',
-  'data',
-  'accessibility',
-  'budget',
-  'contact',
-  'faq',
-  'government',
-  'legislative',
-  'news',
-  'privacy',
-  'service-details',
-  'services',
-  'sitemap',
-  'statistics',
-  'terms',
-];
-const files = [
-  'index.html',
-  '403.html',
-  '404.html',
-  '500.html',
-  'offline.html',
-  'manifest.webmanifest',
-  'robots.txt',
-  'sitemap.xml',
-  'sw.js',
-  'version.json',
-  '.htaccess',
-  'LICENSE',
-];
+const { folders, files } = require('./static-files');
+const { renderPage } = require('./render-templates');
 for (const name of [...folders, ...files])
   fs.cpSync(path.join(root, name), path.join(output, name), { recursive: true });
+function renderDirectory(directory) {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) renderDirectory(file);
+    else if (entry.name.endsWith('.html')) {
+      const source = path.join(root, path.relative(output, file));
+      fs.writeFileSync(file, renderPage(source));
+    }
+  }
+}
+renderDirectory(output);
 console.log('Static site built in dist/. Preview: npm run serve:dist');
