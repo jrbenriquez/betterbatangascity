@@ -1378,3 +1378,140 @@ body a[aria-disabled='true']:active {
     padding: 20px;
   }
 }
+
+/* Source-backed service routing and office locations. */
+.charter-review {
+  padding-block: 24px;
+  background: var(--color-bg-alt);
+}
+.charter-panel {
+  background: var(--color-bg);
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--surface-radius);
+}
+.charter-panel h2 {
+  font-size: 1.25rem;
+  margin-block: 0 16px;
+}
+.charter-panel h3 {
+  font-size: 1rem;
+  margin-block: 0 8px;
+}
+.charter-panel p,
+.charter-service p,
+.charter-office p {
+  max-width: 85ch;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.charter-note,
+.charter-source {
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+.charter-source a,
+.charter-panel a,
+.charter-routing a,
+.charter-index a {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.charter-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-block: 24px 40px;
+}
+.charter-index a {
+  padding-block: 8px;
+}
+.charter-group {
+  margin-block: 48px;
+  scroll-margin-block-start: 12rem;
+}
+.charter-group h2 {
+  font-size: 1.5rem;
+}
+.charter-service-list,
+.charter-office-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.charter-service,
+.charter-office-list > .charter-office {
+  min-width: 0;
+  padding: 24px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--surface-radius);
+  scroll-margin-block-start: 12rem;
+}
+.charter-service h3,
+.charter-office-list h3 {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-block: 0 12px;
+}
+.charter-scope {
+  border-inline-start: 3px solid var(--color-primary);
+  padding-inline-start: 16px;
+}
+@media (max-width: 767px) {
+  .charter-service-list,
+  .charter-office-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .charter-panel,
+  .charter-service,
+  .charter-office-list > .charter-office {
+    padding: 20px;
+  }
+}
+.charter-service h2 {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-block: 0 12px;
+}
+.charter-hospital-link {
+  margin-block-start: 32px;
+}
+.charter-faq .faq-item {
+  margin-block-end: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+.charter-faq .faq-question {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: var(--color-bg);
+  color: var(--color-primary-dark);
+  border: 0;
+  border-radius: 8px;
+  text-align: start;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.charter-faq .faq-answer {
+  max-height: none;
+  overflow: visible;
+  padding: 0 16px 16px;
+}
+.charter-faq .faq-answer[hidden] {
+  display: none;
+}
+.charter-service a,
+.charter-office a,
+.charter-hospital-link a {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+body[data-section='service-details'] .breadcrumb a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

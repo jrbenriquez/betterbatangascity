@@ -158,14 +158,14 @@ test.describe('Volunteer modal — scroll lock', () => {
   });
 
   test('reading position survives the modal opening and closing', async ({ page }) => {
+    // Control the reveal timer so a slow browser cannot open the popup before scrolling.
+    await page.clock.install();
     await gotoFresh(page);
-    // Scroll during the 800ms window before the popup reveals itself.
-    await page.evaluate(() => window.scrollTo(0, 350));
-    await page.waitForTimeout(120);
-
+    await page.evaluate(() => window.scrollTo({ top: 350, behavior: 'instant' }));
+    await page.clock.runFor(1000);
     await waitForOpen(page);
     await page.locator(SEL.close).click();
-    await page.waitForTimeout(500);
+    await page.clock.runFor(500);
 
     const restored = await page.evaluate(() => window.scrollY);
     expect(Math.abs(restored - 350), `scroll jumped to ${restored}, expected ~350`).toBeLessThan(
