@@ -78,11 +78,13 @@ test('every exported page is static and free of retired local content', async ({
       ).toEqual(['en', 'fil']);
     }
     expect(
-      await page
-        .locator('a[href^="tel:"],a[href^="mailto:"],script[src*="googletagmanager"]')
-        .count(),
+      await page.locator('a[href^="mailto:"],script[src*="googletagmanager"]').count(),
       route
     ).toBe(0);
+    // Published city numbers are limited to the homepage card and contact directory.
+    const phoneCount = route === '/index.html' ? 7 : route === '/contact/index.html' ? 21 : 0;
+    await expect(page.locator('a[href^="tel:"]'), route).toHaveCount(phoneCount);
+    await expect(page.locator('.city-phone a[href^="tel:"]'), route).toHaveCount(phoneCount);
   }
   expect(errors).toEqual([]);
 });

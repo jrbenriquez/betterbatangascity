@@ -23,11 +23,38 @@ const blocked = new RegExp(
     'G-' + '8777S9SP9X',
     '09' + '274008033',
     '69' + ',?296',
-    '(?:href|action)=["\'](?:tel:|mailto:)',
+    '(?:href|action)=["\']mailto:',
     '(?:googletagmanager|google-analytics)\\.com',
   ].join('|'),
   'i'
 );
+// Batangas City LGU public listing, transcribed from the user-supplied source.
+// Keep this allowlist explicit so other unconfigured contact links still fail.
+const publishedContacts = new Set([
+  'tel:+639992226626',
+  'tel:+63437231511',
+  'tel:+63434257163',
+  'tel:+639156021984',
+  'tel:+63437232030',
+  'tel:+639164291515',
+  'tel:+639996946805',
+  'tel:+63437023902',
+  'tel:+639568267017',
+  'tel:16211',
+  'tel:16222874',
+  'sms:+639209716211',
+  'sms:+639175516211',
+  'tel:+63433003592',
+  'tel:+639494142633',
+  'tel:+63439806928',
+  'tel:+63437409738',
+  'tel:+63437230911',
+  'tel:+63437231605',
+  'tel:+63437234144',
+  'tel:+63437232508',
+  'tel:+63434038642',
+  'tel:+639189942074',
+]);
 const problems = [];
 let count = 0;
 function walk(dir) {
@@ -56,6 +83,12 @@ function walk(dir) {
     if (blocked.test(normalizedSource))
       problems.push(path.relative(root, file) + ': obsolete identity, record, contact or tracker');
     if (file.endsWith('.html')) {
+      for (const match of source.matchAll(/\bhref=["']((?:tel|sms):[^"']+)["']/gi)) {
+        if (!publishedContacts.has(match[1]))
+          problems.push(
+            path.relative(root, file) + ': contact is not in the published city listing'
+          );
+      }
       if (/<placeholder(?:\s|>)/i.test(source.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')))
         problems.push(path.relative(root, file) + ': unescaped placeholder tag');
       for (const match of source.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
