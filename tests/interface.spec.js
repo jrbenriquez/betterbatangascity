@@ -7,6 +7,9 @@ async function prepare(page) {
     } catch (_) {}
   });
   await page.route('https://**', (route) => route.abort());
+  await page.route('https://api.open-meteo.com/**', (route) =>
+    route.fulfill({ status: 503, json: { error: 'Unavailable during this test' } })
+  );
 }
 test('mobile navigation reverses promptly and returns keyboard focus', async ({ page }) => {
   await prepare(page);

@@ -17,6 +17,7 @@ module.exports = defineConfig({
 
   use: {
     baseURL: process.env.BASE_URL || 'http://localhost:8321',
+    serviceWorkers: 'block',
     trace: 'retain-on-failure',
     launchOptions: { executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined },
     screenshot: 'only-on-failure',
