@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
-const partials = new Set(['header', 'footer']);
+const partials = new Set(['header', 'footer', 'notice', 'info-bar']);
 
 function renderPage(file) {
   const relative = path.relative(root, file).split(path.sep).join('/');
@@ -28,6 +28,12 @@ function renderHtml(source, relative) {
     }
   );
   return content
+    .replace(
+      '</head>',
+      `<link rel="stylesheet" href="${prefix}assets/vendor/bootstrap-icons.css"><link rel="stylesheet" href="${prefix}assets/css/interface.css"></head>`
+    )
+    .replace(/<body\b([^>]*)>/, `<body$1 data-section="${section}">`)
+    .replace('</body>', `<script defer src="${prefix}assets/js/interface.js"></script></body>`)
     .replace(/\{\{root\}\}/g, prefix)
     .replace(/\bdata-nav="([a-z-]+)"/g, (_, target) => {
       if (target !== active) return '';

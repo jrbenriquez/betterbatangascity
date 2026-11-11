@@ -61,16 +61,20 @@
         padding: 8px 12px;
         border-radius: 8px;
       }
-      button:hover {
-        border-color: var(--primary);
+      @media (hover: hover) {
+        button:hover {
+          border-color: var(--primary);
+        }
       }
       button.primary {
         background: var(--primary);
         border-color: var(--primary);
         color: #fff;
       }
-      button.primary:hover {
-        background: var(--primary-dark);
+      @media (hover: hover) {
+        button.primary:hover {
+          background: var(--primary-dark);
+        }
       }
       button.danger {
         color: var(--danger);
@@ -275,15 +279,21 @@
       <h1>News Curation <span class="tag">internal tool · not deployed</span></h1>
       <button id="btn-reload">Reload from server</button>
       <button id="btn-import">Import file…</button>
-      <input accept="application/json,.json" class="visually-hidden" id="file-input" type="file" />
+      <input
+        accept="application/json,.json"
+        aria-label="Import a news JSON file"
+        class="visually-hidden"
+        id="file-input"
+        type="file"
+      />
       <button id="btn-copy">Copy JSON</button>
       <button class="primary" id="btn-download">Download news.json</button>
-      <span class="status" id="status"></span>
+      <span class="status" id="status" role="status"></span>
     </header>
     <main>
       <section aria-label="Current entries" class="panel">
         <h2>Entries (<span id="count">&lt;placeholder&gt;</span>)</h2>
-        <button class="primary" id="btn-new" style="width: 0%; margin-bottom: 12px">
+        <button class="primary" id="btn-new" style="width: 100%; margin-bottom: 12px">
           + Add new update
         </button>
         <div id="list"></div>
@@ -293,31 +303,37 @@
         <form id="form" novalidate="">
           <div class="field" data-field="title">
             <label for="f-title">Title</label>
-            <input id="f-title" maxlength="120" required="" />
+            <input aria-describedby="f-title-error" id="f-title" maxlength="120" required="" />
             <div class="hint">
               <span class="counter" id="title-count">&lt;placeholder&gt;</span>&lt;placeholder&gt;
             </div>
-            <div class="err">&lt;placeholder&gt;</div>
+            <div class="err" id="f-title-error">Enter a news title (up to 120 characters).</div>
           </div>
           <div class="grid-2">
             <div class="field" data-field="date">
               <label for="f-date">Date</label>
-              <input id="f-date" required="" type="date" />
-              <div class="err">A valid date is required.</div>
+              <input aria-describedby="f-date-error" id="f-date" required="" type="date" />
+              <div class="err" id="f-date-error">A valid date is required.</div>
             </div>
             <div class="field" data-field="badge">
               <label for="f-badge">Badge color</label>
-              <select id="f-badge" required="">
+              <select aria-describedby="f-badge-error" id="f-badge" required="">
                 <option value="info">info (blue)</option>
                 <option value="success">success (green)</option>
                 <option value="warning">warning (amber)</option>
               </select>
-              <div class="err">Choose a badge color.</div>
+              <div class="err" id="f-badge-error">Choose a badge color.</div>
             </div>
           </div>
           <div class="field" data-field="category">
             <label for="f-category">Category label</label>
-            <input id="f-category" list="category-presets" maxlength="32" required="" />
+            <input
+              aria-describedby="f-category-error"
+              id="f-category"
+              list="category-presets"
+              maxlength="32"
+              required=""
+            />
             <datalist id="category-presets">
               <option value="Announcement"></option>
               <option value="Advisory"></option>
@@ -329,22 +345,32 @@
               <option value="Weather"></option>
             </datalist>
             <div class="hint">Presets auto-pick a badge color; you can override it above.</div>
-            <div class="err">A category label is required.</div>
+            <div class="err" id="f-category-error">A category label is required.</div>
           </div>
           <div class="field" data-field="summary">
             <label for="f-summary">Summary</label>
-            <textarea id="f-summary" maxlength="300" required=""></textarea>
+            <textarea
+              aria-describedby="f-summary-error"
+              id="f-summary"
+              maxlength="300"
+              required=""
+            ></textarea>
             <div class="hint">
               <span class="counter" id="summary-count">&lt;placeholder&gt;</span>&lt;placeholder&gt;
             </div>
-            <div class="err">&lt;placeholder&gt;</div>
+            <div class="err" id="f-summary-error">Enter a summary (up to 300 characters).</div>
           </div>
           <div class="field" data-field="url">
             <label for="f-url"
               >Link URL <span class="opt">(optional — e.g. the Facebook post)</span></label
             >
-            <input id="f-url" placeholder="https://facebook.com/..." type="url" />
-            <div class="err">Enter a valid http(s) URL or leave blank.</div>
+            <input
+              aria-describedby="f-url-error"
+              id="f-url"
+              placeholder="https://facebook.com/..."
+              type="url"
+            />
+            <div class="err" id="f-url-error">Enter a valid http(s) URL or leave blank.</div>
           </div>
           <div class="field" data-field="source">
             <label for="f-source">Link label <span class="opt">(optional)</span></label>
@@ -353,8 +379,8 @@
           </div>
           <div class="field" data-field="id">
             <label for="f-id">ID <span class="opt">(auto from title; must be unique)</span></label>
-            <input id="f-id" maxlength="80" required="" />
-            <div class="err">A unique ID is required (lowercase, dashes).</div>
+            <input aria-describedby="f-id-error" id="f-id" maxlength="80" required="" />
+            <div class="err" id="f-id-error">A unique ID is required (lowercase, dashes).</div>
           </div>
           <div class="form-actions">
             <button class="primary" id="btn-save" type="submit">Save update</button>
@@ -517,10 +543,18 @@
         updateCounts();
         updatePreview();
         renderList();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({
+          top: 0,
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? 'auto'
+            : 'smooth',
+        });
       }
 
       function clearErrors() {
+        document.querySelectorAll('[aria-invalid]').forEach(function (field) {
+          field.removeAttribute('aria-invalid');
+        });
         var fields = document.querySelectorAll('.field');
         for (var i = 0; i < fields.length; i++) fields[i].classList.remove('invalid');
       }
@@ -610,7 +644,15 @@
             break;
           }
         }
-        if (!ok) return null;
+        if (!ok) {
+          document.querySelectorAll('.field.invalid').forEach(function (field) {
+            field.querySelector('input,textarea,select')?.setAttribute('aria-invalid', 'true');
+          });
+          document
+            .querySelector('.field.invalid input,.field.invalid textarea,.field.invalid select')
+            ?.focus();
+          return null;
+        }
 
         var item = {
           id: id,
@@ -777,7 +819,10 @@
             loadData((data && data.news) || []);
             setStatus('Imported ' + entries.length + ' entries from file.', 'ok');
           } catch (e) {
-            setStatus('Invalid JSON file.', 'bad');
+            setStatus(
+              'Unable to import this file. Select a valid news.json file and try again.',
+              'bad'
+            );
           }
         };
         reader.readAsText(file);

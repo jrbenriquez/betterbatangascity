@@ -118,6 +118,26 @@
   function renderNewsPage(articles) {
     var grid = document.getElementById('news-grid');
     if (!grid) return;
+    if (!articles.length || articles.every((article) => article.title === '<placeholder>')) {
+      grid.setAttribute('role', 'region');
+      const empty = document.createElement('div');
+      empty.className = 'empty-state';
+      const title = document.createElement('h3');
+      title.dataset.i18n = 'ui-news-empty';
+      title.textContent =
+        window.TranslationEngine?.getTranslation('ui-news-empty') || 'No updates published yet';
+      const help = document.createElement('p');
+      help.dataset.i18n = 'ui-news-help';
+      help.textContent =
+        window.TranslationEngine?.getTranslation('ui-news-help') ||
+        'Published community announcements will appear here. For current advice, contact the responsible city office.';
+      const value = document.createElement('span');
+      value.className = 'template-placeholder';
+      value.textContent = '<placeholder>';
+      empty.append(title, help, value);
+      grid.replaceChildren(empty);
+      return;
+    }
 
     var items = sortByDateDesc(articles);
     if (!items.length) {

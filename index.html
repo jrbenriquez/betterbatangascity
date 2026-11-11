@@ -48,20 +48,6 @@
     <link href="assets/images/logo/favicon.svg" rel="icon" type="image/svg+xml" />
     <link href="assets/images/logo/favicon.svg" rel="apple-touch-icon" />
     <link href="/manifest.webmanifest" rel="manifest" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://cdn.jsdelivr.net" rel="preconnect" />
-    <link href="https://cdn.jsdelivr.net" rel="dns-prefetch" />
-    <link href="https://unpkg.com" rel="preconnect" />
-    <link href="https://unpkg.com" rel="dns-prefetch" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/responsive.css" rel="stylesheet" />
     <link href="assets/css/accessibility.css" rel="stylesheet" />
@@ -71,64 +57,9 @@
     <a class="skip-link" data-i18n="home-skip-to-main-content" href="#main-content"
       >Skip to main content</a
     >
-    <div class="hotline-bar">
-      <div class="container">
-        <div class="hotline-inner">
-          <div class="hotline-items">
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;">
-              <i aria-hidden="true" class="bi bi-shield-fill"></i>
-              <span>&lt;placeholder&gt;</span>
-            </a>
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;">
-              <i aria-hidden="true" class="bi bi-heart-fill"></i>
-              <span>&lt;placeholder&gt;</span>
-            </a>
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;">
-              <i aria-hidden="true" class="bi bi-fire"></i>
-              <span>&lt;placeholder&gt;</span>
-            </a>
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;">
-              <i aria-hidden="true" class="bi bi-building"></i>
-              <span>&lt;placeholder&gt;</span>
-            </a>
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;">
-              <i aria-hidden="true" class="bi bi-exclamation-triangle-fill"></i>
-              <span>&lt;placeholder&gt;</span>
-            </a>
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;">
-              <i aria-hidden="true" class="bi bi-truck"></i>
-              <span>&lt;placeholder&gt;</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- include:notice -->
     <!-- include:header -->
-    <div aria-label="Real-time information" class="info-bar" role="complementary">
-      <div class="container">
-        <div aria-atomic="false" aria-live="polite" class="info-bar-inner">
-          <div aria-label="Exchange rates" class="info-bar-item info-bar-rates">
-            <i aria-hidden="true" class="bi bi-currency-exchange"></i>
-            <span class="rate-rotator">
-              <span class="rate-display">&lt;placeholder&gt;</span>
-            </span>
-          </div>
-          <div aria-label="Weather in Batangas City" class="info-bar-item info-bar-weather">
-            <i aria-hidden="true" class="bi bi-thermometer-half"></i>
-            <span class="weather-location">Batangas City</span>
-            <span class="weather-temp">--°C</span>
-          </div>
-          <div aria-label="Philippine Date and Time" class="info-bar-item info-bar-datetime">
-            <i aria-hidden="true" class="bi bi-calendar3"></i>
-            <span class="date-value">--- --, ----</span>
-            <span aria-hidden="true" class="datetime-separator">•</span>
-            <i aria-hidden="true" class="bi bi-clock"></i>
-            <span class="time-value">--:-- --</span>
-            <span class="time-label">PHT</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- include:info-bar -->
     <main id="main-content">
       <section class="home-hero-v2">
         <div class="container">
@@ -157,6 +88,7 @@
                 </h2>
                 <form class="search-form" role="search">
                   <div class="search-input-wrapper">
+                    <label class="sr-only" for="hero-search">Search services</label>
                     <input
                       aria-label="Search services"
                       autocomplete="off"
@@ -200,11 +132,12 @@
               <span aria-hidden="true" class="bi bi-building"></span>
             </div>
             <div class="appointment-cta-content">
-              <h2 class="appointment-cta-heading" data-i18n="content-abace03357">
-                Enhancing Appointment Services of LGU Batangas City Mayor's Office
+              <h2 class="appointment-cta-heading" data-i18n="ui-appointment-title">
+                Appointment information
               </h2>
-              <p class="appointment-cta-subtitle" data-i18n="appointment-cta-subtitle">
-                No lines. No back-and-forth. Just efficient appointments.
+              <p class="appointment-cta-subtitle" data-i18n="ui-appointment-help">
+                Scheduling links are not configured yet. Confirm appointment arrangements with the
+                city office.
               </p>
               <div class="appointment-cta-actions">
                 <a
@@ -478,7 +411,6 @@
             position: relative;
             padding-bottom: 20px;
             opacity: 0;
-            animation: fadeInUp 0.5s ease forwards;
           }
           .timeline-item:nth-child(1) {
             animation-delay: 0.1s;
@@ -513,25 +445,38 @@
             background: var(--color-bg);
             border: 3px solid var(--color-primary);
             border-radius: 50%;
-            transition: all 0.3s ease;
+            transition:
+              color 150ms ease-out,
+              background-color 150ms ease-out,
+              border-color 150ms ease-out,
+              box-shadow 150ms ease-out,
+              opacity 150ms ease-out;
             z-index: 1;
           }
-          .timeline-item:hover .timeline-marker {
-            background: var(--color-primary);
-            transform: scale(1.2);
-            box-shadow: 0 0 0 4px rgba(0, 50, 160, 0.15);
+          @media (hover: hover) {
+            .timeline-item:hover .timeline-marker {
+              background: var(--color-primary);
+
+              box-shadow: 0 0 0 4px rgba(0, 50, 160, 0.15);
+            }
           }
           .timeline-content {
             background: var(--color-bg);
             border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 10px;
             padding: 16px 18px;
-            transition: all 0.3s ease;
+            transition:
+              color 150ms ease-out,
+              background-color 150ms ease-out,
+              border-color 150ms ease-out,
+              box-shadow 150ms ease-out,
+              opacity 150ms ease-out;
           }
-          .timeline-item:hover .timeline-content {
-            border-color: var(--color-primary);
-            box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
-            transform: translateX(4px);
+          @media (hover: hover) {
+            .timeline-item:hover .timeline-content {
+              border-color: var(--color-primary);
+              box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+            }
           }
           .timeline-year {
             display: inline-block;
@@ -571,12 +516,18 @@
             display: flex;
             gap: 14px;
             align-items: flex-start;
-            transition: all 0.3s ease;
+            transition:
+              color 150ms ease-out,
+              background-color 150ms ease-out,
+              border-color 150ms ease-out,
+              box-shadow 150ms ease-out,
+              opacity 150ms ease-out;
           }
-          .history-card:hover {
-            border-color: var(--color-primary);
-            box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
-            transform: translateY(-2px);
+          @media (hover: hover) {
+            .history-card:hover {
+              border-color: var(--color-primary);
+              box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+            }
           }
           .history-card-icon {
             width: 44px;
@@ -651,10 +602,12 @@
           </div>
           <div class="home-fb">
             <div class="home-fb-intro">
-              <span class="home-fb-eyebrow">
-                <i aria-hidden="true" class="bi bi-facebook"></i> Official Facebook Page
-              </span>
-              <h3 class="home-fb-title">Real-time updates, straight from our page</h3>
+              <span class="home-fb-eyebrow" data-i18n="ui-community-updates"
+                >Community updates</span
+              >
+              <h3 class="home-fb-title" data-i18n="ui-community-heading">
+                Stay informed about Batangas City
+              </h3>
               <p class="home-fb-text">&lt;placeholder&gt;</p>
               <ul class="home-fb-points">
                 <li>
@@ -665,10 +618,7 @@
                   <i aria-hidden="true" class="bi bi-calendar-event"></i> Events &amp; community
                   programs
                 </li>
-                <li>
-                  <i aria-hidden="true" class="bi bi-broadcast"></i> Posted in real time, as it
-                  happens
-                </li>
+                <li data-i18n="ui-social-pending">Updates will appear after publication.</li>
               </ul>
               <a
                 aria-disabled="true"
@@ -681,17 +631,13 @@
             </div>
             <div class="home-fb-feed">
               <div class="fb-plugin-wrap">
-                <iframe
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowfullscreen="true"
-                  class="fb-page-plugin"
-                  frameborder="0"
-                  height="700"
-                  scrolling="no"
-                  srcdoc='&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;body&gt;&lt;p&gt;&amp;lt;placeholder&amp;gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;'
-                  title="&lt;placeholder&gt;"
-                  width="500"
-                ></iframe>
+                <div class="empty-state">
+                  <h3 data-i18n="ui-social-title">Community updates are not connected yet</h3>
+                  <p data-i18n="ui-social-help">
+                    A verified public feed will appear here when it is configured.
+                  </p>
+                  <span class="template-placeholder">&lt;placeholder&gt;</span>
+                </div>
               </div>
               <p class="home-fb-fallback">
                 Can't see the feed?

@@ -15,3 +15,6 @@ blob-report/
 # Build-time config (see .env.example) and release archives
 .env
 release/
+
+# Generated interface screenshots and reports
+review-artifacts/

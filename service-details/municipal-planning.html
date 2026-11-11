@@ -25,20 +25,7 @@
     <meta content="summary_large_image" name="twitter:card" />
     <title>city Planning &amp; Development Office | Batangas City</title>
     <link href="../assets/images/logo/favicon.svg" rel="icon" type="image/svg+xml" />
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://cdn.jsdelivr.net" rel="preconnect" />
-    <link href="https://cdn.jsdelivr.net" rel="dns-prefetch" />
-    <link href="https://unpkg.com" rel="preconnect" />
-    <link href="https://unpkg.com" rel="dns-prefetch" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+
     <link href="../assets/css/style.css" rel="stylesheet" />
     <link href="../assets/css/responsive.css" rel="stylesheet" />
     <link href="../assets/css/accessibility.css" rel="stylesheet" />
@@ -80,11 +67,18 @@
         border: 1px solid rgba(0, 0, 0, 0.06);
         border-radius: 8px;
         padding: 14px;
-        transition: all 0.2s ease;
+        transition:
+          color 150ms ease-out,
+          background-color 150ms ease-out,
+          border-color 150ms ease-out,
+          box-shadow 150ms ease-out,
+          opacity 150ms ease-out;
       }
-      .service-card:hover {
-        border-color: var(--color-primary);
-        box-shadow: 0 2px 10px rgba(0, 50, 160, 0.08);
+      @media (hover: hover) {
+        .service-card:hover {
+          border-color: var(--color-primary);
+          box-shadow: 0 2px 10px rgba(0, 50, 160, 0.08);
+        }
       }
       .service-card h4 {
         font-size: 0.8125rem;
@@ -241,52 +235,9 @@
     <a class="skip-link" data-i18n="mpdo-skip-to-main-content" href="#main-content"
       >Skip to main content</a
     >
-    <div class="hotline-bar">
-      <div class="container">
-        <div class="hotline-inner">
-          <div class="hotline-items">
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-shield-fill"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-heart-fill"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-fire"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-building"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-exclamation-triangle-fill"></i><span>&lt;placeholder&gt;</span></a
-            >
-            <a aria-disabled="true" class="hotline-item" data-placeholder="&lt;placeholder&gt;"
-              ><i class="bi bi-truck"></i><span>&lt;placeholder&gt;</span></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- include:notice -->
     <!-- include:header -->
-    <div class="info-bar" role="complementary">
-      <div class="container">
-        <div class="info-bar-inner">
-          <div class="info-bar-item info-bar-rates">
-            <i class="bi bi-currency-exchange"></i
-            ><span class="rate-rotator"><span class="rate-display">&lt;placeholder&gt;</span></span>
-          </div>
-          <div aria-label="Weather in Batangas City" class="info-bar-item info-bar-weather">
-            <i class="bi bi-thermometer-half"></i><span class="weather-location">Batangas City</span
-            ><span class="weather-temp">--°C</span>
-          </div>
-          <div class="info-bar-item info-bar-datetime">
-            <i class="bi bi-calendar3"></i><span class="date-value">--- --, ----</span
-            ><span class="datetime-separator">•</span><i class="bi bi-clock"></i
-            ><span class="time-value">--:-- --</span><span class="time-label">PHT</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- include:info-bar -->
     <main id="main-content">
       <div class="container">
         <nav aria-label="Breadcrumb" class="breadcrumbs">

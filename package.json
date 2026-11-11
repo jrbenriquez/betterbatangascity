@@ -22,7 +22,10 @@
     "package": "bash scripts/package-cpanel.sh --build",
     "package:only": "bash scripts/package-cpanel.sh",
     "audit:template": "node scripts/audit-template.js",
-    "test:layouts": "node --test scripts/tests/*.test.js"
+    "test:layouts": "node --test scripts/tests/*.test.js",
+    "capture:interface": "node scripts/capture-interface.js",
+    "report:interface": "node scripts/interface-report.js",
+    "audit:contrast": "node scripts/check-interface-contrast.js"
   },
   "keywords": [
     "template",
@@ -43,7 +46,8 @@
     "html-minifier-terser": "^7.2.0",
     "playwright": "^1.61.0",
     "prettier": "^3.8.1",
-    "terser": "^5.44.1"
+    "terser": "^5.44.1",
+    "axe-core": "^4.11.2"
   },
   "overrides": {
     "tmp": "0.2.7",

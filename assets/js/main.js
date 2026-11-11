@@ -277,31 +277,23 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo(0, scrollY);
     };
 
-    var isAnimating = false;
-
     var closeMobileMenu = function () {
-      if (isAnimating) return;
-      isAnimating = true;
       toggleBtn.setAttribute('aria-expanded', 'false');
       nav.classList.remove('active');
       toggleBtn.innerHTML = '<i class="bi bi-list" aria-hidden="true"></i>';
       closeAllDropdowns();
       unlockBodyScroll();
-      setTimeout(function () {
-        isAnimating = false;
-      }, 320);
     };
 
     var openMobileMenu = function () {
-      if (isAnimating) return;
-      isAnimating = true;
       toggleBtn.setAttribute('aria-expanded', 'true');
       nav.classList.add('active');
       toggleBtn.innerHTML = '<i class="bi bi-x-lg" aria-hidden="true"></i>';
       lockBodyScroll();
-      setTimeout(function () {
-        isAnimating = false;
-      }, 320);
+      requestAnimationFrame(function () {
+        var first = nav.querySelector('a[href]');
+        if (first) first.focus();
+      });
     };
 
     toggleBtn.addEventListener('click', function (e) {
@@ -372,7 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         if (!isMobileNav() && nav.classList.contains('active')) {
-          isAnimating = false; // force allow close on resize
           closeMobileMenu();
         }
       }, 150);

@@ -53,15 +53,22 @@
   justify-content: center;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.125rem;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   text-decoration: none;
 }
 
-.footer-social-btn:hover {
-  background: var(--color-primary);
-  color: white;
-  transform: translateY(-2px);
-  text-decoration: none;
+@media (hover: hover) {
+  .footer-social-btn:hover {
+    background: var(--color-primary);
+    color: white;
+
+    text-decoration: none;
+  }
 }
 
 /* Foo
@@ -94,9 +101,11 @@ ter Columns */
   transition: color 0.2s ease;
 }
 
-.footer-links-new a:hover {
-  color: white;
-  text-decoration: none;
+@media (hover: hover) {
+  .footer-links-new a:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 /* External Links with Badge */
@@ -188,9 +197,11 @@ ter Columns */
   text-decoration: none;
 }
 
-.footer-copyright a:hover {
-  color: white;
-  text-decoration: none;
+@media (hover: hover) {
+  .footer-copyright a:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .footer-contribute {
@@ -203,14 +214,21 @@ ter Columns */
   padding: 8px 16px;
   border-radius: 50px;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   margin-top: 12px;
 }
 
-.footer-contribute:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  text-decoration: none;
+@media (hover: hover) {
+  .footer-contribute:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .footer-contribute i {
@@ -239,8 +257,10 @@ ter Columns */
   transition: opacity 0.2s ease;
 }
 
-.footer-partners a:hover {
-  opacity: 1;
+@media (hover: hover) {
+  .footer-partners a:hover {
+    opacity: 1;
+  }
 }
 
 .footer-partner-logo {

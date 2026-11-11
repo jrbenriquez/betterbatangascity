@@ -46,9 +46,11 @@ a {
   transition: color 0.2s ease;
 }
 
-a:hover {
-  color: var(--color-primary-dark);
-  text-decoration: underline;
+@media (hover: hover) {
+  a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
 }
 
 ul {
@@ -184,7 +186,12 @@ p {
   font-weight: 600;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   text-align: center;
   text-decoration: none;
 }
@@ -194,12 +201,14 @@ p {
   color: var(--color-white);
 }
 
-.btn-primary:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-white);
-  text-decoration: none;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+@media (hover: hover) {
+  .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    text-decoration: none;
+
+    box-shadow: var(--shadow-md);
+  }
 }
 
 .btn-secondary {
@@ -208,9 +217,11 @@ p {
   border-color: var(--color-primary);
 }
 
-.btn-secondary:hover {
-  background-color: var(--color-bg-alt);
-  text-decoration: none;
+@media (hover: hover) {
+  .btn-secondary:hover {
+    background-color: var(--color-bg-alt);
+    text-decoration: none;
+  }
 }
 
 .btn-block {
@@ -289,9 +300,13 @@ p {
   font-weight: 500;
 }
 
-.main-nav a:hover,
 .main-nav a.active {
   color: var(--color-primary);
+}
+@media (hover: hover) {
+  .main-nav a:hover {
+    color: var(--color-primary);
+  }
 }
 
 /* Dropdown Menu Styles */
@@ -323,7 +338,12 @@ p {
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   z-index: 1001;
   display: flex;
   flex-direction: column;
@@ -337,10 +357,11 @@ p {
 }
 
 @media (hover: hover) and (min-width: 1025px) {
-  .main-nav .has-dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  @media (hover: hover) {
+    .main-nav .has-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 
@@ -365,10 +386,12 @@ body.mobile-menu-open {
   transition: background-color 0.2s ease;
 }
 
-.main-nav .dropdown-menu a:hover {
-  background-color: var(--color-bg-alt);
-  color: var(--color-primary);
-  text-decoration: none;
+@media (hover: hover) {
+  .main-nav .dropdown-menu a:hover {
+    background-color: var(--color-bg-alt);
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 .header-actions {
@@ -392,12 +415,19 @@ body.mobile-menu-open {
   transition: opacity 0.2s ease;
 }
 
-.lang-btn:hover,
 .lang-btn.active {
   opacity: 1;
   background-color: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
+}
+@media (hover: hover) {
+  .lang-btn:hover {
+    opacity: 1;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+  }
 }
 
 .section-header {
@@ -475,9 +505,10 @@ body.mobile-menu-open {
   flex-direction: column;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--spacing-md);
+@media (hover: hover) {
+  .card:hover {
+    box-shadow: var(--spacing-md);
+  }
 }
 
 .card-icon {
@@ -503,8 +534,10 @@ body.mobile-menu-open {
   color: var(--color-text);
 }
 
-.card-link:hover {
-  text-decoration: none;
+@media (hover: hover) {
+  .card-link:hover {
+    text-decoration: none;
+  }
 }
 
 .card-link h4 {
@@ -530,9 +563,10 @@ body.mobile-menu-open {
     box-shadow 0.2s ease;
 }
 
-.news-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+@media (hover: hover) {
+  .news-card:hover {
+    box-shadow: var(--shadow-md);
+  }
 }
 
 .news-card:focus-within {
@@ -573,9 +607,13 @@ body.mobile-menu-open {
   text-decoration: none;
 }
 
-.news-card-title a:hover,
 .news-card-title a:focus {
   color: var(--color-primary);
+}
+@media (hover: hover) {
+  .news-card-title a:hover {
+    color: var(--color-primary);
+  }
 }
 
 .news-card-desc {
@@ -610,10 +648,15 @@ body.mobile-menu-open {
   border-radius: 4px;
 }
 
-.news-card-source:hover,
 .news-card-source:focus {
   color: var(--color-primary-dark);
   text-decoration: underline;
+}
+@media (hover: hover) {
+  .news-card-source:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
 }
 
 .news-card-source:focus-visible {
@@ -626,8 +669,9 @@ body.mobile-menu-open {
   transition: transform 0.15s ease;
 }
 
-.news-card-source:hover i {
-  transform: translateX(2px);
+@media (hover: hover) {
+  .news-card-source:hover i {
+  }
 }
 
 /* Facebook page feed embed (news page) */
@@ -677,8 +721,10 @@ body.mobile-menu-open {
   font-weight: 500;
 }
 
-.fb-feed-fallback a:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  .fb-feed-fallback a:hover {
+    text-decoration: underline;
+  }
 }
 
 .site-footer {
@@ -707,8 +753,10 @@ body.mobile-menu-open {
   color: #cccccc;
 }
 
-.footer-links a:hover {
-  color: var(--color-white);
+@media (hover: hover) {
+  .footer-links a:hover {
+    color: var(--color-white);
+  }
 }
 
 .footer-bottom {
@@ -815,8 +863,10 @@ body.mobile-menu-open {
   font-family: var(--font-main);
 }
 
-.sw-update-banner button:hover {
-  background: rgba(255, 255, 255, 0.35);
+@media (hover: hover) {
+  .sw-update-banner button:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
 }
 
 /* PWA Install Banner */
@@ -872,8 +922,10 @@ body.mobile-menu-open {
   transition: background 0.2s ease;
 }
 
-.pwa-install-btn:hover {
-  background: #ffffff;
+@media (hover: hover) {
+  .pwa-install-btn:hover {
+    background: #ffffff;
+  }
 }
 
 .pwa-install-dismiss {
@@ -891,8 +943,10 @@ body.mobile-menu-open {
   transition: background 0.2s ease;
 }
 
-.pwa-install-dismiss:hover {
-  background: rgba(255, 255, 255, 0.3);
+@media (hover: hover) {
+  .pwa-install-dismiss:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
 }
 
 @media (max-width: 575px) {
@@ -968,16 +1022,22 @@ body.mobile-menu-open {
   background: rgba(255, 255, 255, 0.15);
   padding: 4px 10px;
   border-radius: 20px;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.hotline-item:hover {
-  background: rgba(255, 255, 255, 0.3);
-  color: var(--color-white);
-  text-decoration: none;
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .hotline-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--color-white);
+    text-decoration: none;
+  }
 }
 
 .hotline-item i {
@@ -1021,14 +1081,18 @@ body.mobile-menu-open {
   .hotline-items-track {
     display: flex;
     gap: var(--spacing-sm);
-    animation: hotlineScroll 25s linear infinite;
+
     will-change: transform;
     padding: 8px 0;
   }
 
-  .hotline-items-track:hover,
   .hotline-items-track:focus-within {
     animation-play-state: paused;
+  }
+  @media (hover: hover) {
+    .hotline-items-track:hover {
+      animation-play-state: paused;
+    }
   }
 
   .hotline-item {
@@ -1221,10 +1285,12 @@ body.mobile-menu-open {
   transition: background 0.2s ease;
 }
 
-.download-links a:hover,
-.related-links a:hover {
-  background: var(--color-bg-alt);
-  text-decoration: none;
+@media (hover: hover) {
+  .download-links a:hover,
+  .related-links a:hover {
+    background: var(--color-bg-alt);
+    text-decoration: none;
+  }
 }
 
 .download-links i {
@@ -1336,12 +1402,19 @@ body.mobile-menu-open {
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.executive-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+@media (hover: hover) {
+  .executive-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+  }
 }
 
 .executive-card-header {
@@ -1391,12 +1464,19 @@ body.mobile-menu-open {
   padding: 10px 12px;
   background: var(--color-bg-alt);
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.executive-contacts a:hover {
-  background: rgba(0, 50, 160, 0.08);
-  text-decoration: none;
+@media (hover: hover) {
+  .executive-contacts a:hover {
+    background: rgba(0, 50, 160, 0.08);
+    text-decoration: none;
+  }
 }
 
 .executive-contacts i {
@@ -1486,13 +1566,20 @@ body.mobile-menu-open {
   box-shadow:
     0 4px 20px rgba(0, 50, 160, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: all 0.25s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.page-header-search .service-search-input:hover {
-  box-shadow:
-    0 6px 24px rgba(0, 50, 160, 0.15),
-    0 2px 8px rgba(0, 0, 0, 0.08);
+@media (hover: hover) {
+  .page-header-search .service-search-input:hover {
+    box-shadow:
+      0 6px 24px rgba(0, 50, 160, 0.15),
+      0 2px 8px rgba(0, 0, 0, 0.08);
+  }
 }
 
 .page-header-search .service-search-input:focus {
@@ -1516,13 +1603,20 @@ body.mobile-menu-open {
   overflow: hidden;
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.service-category-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
-  text-decoration: none;
+@media (hover: hover) {
+  .service-category-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+    text-decoration: none;
+  }
 }
 
 .service-category-icon {
@@ -1569,8 +1663,10 @@ body.mobile-menu-open {
   transition: gap 0.2s ease;
 }
 
-.service-category-card:hover .service-category-link {
-  gap: 8px;
+@media (hover: hover) {
+  .service-category-card:hover .service-category-link {
+    gap: 8px;
+  }
 }
 
 /* Info Card - Legislative Pages */
@@ -1624,13 +1720,20 @@ body.mobile-menu-open {
   overflow: hidden;
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.contact-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
-  text-decoration: none;
+@media (hover: hover) {
+  .contact-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+    text-decoration: none;
+  }
 }
 
 .contact-card-icon {
@@ -1729,13 +1832,20 @@ body.mobile-menu-open {
   padding: var(--spacing-md);
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.emergency-card:hover {
-  border-color: #ef4444;
-  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
-  text-decoration: none;
+@media (hover: hover) {
+  .emergency-card:hover {
+    border-color: #ef4444;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+    text-decoration: none;
+  }
 }
 
 .emergency-card > i {
@@ -1767,12 +1877,19 @@ body.mobile-menu-open {
   font-size: 0.9375rem;
   font-weight: 500;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.category-tag:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 2px 8px rgba(0, 50, 160, 0.08);
+@media (hover: hover) {
+  .category-tag:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 50, 160, 0.08);
+  }
 }
 
 .category-tag i {
@@ -1854,9 +1971,11 @@ body.mobile-menu-open {
   transition: color 0.2s ease;
 }
 
-.error-quick-links a:hover {
-  color: var(--color-primary-dark);
-  text-decoration: none;
+@media (hover: hover) {
+  .error-quick-links a:hover {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+  }
 }
 
 /* Life Event Cards */
@@ -1870,13 +1989,20 @@ body.mobile-menu-open {
   padding: var(--spacing-sm) var(--spacing-md);
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.life-event-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 2px 8px rgba(0, 50, 160, 0.08);
-  text-decoration: none;
+@media (hover: hover) {
+  .life-event-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 50, 160, 0.08);
+    text-decoration: none;
+  }
 }
 
 .life-event-card i {
@@ -1895,12 +2021,19 @@ body.mobile-menu-open {
   border: 1px solid #e5e7eb;
   border-radius: 10px;
   padding: var(--spacing-md);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.service-item-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(0, 50, 160, 0.08);
+@media (hover: hover) {
+  .service-item-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 50, 160, 0.08);
+  }
 }
 
 .service-item-link {
@@ -1972,13 +2105,19 @@ body.mobile-menu-open {
   padding: var(--spacing-md) var(--spacing-lg);
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.office-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .office-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+  }
 }
 
 .office-card-icon {
@@ -2025,22 +2164,35 @@ body.mobile-menu-open {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .office-card-arrow i {
   font-size: 0.875rem;
   color: var(--color-text-light);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.office-card:hover .office-card-arrow {
-  background: var(--color-primary);
+@media (hover: hover) {
+  .office-card:hover .office-card-arrow {
+    background: var(--color-primary);
+  }
 }
 
-.office-card:hover .office-card-arrow i {
-  color: white;
-  transform: translateX(2px);
+@media (hover: hover) {
+  .office-card:hover .office-card-arrow i {
+    color: white;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2060,12 +2212,19 @@ body.mobile-menu-open {
   border: 1px solid #e5e7eb;
   border-left: 3px solid var(--color-primary);
   padding: var(--spacing-md);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.councilor-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(0, 50, 160, 0.08);
+@media (hover: hover) {
+  .councilor-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 50, 160, 0.08);
+  }
 }
 
 .councilor-card--liga {
@@ -2124,12 +2283,19 @@ body.mobile-menu-open {
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   overflow: hidden;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.dept-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+@media (hover: hover) {
+  .dept-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.1);
+  }
 }
 
 .dept-card-icon {
@@ -2183,9 +2349,11 @@ body.mobile-menu-open {
   transition: color 0.2s ease;
 }
 
-.dept-card-contacts a:hover {
-  color: var(--color-primary);
-  text-decoration: none;
+@media (hover: hover) {
+  .dept-card-contacts a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 .dept-card-contacts i {
@@ -2205,9 +2373,11 @@ body.mobile-menu-open {
   transition: gap 0.2s ease;
 }
 
-.dept-card-link:hover {
-  gap: 8px;
-  text-decoration: none;
+@media (hover: hover) {
+  .dept-card-link:hover {
+    gap: 8px;
+    text-decoration: none;
+  }
 }
 
 /* Clickable Department Card Wrapper */
@@ -2217,16 +2387,22 @@ a.dept-card-link-wrap {
   cursor: pointer;
 }
 
-a.dept-card-link-wrap:hover {
-  text-decoration: none;
+@media (hover: hover) {
+  a.dept-card-link-wrap:hover {
+    text-decoration: none;
+  }
 }
 
-a.dept-card-link-wrap:hover .dept-card-title {
-  color: var(--color-primary);
+@media (hover: hover) {
+  a.dept-card-link-wrap:hover .dept-card-title {
+    color: var(--color-primary);
+  }
 }
 
-a.dept-card-link-wrap:hover .dept-card-link {
-  gap: 8px;
+@media (hover: hover) {
+  a.dept-card-link-wrap:hover .dept-card-link {
+    gap: 8px;
+  }
 }
 
 a.dept-card-link-wrap .dept-card-contacts span {
@@ -2252,14 +2428,21 @@ a.dept-card-link-wrap .dept-card-contacts span i {
   padding: var(--spacing-sm);
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.barangay-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(0, 50, 160, 0.1);
-  transform: translateY(-2px);
-  text-decoration: none;
+@media (hover: hover) {
+  .barangay-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 50, 160, 0.1);
+
+    text-decoration: none;
+  }
 }
 
 .barangay-card-header {
@@ -2394,8 +2577,10 @@ textarea.form-control {
   font-weight: 600;
 }
 
-.data-table tbody tr:hover {
-  background-color: var(--color-bg-alt);
+@media (hover: hover) {
+  .data-table tbody tr:hover {
+    background-color: var(--color-bg-alt);
+  }
 }
 
 .data-table i {
@@ -2492,9 +2677,10 @@ a:focus-visible {
     box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+@media (hover: hover) {
+  .card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Typography Improvements */
@@ -2618,9 +2804,11 @@ h6 {
   transition: color 0.2s ease;
 }
 
-.footer-right-links a:hover {
-  color: var(--color-white);
-  text-decoration: none;
+@media (hover: hover) {
+  .footer-right-links a:hover {
+    color: var(--color-white);
+    text-decoration: none;
+  }
 }
 
 .footer-data-source {
@@ -2650,8 +2838,10 @@ h6 {
   color: #cccccc;
 }
 
-.footer-bottom-bar a:hover {
-  color: var(--color-white);
+@media (hover: hover) {
+  .footer-bottom-bar a:hover {
+    color: var(--color-white);
+  }
 }
 
 .footer-social {
@@ -2667,16 +2857,25 @@ h6 {
   gap: var(--spacing-xs);
   text-decoration: none;
   color: #cccccc;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.footer-social-link:hover {
-  color: var(--color-white);
-  text-decoration: none;
+@media (hover: hover) {
+  .footer-social-link:hover {
+    color: var(--color-white);
+    text-decoration: none;
+  }
 }
 
-.footer-social-link:hover .footer-social-icon {
-  color: #0032a0;
+@media (hover: hover) {
+  .footer-social-link:hover .footer-social-icon {
+    color: #0032a0;
+  }
 }
 
 .footer-social-icon {
@@ -2685,7 +2884,12 @@ h6 {
   justify-content: center;
   color: #cccccc;
   font-size: 0.875rem;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .footer-social-label {
@@ -2727,8 +2931,10 @@ h6 {
   transition: color 0.2s ease;
 }
 
-.sitemap-list a:hover {
-  color: var(--color-primary);
+@media (hover: hover) {
+  .sitemap-list a:hover {
+    color: var(--color-primary);
+  }
 }
 
 /* Footer heart icon */
@@ -2828,7 +3034,6 @@ h6 {
 
 .emergency-hotlines h3 i {
   color: #ef4444;
-  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -2852,10 +3057,11 @@ h6 {
   box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1);
 }
 
-.emergency-hotlines .hotline-card:hover {
-  border-color: #ef4444;
-  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.2);
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .emergency-hotlines .hotline-card:hover {
+    border-color: #ef4444;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.2);
+  }
 }
 
 .hotlines-section h4 i {
@@ -2878,14 +3084,20 @@ h6 {
   border: 1px solid var(--color-bg-alt);
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.hotline-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--color-primary);
-  text-decoration: none;
+@media (hover: hover) {
+  .hotline-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 .hotline-card-icon {
@@ -2926,12 +3138,18 @@ h6 {
   font-size: 1.25rem;
   opacity: 0;
   transform: translateX(-8px);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.hotline-card:hover .hotline-card-action {
-  opacity: 1;
-  transform: translateX(0);
+@media (hover: hover) {
+  .hotline-card:hover .hotline-card-action {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 575px) {
@@ -3081,8 +3299,10 @@ h6 {
     border: 1px solid var(--color-bg-alt);
   }
 
-  .resolution-table tbody tr:hover {
-    box-shadow: var(--shadow-md);
+  @media (hover: hover) {
+    .resolution-table tbody tr:hover {
+      box-shadow: var(--shadow-md);
+    }
   }
 
   /* Style cells with data labels */
@@ -3172,8 +3392,10 @@ h6 {
 }
 
 /* Row hover effect with bg-alt color - Requirement 2.4 */
-.resolution-table tbody tr:hover {
-  background-color: var(--color-bg-alt);
+@media (hover: hover) {
+  .resolution-table tbody tr:hover {
+    background-color: var(--color-bg-alt);
+  }
 }
 
 /* Last row rounded corners */
@@ -3294,8 +3516,10 @@ h6 {
   color: var(--color-primary);
 }
 
-.data-source a:hover {
-  text-decoration: underline;
+@media (hover: hover) {
+  .data-source a:hover {
+    text-decoration: underline;
+  }
 }
 
 /* Stat cards grid */
@@ -3487,9 +3711,10 @@ cklist with Icons - Proper Indentation */
     box-shadow 0.3s ease;
 }
 
-.poverty-year-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+@media (hover: hover) {
+  .poverty-year-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .poverty-year-improved {
@@ -3665,8 +3890,10 @@ cklist with Icons - Proper Indentation */
   transition: background 0.2s ease;
 }
 
-.insight-item:hover {
-  background: #e8f0fe;
+@media (hover: hover) {
+  .insight-item:hover {
+    background: #e8f0fe;
+  }
 }
 
 .insight-icon {
@@ -3873,12 +4100,18 @@ cklist with Icons - Proper Indentation */
   padding: 8px 12px;
   background: var(--color-bg-alt);
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.barangay-item-row:hover {
-  background: #e8f0fe;
-  transform: translateX(4px);
+@media (hover: hover) {
+  .barangay-item-row:hover {
+    background: #e8f0fe;
+  }
 }
 
 .barangay-rank {
@@ -4192,9 +4425,10 @@ cklist with Icons - Proper Indentation */
   border: 1px solid rgba(0, 50, 160, 0.08);
 }
 
-.demo-stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+@media (hover: hover) {
+  .demo-stat-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .demo-stat-visual {
@@ -4458,11 +4692,18 @@ cklist with Icons - Proper Indentation */
   padding: var(--spacing-sm);
   border-radius: 8px;
   background: var(--color-bg-alt);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.milestone-item:hover {
-  background: #e8f0fe;
+@media (hover: hover) {
+  .milestone-item:hover {
+    background: #e8f0fe;
+  }
 }
 
 .milestone-current {
@@ -4632,9 +4873,10 @@ cklist with Icons - Proper Indentation */
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.economic-stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+@media (hover: hover) {
+  .economic-stat-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .economic-stat-header {
@@ -4789,12 +5031,18 @@ cklist with Icons - Proper Indentation */
   padding: var(--spacing-sm);
   background: var(--color-bg-alt);
   border-radius: 12px;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sector-item:hover {
-  background: #e8f0fe;
-  transform: translateX(4px);
+@media (hover: hover) {
+  .sector-item:hover {
+    background: #e8f0fe;
+  }
 }
 
 .sector-icon {
@@ -4993,12 +5241,19 @@ cklist with Icons - Proper Indentation */
   border-radius: 12px;
   border: 1px solid var(--color-bg-alt);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.accordion-item:hover {
-  border-color: rgba(0, 50, 160, 0.2);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+@media (hover: hover) {
+  .accordion-item:hover {
+    border-color: rgba(0, 50, 160, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
 }
 
 .accordion-item.active {
@@ -5018,11 +5273,18 @@ cklist with Icons - Proper Indentation */
   cursor: pointer;
   text-align: left;
   font-family: var(--font-main);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.accordion-trigger:hover {
-  background: var(--color-bg-alt);
+@media (hover: hover) {
+  .accordion-trigger:hover {
+    background: var(--color-bg-alt);
+  }
 }
 
 .accordion-trigger:focus {
@@ -5045,7 +5307,12 @@ cklist with Icons - Proper Indentation */
   font-size: 1.125rem;
   color: var(--color-primary);
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .accordion-item.active .accordion-icon {
@@ -5470,9 +5737,10 @@ cklist with Icons - Proper Indentation */
     box-shadow 0.2s ease;
 }
 
-.demo-v2-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+@media (hover: hover) {
+  .demo-v2-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .demo-v2-card-icon {
@@ -5705,8 +5973,10 @@ cklist with Icons - Proper Indentation */
   color: white;
 }
 
-.home-hero-actions .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
+@media (hover: hover) {
+  .home-hero-actions .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 }
 
 /* Home Section Header */
@@ -5739,9 +6009,11 @@ cklist with Icons - Proper Indentation */
   font-size: 0.9375rem;
 }
 
-.home-section-link:hover {
-  text-decoration: none;
-  gap: 10px;
+@media (hover: hover) {
+  .home-section-link:hover {
+    text-decoration: none;
+    gap: 10px;
+  }
 }
 
 /* Home Services Grid */
@@ -5761,13 +6033,20 @@ cklist with Icons - Proper Indentation */
   border-radius: 12px;
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.home-service-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(0, 50, 160, 0.1);
-  text-decoration: none;
+@media (hover: hover) {
+  .home-service-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 50, 160, 0.1);
+    text-decoration: none;
+  }
 }
 
 .home-service-icon {
@@ -5808,9 +6087,10 @@ cklist with Icons - Proper Indentation */
     transform 0.2s ease;
 }
 
-.home-service-card:hover .home-service-arrow {
-  opacity: 1;
-  transform: translateX(4px);
+@media (hover: hover) {
+  .home-service-card:hover .home-service-arrow {
+    opacity: 1;
+  }
 }
 
 .home-service-card--all {
@@ -5833,8 +6113,10 @@ cklist with Icons - Proper Indentation */
   color: white;
 }
 
-.home-service-card--all:hover {
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.3);
+@media (hover: hover) {
+  .home-service-card--all:hover {
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.3);
+  }
 }
 
 /* Home Stats Section */
@@ -5926,8 +6208,10 @@ cklist with Icons - Proper Indentation */
   color: var(--color-text);
 }
 
-.home-news-card h3 a:hover {
-  color: var(--color-primary);
+@media (hover: hover) {
+  .home-news-card h3 a:hover {
+    color: var(--color-primary);
+  }
 }
 
 .home-news-card p {
@@ -6016,15 +6300,22 @@ cklist with Icons - Proper Indentation */
   padding: 12px 22px;
   border-radius: var(--border-radius);
   text-decoration: none;
-  transition: background 0.18s ease, transform 0.15s ease;
+  transition:
+    background 0.18s ease,
+    transform 0.15s ease;
 }
 
-.home-fb-cta:hover,
 .home-fb-cta:focus {
   background: #0b5ed7;
   color: #fff;
   text-decoration: none;
-  transform: translateY(-1px);
+}
+@media (hover: hover) {
+  .home-fb-cta:hover {
+    background: #0b5ed7;
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .home-fb-cta:focus-visible {
@@ -6104,12 +6395,26 @@ cklist with Icons - Proper Indentation */
   animation: skeleton-shimmer 1.4s infinite ease-in-out;
 }
 
-.fb-skel-bar--title { height: 13px; width: 72%; margin-bottom: 8px; }
-.fb-skel-bar--100   { width: 100%; }
-.fb-skel-bar--80    { width: 80%; }
-.fb-skel-bar--60    { width: 60%; }
-.fb-skel-bar--45    { width: 45%; }
-.fb-skel-bar--sm    { height: 8px; }
+.fb-skel-bar--title {
+  height: 13px;
+  width: 72%;
+  margin-bottom: 8px;
+}
+.fb-skel-bar--100 {
+  width: 100%;
+}
+.fb-skel-bar--80 {
+  width: 80%;
+}
+.fb-skel-bar--60 {
+  width: 60%;
+}
+.fb-skel-bar--45 {
+  width: 45%;
+}
+.fb-skel-bar--sm {
+  height: 8px;
+}
 
 /* ── Post cards ── */
 .fb-feed-local {
@@ -6128,8 +6433,10 @@ cklist with Icons - Proper Indentation */
   border-bottom: none;
 }
 
-.fb-post:hover {
-  background: #fafbfd;
+@media (hover: hover) {
+  .fb-post:hover {
+    background: #fafbfd;
+  }
 }
 
 .fb-post--empty {
@@ -6213,10 +6520,15 @@ cklist with Icons - Proper Indentation */
   text-decoration: none;
 }
 
-.fb-post-title a:hover,
 .fb-post-title a:focus {
   color: #1877f2;
   text-decoration: underline;
+}
+@media (hover: hover) {
+  .fb-post-title a:hover {
+    color: #1877f2;
+    text-decoration: underline;
+  }
 }
 
 .fb-post-text {
@@ -6237,9 +6549,13 @@ cklist with Icons - Proper Indentation */
   text-decoration: none;
 }
 
-.fb-post-link:hover,
 .fb-post-link:focus {
   text-decoration: underline;
+}
+@media (hover: hover) {
+  .fb-post-link:hover {
+    text-decoration: underline;
+  }
 }
 
 /* Fallback text below shell */
@@ -6338,8 +6654,10 @@ cklist with Icons - Proper Indentation */
   color: var(--color-text-light);
 }
 
-.home-leader-contacts a:hover {
-  color: var(--color-primary);
+@media (hover: hover) {
+  .home-leader-contacts a:hover {
+    color: var(--color-primary);
+  }
 }
 
 /* Home Contact Section */
@@ -6383,8 +6701,10 @@ cklist with Icons - Proper Indentation */
   text-decoration: none;
 }
 
-.home-contact-item:hover {
-  text-decoration: none;
+@media (hover: hover) {
+  .home-contact-item:hover {
+    text-decoration: none;
+  }
 }
 
 .home-contact-item i {
@@ -6422,8 +6742,10 @@ cklist with Icons - Proper Indentation */
   color: var(--color-primary);
 }
 
-.home-contact-cta .btn-primary:hover {
-  background: var(--color-bg-alt);
+@media (hover: hover) {
+  .home-contact-cta .btn-primary:hover {
+    background: var(--color-bg-alt);
+  }
 }
 
 /* Homepage Responsive */
@@ -6536,9 +6858,11 @@ cklist with Icons - Proper Indentation */
   color: var(--color-primary);
 }
 
-.home-hero-v2-actions .btn-primary:hover {
-  background: var(--color-bg-alt);
-  color: var(--color-primary);
+@media (hover: hover) {
+  .home-hero-v2-actions .btn-primary:hover {
+    background: var(--color-bg-alt);
+    color: var(--color-primary);
+  }
 }
 
 .btn-outline {
@@ -6549,14 +6873,21 @@ cklist with Icons - Proper Indentation */
   border-radius: var(--border-radius);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   text-decoration: none;
 }
 
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: white;
-  text-decoration: none;
+@media (hover: hover) {
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    text-decoration: none;
+  }
 }
 
 /* Appointment CTA Section */
@@ -6620,7 +6951,12 @@ cklist with Icons - Proper Indentation */
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   cursor: pointer;
 }
 
@@ -6629,11 +6965,13 @@ cklist with Icons - Proper Indentation */
   color: white;
 }
 
-.appointment-cta-btn--primary:hover {
-  background: #13277c;
-  box-shadow: 0 4px 16px rgba(21, 44, 149, 0.3);
-  text-decoration: none;
-  color: white;
+@media (hover: hover) {
+  .appointment-cta-btn--primary:hover {
+    background: #13277c;
+    box-shadow: 0 4px 16px rgba(21, 44, 149, 0.3);
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .appointment-cta-btn--outline {
@@ -6642,11 +6980,13 @@ cklist with Icons - Proper Indentation */
   border: 1px solid #d1d5db;
 }
 
-.appointment-cta-btn--outline:hover {
-  border-color: var(--color-text);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  text-decoration: none;
-  color: var(--color-text);
+@media (hover: hover) {
+  .appointment-cta-btn--outline:hover {
+    border-color: var(--color-text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: var(--color-text);
+  }
 }
 
 @media (max-width: 768px) {
@@ -6743,13 +7083,19 @@ cklist with Icons - Proper Indentation */
   color: white;
 }
 
-.abakada-cta-btn:hover,
 .abakada-cta-btn:focus {
   background: #1bcace;
   color: white;
   box-shadow: 0 4px 16px rgba(27, 202, 206, 0.3);
   text-decoration: none;
-  transform: translateY(-1px);
+}
+@media (hover: hover) {
+  .abakada-cta-btn:hover {
+    background: #1bcace;
+    color: white;
+    box-shadow: 0 4px 16px rgba(27, 202, 206, 0.3);
+    text-decoration: none;
+  }
 }
 
 .abakada-cta-btn:active {
@@ -6883,13 +7229,19 @@ cklist with Icons - Proper Indentation */
   margin-top: 8px;
 }
 
-.hivcare-cta-btn:hover,
 .hivcare-cta-btn:focus {
   background: #e0193c;
   color: white;
   box-shadow: 0 6px 20px rgba(255, 46, 81, 0.4);
   text-decoration: none;
-  transform: translateY(-2px);
+}
+@media (hover: hover) {
+  .hivcare-cta-btn:hover {
+    background: #e0193c;
+    color: white;
+    box-shadow: 0 6px 20px rgba(255, 46, 81, 0.4);
+    text-decoration: none;
+  }
 }
 
 .hivcare-cta-btn:active {
@@ -7012,18 +7364,25 @@ cklist with Icons - Proper Indentation */
   font-weight: 600;
   border-radius: var(--border-radius);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   background: var(--color-primary);
   color: white;
   box-shadow: 0 2px 8px rgba(0, 50, 160, 0.25);
 }
 
-.quiz-cta-btn:hover {
-  background: #002a88;
-  box-shadow: 0 4px 16px rgba(0, 50, 160, 0.35);
-  transform: translateY(-1px);
-  color: white;
-  text-decoration: none;
+@media (hover: hover) {
+  .quiz-cta-btn:hover {
+    background: #002a88;
+    box-shadow: 0 4px 16px rgba(0, 50, 160, 0.35);
+
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .quiz-cta-btn:focus {
@@ -7163,9 +7522,11 @@ cklist with Icons - Proper Indentation */
   background: #fafbfc;
 }
 
-.home-search-box .service-search-input:hover {
-  border-color: #d0d5dd;
-  background: #fff;
+@media (hover: hover) {
+  .home-search-box .service-search-input:hover {
+    border-color: #d0d5dd;
+    background: #fff;
+  }
 }
 
 .home-search-box .service-search-input:focus {
@@ -7191,14 +7552,21 @@ cklist with Icons - Proper Indentation */
   align-items: center;
   justify-content: center;
   font-size: 1.125rem;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   box-shadow: 0 2px 8px rgba(0, 50, 160, 0.3);
 }
 
-.search-submit-btn:hover {
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #003399 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 50, 160, 0.4);
+@media (hover: hover) {
+  .search-submit-btn:hover {
+    background: linear-gradient(135deg, var(--color-primary-dark) 0%, #003399 100%);
+
+    box-shadow: 0 4px 12px rgba(0, 50, 160, 0.4);
+  }
 }
 
 .search-submit-btn:active {
@@ -7225,15 +7593,22 @@ cklist with Icons - Proper Indentation */
   padding: 5px 12px;
   border-radius: 50px;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   font-weight: 500;
   border: 1px solid transparent;
 }
 
-.home-search-tags a:hover {
-  background: rgba(0, 50, 160, 0.1);
-  border-color: rgba(0, 50, 160, 0.15);
-  text-decoration: none;
+@media (hover: hover) {
+  .home-search-tags a:hover {
+    background: rgba(0, 50, 160, 0.1);
+    border-color: rgba(0, 50, 160, 0.15);
+    text-decoration: none;
+  }
 }
 
 /* Contact V2 - Card Grid */
@@ -7253,13 +7628,20 @@ cklist with Icons - Proper Indentation */
   border-radius: 12px;
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.home-contact-v2-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(0, 50, 160, 0.08);
-  text-decoration: none;
+@media (hover: hover) {
+  .home-contact-v2-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 50, 160, 0.08);
+    text-decoration: none;
+  }
 }
 
 .home-contact-v2-icon {
@@ -7528,13 +7910,20 @@ cklist with Icons - Proper Indentation */
   border-radius: 8px;
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.hotline-card:hover {
-  border-color: #dc2626;
-  background: #fef2f2;
-  text-decoration: none;
+@media (hover: hover) {
+  .hotline-card:hover {
+    border-color: #dc2626;
+    background: #fef2f2;
+    text-decoration: none;
+  }
 }
 
 .hotline-card > i {
@@ -7641,7 +8030,7 @@ cklist with Icons - Proper Indentation */
 }
 
 .faq-accordion summary::after {
-  content: '\F282';
+  content: '';
   font-family: 'bootstrap-icons';
   color: var(--color-text-light);
   transition: transform 0.2s ease;
@@ -7651,8 +8040,10 @@ cklist with Icons - Proper Indentation */
   transform: rotate(180deg);
 }
 
-.faq-accordion summary:hover {
-  background: var(--color-bg-alt);
+@media (hover: hover) {
+  .faq-accordion summary:hover {
+    background: var(--color-bg-alt);
+  }
 }
 
 .faq-accordion[open] summary {
@@ -7721,8 +8112,10 @@ cklist with Icons - Proper Indentation */
   flex-shrink: 0;
 }
 
-.faq-cta .btn:hover {
-  background: var(--color-bg-alt);
+@media (hover: hover) {
+  .faq-cta .btn:hover {
+    background: var(--color-bg-alt);
+  }
 }
 
 /* ============================================
@@ -7796,13 +8189,20 @@ cklist with Icons - Proper Indentation */
   padding: 10px var(--spacing-md);
   color: var(--color-text);
   font-size: 0.9375rem;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sitemap-links a:hover {
-  background: var(--color-bg-alt);
-  color: var(--color-primary);
-  text-decoration: none;
+@media (hover: hover) {
+  .sitemap-links a:hover {
+    background: var(--color-bg-alt);
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 .sitemap-links a i {
@@ -7810,8 +8210,10 @@ cklist with Icons - Proper Indentation */
   color: var(--color-text-light);
 }
 
-.sitemap-links a:hover i {
-  color: var(--color-primary);
+@media (hover: hover) {
+  .sitemap-links a:hover i {
+    color: var(--color-primary);
+  }
 }
 
 /* ============================================
@@ -7943,13 +8345,20 @@ cklist with Icons - Proper Indentation */
   border-radius: 8px;
   color: var(--color-text);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-a.a11y-contact-item:hover {
-  background: var(--color-primary);
-  color: white;
-  text-decoration: none;
+@media (hover: hover) {
+  a.a11y-contact-item:hover {
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .a11y-contact-item i {
@@ -7957,8 +8366,10 @@ a.a11y-contact-item:hover {
   color: var(--color-primary);
 }
 
-a.a11y-contact-item:hover i {
-  color: white;
+@media (hover: hover) {
+  a.a11y-contact-item:hover i {
+    color: white;
+  }
 }
 
 .a11y-contact-item span {
@@ -8087,7 +8498,12 @@ a.a11y-contact-item:hover i {
   border-radius: 12px;
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.3s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   position: relative;
   overflow: hidden;
 }
@@ -8104,15 +8520,19 @@ a.a11y-contact-item:hover i {
   transition: opacity 0.3s ease;
 }
 
-.home-stat-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 8px 24px rgba(0, 50, 160, 0.12);
-  transform: translateY(-2px);
-  text-decoration: none;
+@media (hover: hover) {
+  .home-stat-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(0, 50, 160, 0.12);
+
+    text-decoration: none;
+  }
 }
 
-.home-stat-card:hover::before {
-  opacity: 1;
+@media (hover: hover) {
+  .home-stat-card:hover::before {
+    opacity: 1;
+  }
 }
 
 .home-stat-card-icon {
@@ -8126,12 +8546,19 @@ a.a11y-contact-item:hover i {
   color: var(--color-primary);
   font-size: 1.25rem;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.home-stat-card:hover .home-stat-card-icon {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  color: white;
+@media (hover: hover) {
+  .home-stat-card:hover .home-stat-card-icon {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: white;
+  }
 }
 
 .home-stat-card-content {
@@ -8148,8 +8575,10 @@ a.a11y-contact-item:hover i {
   transition: color 0.3s ease;
 }
 
-.home-stat-card:hover .home-stat-card-value {
-  color: var(--color-primary-dark);
+@media (hover: hover) {
+  .home-stat-card:hover .home-stat-card-value {
+    color: var(--color-primary-dark);
+  }
 }
 
 .home-stat-card-label {
@@ -8436,11 +8865,12 @@ a.a11y-contact-item:hover i {
     transform 0.3s ease;
 }
 
-.weather-widget:hover {
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.06),
-    0 8px 24px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .weather-widget:hover {
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.06),
+      0 8px 24px rgba(0, 0, 0, 0.06);
+  }
 }
 
 .weather-current {
@@ -8458,8 +8888,9 @@ a.a11y-contact-item:hover i {
   transition: transform 0.3s ease;
 }
 
-.weather-widget:hover .weather-current-icon {
-  transform: scale(1.05);
+@media (hover: hover) {
+  .weather-widget:hover .weather-current-icon {
+  }
 }
 
 .weather-current-info {
@@ -8546,9 +8977,10 @@ a.a11y-contact-item:hover i {
     transform 0.2s ease;
 }
 
-.weather-hour:hover {
-  background: rgba(0, 50, 160, 0.06);
-  transform: translateY(-1px);
+@media (hover: hover) {
+  .weather-hour:hover {
+    background: rgba(0, 50, 160, 0.06);
+  }
 }
 
 .weather-hour-time {
@@ -8727,11 +9159,12 @@ a.a11y-contact-item:hover i {
     transform 0.3s ease;
 }
 
-.map-card:hover {
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.06),
-    0 8px 24px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
+@media (hover: hover) {
+  .map-card:hover {
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.06),
+      0 8px 24px rgba(0, 0, 0, 0.06);
+  }
 }
 
 #map-container {
@@ -8957,15 +9390,22 @@ a.a11y-contact-item:hover i {
   padding: var(--spacing-md);
   text-decoration: none;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
   position: relative;
 }
 
-.online-service-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 8px 24px rgba(0, 50, 160, 0.12);
-  transform: translateY(-2px);
-  text-decoration: none;
+@media (hover: hover) {
+  .online-service-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 24px rgba(0, 50, 160, 0.12);
+
+    text-decoration: none;
+  }
 }
 
 .online-service-icon {
@@ -9026,7 +9466,12 @@ a.a11y-contact-item:hover i {
   background: var(--color-bg-alt);
   border-radius: 8px;
   flex-shrink: 0;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
 .online-service-link i {
@@ -9034,12 +9479,16 @@ a.a11y-contact-item:hover i {
   color: var(--color-primary);
 }
 
-.online-service-card:hover .online-service-link {
-  background: var(--color-primary);
+@media (hover: hover) {
+  .online-service-card:hover .online-service-link {
+    background: var(--color-primary);
+  }
 }
 
-.online-service-card:hover .online-service-link i {
-  color: white;
+@media (hover: hover) {
+  .online-service-card:hover .online-service-link i {
+    color: white;
+  }
 }
 
 @media (max-width: 767px) {
@@ -9144,15 +9593,21 @@ a.a11y-contact-item:hover i {
   font-weight: 500;
   color: var(--color-text);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.sitemap-link-item:hover {
-  border-color: var(--color-primary);
-  background: rgba(0, 50, 160, 0.04);
-  color: var(--color-primary);
-  text-decoration: none;
-  transform: translateX(2px);
+@media (hover: hover) {
+  .sitemap-link-item:hover {
+    border-color: var(--color-primary);
+    background: rgba(0, 50, 160, 0.04);
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 }
 
 .sitemap-link-item i {
@@ -9161,22 +9616,28 @@ a.a11y-contact-item:hover i {
   transition: color 0.2s ease;
 }
 
-.sitemap-link-item:hover i {
-  color: var(--color-primary);
+@media (hover: hover) {
+  .sitemap-link-item:hover i {
+    color: var(--color-primary);
+  }
 }
 
 .sitemap-link-item--external {
   background: #fafafa;
 }
 
-.sitemap-link-item--external:hover {
-  background: rgba(6, 167, 125, 0.06);
-  border-color: #06a77d;
-  color: #06a77d;
+@media (hover: hover) {
+  .sitemap-link-item--external:hover {
+    background: rgba(6, 167, 125, 0.06);
+    border-color: #06a77d;
+    color: #06a77d;
+  }
 }
 
-.sitemap-link-item--external:hover i {
-  color: #06a77d;
+@media (hover: hover) {
+  .sitemap-link-item--external:hover i {
+    color: #06a77d;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -9244,9 +9705,11 @@ a.a11y-contact-item:hover i {
   border-color: #bfdbfe;
 }
 
-.hotline-card--medical:hover {
-  border-color: #0077be;
-  background: #eff6ff;
+@media (hover: hover) {
+  .hotline-card--medical:hover {
+    border-color: #0077be;
+    background: #eff6ff;
+  }
 }
 
 .hotline-card--medical > i {
@@ -9284,12 +9747,19 @@ a.a11y-contact-item:hover i {
   border-left: 3px solid var(--color-primary);
   padding: 14px 16px;
   border-radius: 0 6px 6px 0;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.env-item:hover {
-  background: #eef2ff;
-  border-left-color: var(--color-primary-dark);
+@media (hover: hover) {
+  .env-item:hover {
+    background: #eef2ff;
+    border-left-color: var(--color-primary-dark);
+  }
 }
 
 .env-item-header {
@@ -9359,12 +9829,19 @@ a.a11y-contact-item:hover i {
   border-radius: 8px;
   padding: 24px 16px;
   text-align: center;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.edu-stat-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 2px 8px rgba(0, 50, 160, 0.1);
+@media (hover: hover) {
+  .edu-stat-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 50, 160, 0.1);
+  }
 }
 
 .edu-stat-num {
@@ -9401,11 +9878,18 @@ a.a11y-contact-item:hover i {
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--color-text);
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.edu-category-header:hover {
-  background: var(--color-bg-alt);
+@media (hover: hover) {
+  .edu-category-header:hover {
+    background: var(--color-bg-alt);
+  }
 }
 
 .edu-category-header span:first-child {
@@ -9451,12 +9935,19 @@ a.a11y-contact-item:hover i {
   background: var(--color-bg-alt);
   border-radius: 6px;
   border-left: 3px solid var(--color-primary);
-  transition: all 0.15s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.edu-school-item:hover {
-  background: #eef2ff;
-  border-left-color: var(--color-primary-dark);
+@media (hover: hover) {
+  .edu-school-item:hover {
+    background: #eef2ff;
+    border-left-color: var(--color-primary-dark);
+  }
 }
 
 .edu-school-name {
@@ -9514,12 +10005,19 @@ a.a11y-contact-item:hover i {
   border-radius: 8px;
   padding: 16px 12px;
   text-align: center;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.health-stat-card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 2px 8px rgba(0, 50, 160, 0.1);
+@media (hover: hover) {
+  .health-stat-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 8px rgba(0, 50, 160, 0.1);
+  }
 }
 
 .health-stat-num {
@@ -9549,13 +10047,20 @@ a.a11y-contact-item:hover i {
   border-left: 3px solid var(--color-primary);
   border-radius: 0 8px 8px 0;
   padding: 16px;
-  transition: all 0.2s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.health-facility-card:hover {
-  border-color: var(--color-primary);
-  border-left-color: var(--color-primary-dark);
-  box-shadow: 0 2px 8px rgba(0, 50, 160, 0.08);
+@media (hover: hover) {
+  .health-facility-card:hover {
+    border-color: var(--color-primary);
+    border-left-color: var(--color-primary-dark);
+    box-shadow: 0 2px 8px rgba(0, 50, 160, 0.08);
+  }
 }
 
 .health-facility-badge {
@@ -9669,12 +10174,19 @@ a.a11y-contact-item:hover i {
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--color-text);
-  transition: all 0.15s ease;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out,
+    box-shadow 150ms ease-out,
+    opacity 150ms ease-out;
 }
 
-.health-bhs-item:hover {
-  background: #eef2ff;
-  border-left-color: var(--color-primary-dark);
+@media (hover: hover) {
+  .health-bhs-item:hover {
+    background: #eef2ff;
+    border-left-color: var(--color-primary-dark);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -9766,7 +10278,9 @@ a.a11y-contact-item:hover i {
   pointer-events: none;
   /* Visibility flips only after the fade-out finishes, so the close animation
      stays visible; opacity still carries the motion. */
-  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+  transition:
+    opacity 0.3s ease,
+    visibility 0s linear 0.3s;
   /* Pre-promote the overlay to its own persistent GPU compositing layer at page
      load — even while hidden (opacity:0). This forces the backdrop-filter layer
      to be established ONCE up front, so toggling opacity 0->1 on reveal can no
@@ -9846,7 +10360,9 @@ a.a11y-contact-item:hover i {
   justify-content: center;
   font-size: 1rem;
   z-index: 2;
-  transition: background 0.18s ease, transform 0.18s ease;
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease;
 }
 
 /* Expand the pointer target to ~46px without growing the 36px visual circle,
@@ -9860,9 +10376,10 @@ a.a11y-contact-item:hover i {
 /* :hover and :focus-visible are kept in SEPARATE rules on purpose. Grouped in
    one selector list, any engine that does not understand :focus-visible treats
    the whole list as invalid and drops the hover styling too. */
-.vol-popup-close:hover {
-  background: rgba(255, 255, 255, 0.32);
-  transform: scale(1.1);
+@media (hover: hover) {
+  .vol-popup-close:hover {
+    background: rgba(255, 255, 255, 0.32);
+  }
 }
 
 .vol-popup-close:focus-visible {
@@ -10006,16 +10523,19 @@ a.a11y-contact-item:hover i {
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
   box-shadow: 0 4px 16px rgba(0, 50, 160, 0.32);
   font-family: var(--font-main);
 }
 
-.vol-popup-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0, 50, 160, 0.44);
-  color: #fff;
-  text-decoration: none;
+@media (hover: hover) {
+  .vol-popup-cta:hover {
+    box-shadow: 0 8px 28px rgba(0, 50, 160, 0.44);
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .vol-popup-cta:focus-visible {
@@ -10043,9 +10563,11 @@ a.a11y-contact-item:hover i {
   transition: color 0.18s ease;
 }
 
-.vol-popup-skip:hover {
-  color: var(--color-text);
-  text-decoration: underline;
+@media (hover: hover) {
+  .vol-popup-skip:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
 }
 
 /* Keeps a real focus ring — the previous `outline: none` here left keyboard
@@ -10147,9 +10669,13 @@ a.a11y-contact-item:hover i {
     color: ButtonText;
   }
 
-  .vol-popup-close:hover,
   .vol-popup-close:focus-visible {
     outline: 2px solid Highlight;
+  }
+  @media (hover: hover) {
+    .vol-popup-close:hover {
+      outline: 2px solid Highlight;
+    }
   }
 
   .vol-popup-role {

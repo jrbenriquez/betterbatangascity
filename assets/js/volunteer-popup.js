@@ -7,6 +7,21 @@
   var EXIT_DURATION_MS = 340;
 
   var _dismissed = false;
+  var _inertBackground = [];
+  function setBackgroundInert(overlay) {
+    _inertBackground = Array.prototype.filter.call(document.body.children, function (element) {
+      return element !== overlay && !element.inert && !/^(SCRIPT|STYLE)$/.test(element.tagName);
+    });
+    _inertBackground.forEach(function (element) {
+      element.inert = true;
+    });
+  }
+  function restoreBackground() {
+    _inertBackground.forEach(function (element) {
+      element.inert = false;
+    });
+    _inertBackground = [];
+  }
   var _previousFocus = null;
   var _scrollbarWidth = 0;
   var _scrollY = 0;
@@ -125,6 +140,7 @@
 
     // Restore page state immediately — scroll unlock and focus happen before
     // the overlay finishes fading so the page feels responsive at once.
+    restoreBackground();
     unlockScroll();
     if (_previousFocus && typeof _previousFocus.focus === 'function') {
       try {
@@ -216,6 +232,7 @@
         lockScroll();
 
         requestAnimationFrame(function () {
+          setBackgroundInert(overlay);
           overlay.classList.add('vol-popup-overlay--visible');
           overlay.removeAttribute('aria-hidden');
 

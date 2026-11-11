@@ -26,6 +26,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Test static interface
+        env:
+          STATIC_TEST_DIR: dist
+        run: npx playwright test tests/template.spec.js tests/interface.spec.js tests/volunteer-modal.behavior.spec.js --project=chrome --workers=2
+
       - name: Start server
         run: |
           cd dist
