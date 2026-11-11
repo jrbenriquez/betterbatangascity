@@ -29,3 +29,13 @@ After setup, successful main builds publish automatically. Failed validation and
 GitHub Pages does not process `.htaccess`; Apache-specific headers and redirects in that file do not apply. The site uses actual HTML files and directory indexes and does not need Apache rewriting. GitHub supplies the custom 404 page.
 
 This configuration does not register the domain, change DNS, verify ownership, or enable the repository's Pages setting. Those require the domain owner's and repository administrator's settings access.
+
+## GoDaddy registration, Cloudflare DNS and email forwarding
+
+Keep the domain registered at GoDaddy; a registrar transfer is unnecessary. Add `betterbatangascity.org` to Cloudflare's Free plan, review its imported DNS records, and copy any missing records before changing nameservers. If DNSSEC is enabled at GoDaddy, follow Cloudflare's migration instructions for the existing DS record before switching; enable DNSSEC again after Cloudflare is authoritative.
+
+Replace the domain's nameservers in GoDaddy with the two Cloudflare assigns. Wait for Cloudflare to mark the zone active. Add the GitHub Pages records above in Cloudflare and initially use **DNS only** (gray cloud) so GitHub can validate the domain and provision HTTPS. Keep the GitHub domain-ownership TXT record.
+
+In Cloudflare → Email → Email Routing, verify the chosen destination inbox and create specific forwarding aliases such as `hello@betterbatangascity.org` and `contribute@betterbatangascity.org`. Let Cloudflare install its required MX and TXT records. Do not overwrite existing mail-service records unless intentionally replacing that service; review existing SPF records instead of adding multiple SPF policies. Send an external test email to each alias before publishing it on the site. The destination inbox must be supplied and verified by its owner; the repository does not determine it automatically.
+
+Email Routing provides inbound forwarding, not a mailbox or outbound SMTP. Replies from the destination account normally show that account's address unless a separate custom-domain sending service is configured. No forwarding address is added to the public portal until it has been tested.
