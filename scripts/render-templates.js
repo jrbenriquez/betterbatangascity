@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
-const partials = new Set(['header', 'footer', 'notice', 'info-bar']);
+const partials = new Set(['header', 'footer', 'notice', 'info-bar', 'city-hotlines']);
 
 function renderPage(file) {
   const relative = path.relative(root, file).split(path.sep).join('/');

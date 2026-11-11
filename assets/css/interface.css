@@ -1257,3 +1257,111 @@ body a[aria-disabled='true']:active {
     transition: scale 150ms ease-out;
   }
 }
+
+/* Visible city contacts, shared with the complete directory. */
+.home-hotlines {
+  padding-block: var(--space-6, 24px);
+  background: var(--color-bg-alt);
+}
+.city-hotlines-panel {
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--surface-radius);
+  background: var(--color-bg);
+}
+.city-hotlines-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-block-end: 20px;
+}
+.city-hotlines-heading h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.city-hotlines-heading a,
+.city-hotlines-source a {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.city-phone-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+.city-phone {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+.city-phone > i {
+  color: var(--color-primary);
+  margin-block-start: 3px;
+}
+.city-phone > div {
+  min-width: 0;
+}
+.city-phone h3 {
+  margin: 0 0 8px;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.city-phone-numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.city-phone-numbers a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+.city-hotlines-source {
+  font-size: 0.75rem;
+  margin: 20px 0 0;
+}
+.city-directory-note {
+  color: var(--color-text-light);
+  margin-block: 0 24px;
+  max-width: 75ch;
+}
+.city-directory-heading {
+  margin-block: 40px 24px;
+  font-size: 1.25rem;
+}
+.city-phone-grid--directory {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+#city-contacts,
+#hospitals {
+  scroll-margin-block-start: 12rem;
+}
+@media (max-width: 1000px) {
+  .city-phone-grid,
+  .city-phone-grid--directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 540px) {
+  .city-phone-grid,
+  .city-phone-grid--directory {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .city-hotlines-panel {
+    padding: 20px;
+  }
+}

@@ -1,6 +1,18 @@
 /* Template translations. Replace <placeholder> in all supported languages. */
 const translations = {
   en: {
+    'hotline-title': 'City Hotlines',
+    'hotline-health': '24/7 EBD Emergency Health Hotline',
+    'hotline-mayor': 'Mayor’s Action Center',
+    'hotline-view-all': 'All contacts & hospitals →',
+    'hotline-source': 'Source: Batangas City LGU website',
+    'hotline-directory-note':
+      'Only the EBD Emergency Health Hotline is listed as 24/7. Local seven-digit landlines use the Batangas area code (043).',
+    'hotline-other': 'Other city contacts & utilities',
+    'hotline-hospitals': 'Hospitals',
+    'hotline-provenance':
+      'Transcribed from the official listing supplied on 11 November 2026. Numbers have not been call-tested.',
+
     'nav-home': 'Home',
     'nav-services': 'Services',
     'nav-government': 'Government',
@@ -6282,6 +6294,18 @@ const translations = {
     'ui-social-pending': 'Updates will appear after publication.',
   },
   fil: {
+    'hotline-title': 'Mga Hotline ng Lungsod',
+    'hotline-health': '24/7 EBD Emergency Health Hotline',
+    'hotline-mayor': 'Mayor’s Action Center',
+    'hotline-view-all': 'Lahat ng kontak at ospital →',
+    'hotline-source': 'Pinagmulan: Website ng LGU Batangas City',
+    'hotline-directory-note':
+      'Ang EBD Emergency Health Hotline lamang ang nakalistang bukas 24/7. Gamitin ang area code ng Batangas (043) para sa pitong-digit na lokal na landline.',
+    'hotline-other': 'Iba pang kontak at serbisyo sa lungsod',
+    'hotline-hospitals': 'Mga Ospital',
+    'hotline-provenance':
+      'Kinopya mula sa opisyal na listahang ibinigay noong 11 Nobyembre 2026. Hindi pa nasubukang tawagan ang mga numero.',
+
     'nav-home': 'Tahanan',
     'nav-services': 'Mga Serbisyo',
     'nav-government': 'Pamahalaan',
