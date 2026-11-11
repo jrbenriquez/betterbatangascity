@@ -18,6 +18,8 @@ const folders = [
 ];
 const files = [
   'index.html',
+  'CNAME',
+  '.nojekyll',
   '403.html',
   '404.html',
   '500.html',
