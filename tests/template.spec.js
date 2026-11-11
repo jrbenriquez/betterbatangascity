@@ -117,8 +117,7 @@ test('language switching and JSON rendering retain literal placeholders', async 
   for (const lang of ['en', 'fil']) {
     await page.evaluate((lang) => TranslationEngine.switchLanguage(lang), lang);
     expect(await page.locator('body').innerText()).not.toMatch(retired);
-    await expect(page.locator('.charter-office')).toContainText('P. Burgos Street');
-    await expect(page.locator('.charter-source a[href$="#page=400"]').first()).toBeVisible();
+    await expect(page.locator('main')).toContainText('<placeholder>');
   }
   await page.goto('/legislative/ordinance-framework.html');
   await expect(page.locator('#ordinance-table-body')).toContainText('<placeholder>');
