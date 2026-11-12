@@ -155,9 +155,9 @@ body a[aria-disabled='true']::after {
   color: var(--color-text-light);
 }
 .community-notice {
-  background: #eaf0fb;
-  color: #233d69;
-  border-block-end: 1px solid #d8e2f4;
+  background: #fef3c7;
+  color: #78350f;
+  border-block-end: 1px solid #f59e0b;
   font-size: 0.8125rem;
 }
 .community-notice .container {
@@ -172,6 +172,11 @@ body a[aria-disabled='true']::after {
   align-items: center;
   gap: 8px;
   font-weight: 600;
+}
+.community-notice-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  line-height: 1;
 }
 body .site-header {
   background: #fff;
