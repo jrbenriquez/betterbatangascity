@@ -1,630 +1,67 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      content="city Engineering Office - Building permit issuance, construction permits, and engineering services in Batangas City."
       name="description"
+      content="OSCP handles construction permits. The City Engineer also provides documented public-infrastructure maintenance, technical and waterworks services with separate request procedures."
     />
-    <meta content="&lt;placeholder&gt;" name="author" />
-    <meta
-      content="city Engineering Batangas City, building permit, construction permit, architectural permit, structural permit, electrical permit, Batangas"
-      name="keywords"
+    <link
+      rel="canonical"
+      href="https://betterbatangascity.org/service-details/municipal-engineering.html"
     />
-    <meta content="index, follow" name="robots" />
-    <link rel="canonical" href="https://betterbatangascity.org/service-details/municipal-engineering.html" />
-    <meta content="website" property="og:type" />
-    <meta content="https://betterbatangascity.org/service-details/municipal-engineering.html" property="og:url" />
-    <meta content="city Engineering Office | Batangas City" property="og:title" />
+    <meta property="og:type" content="website" />
     <meta
-      content="Building permit issuance, construction permits, and engineering services in Batangas City."
+      property="og:url"
+      content="https://betterbatangascity.org/service-details/municipal-engineering.html"
+    />
+    <meta
+      property="og:title"
+      content="City Engineer and Construction Permits | Better Batangas City"
+    />
+    <meta
       property="og:description"
+      content="OSCP handles construction permits. The City Engineer also provides documented public-infrastructure maintenance, technical and waterworks services with separate request procedures."
     />
-    <meta content="summary_large_image" name="twitter:card" />
-    <title>city Engineering Office | Batangas City</title>
+    <title>City Engineer and Construction Permits | Better Batangas City</title>
     <link href="../assets/images/logo/favicon.svg" rel="icon" type="image/svg+xml" />
-
     <link href="../assets/css/style.css" rel="stylesheet" />
     <link href="../assets/css/responsive.css" rel="stylesheet" />
     <link href="../assets/css/accessibility.css" rel="stylesheet" />
     <link href="../assets/css/footer.css" rel="stylesheet" />
-    <style>
-      .meo-section {
-        padding: 40px 0;
-      }
-      .meo-section.alt-bg {
-        background: var(--color-bg-alt);
-      }
-      .section-header {
-        margin-bottom: 20px;
-      }
-      .section-header h2 {
-        font-size: 1.125rem;
-        color: var(--color-text);
-        margin-bottom: 4px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .section-header h2 i {
-        color: var(--color-primary);
-        font-size: 1rem;
-      }
-      .section-header p {
-        color: var(--color-text-light);
-        font-size: 0.8125rem;
-        margin: 0;
-      }
-      .quick-stats {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-      .stat-card {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 12px;
-        text-align: center;
-      }
-      .stat-card i {
-        font-size: 1rem;
-        color: var(--color-primary);
-        margin-bottom: 4px;
-      }
-      .stat-card h4 {
-        font-size: 0.625rem;
-        color: var(--color-text-light);
-        margin-bottom: 2px;
-        font-weight: 500;
-        text-transform: uppercase;
-      }
-      .stat-card p {
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: var(--color-text);
-        margin: 0;
-      }
-      .process-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-      }
-      .process-card {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 14px;
-      }
-      .process-card .step-num {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 22px;
-        height: 22px;
-        background: var(--color-primary);
-        color: white;
-        font-size: 0.625rem;
-        font-weight: 700;
-        border-radius: 5px;
-        margin-bottom: 8px;
-      }
-      .process-card h4 {
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: var(--color-text);
-        margin-bottom: 4px;
-      }
-      .process-card p {
-        font-size: 0.6875rem;
-        color: var(--color-text-light);
-        margin-bottom: 6px;
-        line-height: 1.4;
-      }
-      .process-card .meta {
-        font-size: 0.625rem;
-        color: var(--color-primary);
-        font-weight: 500;
-      }
-      .process-card.final .step-num {
-        background: var(--color-success);
-      }
-      .req-box {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 14px;
-      }
-      .req-box h4 {
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: var(--color-text);
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .req-box h4 i {
-        color: var(--color-primary);
-      }
-      .req-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        column-count: 2;
-        column-gap: 20px;
-      }
-      .req-list.single-col {
-        column-count: 1;
-      }
-      .req-list li {
-        font-size: 0.75rem;
-        color: var(--color-text);
-        padding: 4px 0;
-        display: flex;
-        align-items: flex-start;
-        gap: 6px;
-        break-inside: avoid;
-      }
-      .req-list li i {
-        color: var(--color-primary);
-        font-size: 0.625rem;
-        margin-top: 3px;
-        flex-shrink: 0;
-      }
-      .permit-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-      }
-      .permit-card {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 12px;
-        text-align: center;
-        transition:
-          color 150ms ease-out,
-          background-color 150ms ease-out,
-          border-color 150ms ease-out,
-          box-shadow 150ms ease-out,
-          opacity 150ms ease-out;
-      }
-      @media (hover: hover) {
-        .permit-card:hover {
-          border-color: var(--color-primary);
-          box-shadow: 0 2px 8px rgba(0, 50, 160, 0.08);
-        }
-      }
-      .permit-card i {
-        font-size: 1.25rem;
-        color: var(--color-primary);
-        margin-bottom: 6px;
-      }
-      .permit-card h4 {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--color-text);
-        margin: 0;
-      }
-      .staff-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-      }
-      .staff-card {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 12px;
-      }
-      .staff-card h4 {
-        font-size: 0.75rem;
-        font-weight: 600;
-        color: var(--color-text);
-        margin-bottom: 2px;
-      }
-      .staff-card p {
-        font-size: 0.6875rem;
-        color: var(--color-text-light);
-        margin: 0;
-      }
-      @media (max-width: 992px) {
-        .process-grid,
-        .staff-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .permit-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-      @media (max-width: 768px) {
-        .quick-stats,
-        .permit-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .req-list {
-          column-count: 1;
-        }
-      }
-      @media (max-width: 575px) {
-        .process-grid,
-        .staff-grid,
-        .quick-stats,
-        .permit-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
   </head>
   <body>
-    <a class="skip-link" data-i18n="eng-skip-to-main-content" href="#main-content"
-      >Skip to main content</a
-    >
+    <a class="skip-link" href="#main-content" data-i18n="ui-skip">Skip to main content</a>
     <!-- include:notice -->
     <!-- include:header -->
     <!-- include:info-bar -->
     <main id="main-content">
       <div class="container">
-        <nav aria-label="Breadcrumb" class="breadcrumbs">
-          <a data-i18n="eng-home" href="../">Home</a><span>/</span>
-          <a data-i18n="eng-services" href="../services/">Services</a><span>/</span>
-          <a data-i18n="eng-infrastructure" href="../services/infrastructure.html">Infrastructure</a
-          ><span>/</span>
-          <span aria-current="page">Municipal Engineering Office</span>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../" data-i18n="nav-home">Home</a><span>/</span
+          ><a href="../services/" data-i18n="nav-services">Services</a><span>/</span
+          ><span aria-current="page" lang="en">City Engineer and Construction Permits</span>
         </nav>
       </div>
       <section class="page-header">
         <div class="container">
-          <div class="page-header-content">
-            <span class="page-header-badge"
-              ><i class="bi bi-hammer"></i>
-              <span data-i18n="eng-engineering">Engineering</span></span
-            >
-            <h1 data-i18n="eng-municipal-engineering-office">Municipal Engineering Office</h1>
-            <p
-              class="page-header-desc"
-              data-i18n="eng-building-permit-issuance-construction-permits-and"
-            >
-              Building permit issuance, construction permits, and engineering services
-            </p>
-          </div>
+          <h1 lang="en">City Engineer and Construction Permits</h1>
+          <p class="page-header-desc" lang="en">
+            OSCP handles construction permits. The City Engineer also provides documented
+            public-infrastructure maintenance, technical and waterworks services with separate
+            request procedures.
+          </p>
         </div>
       </section>
-      <section class="meo-section">
-        <div class="container">
-          <div class="quick-stats">
-            <div class="stat-card">
-              <i class="bi bi-building"></i>
-              <h4 data-i18n="eng-office">Office</h4>
-              <p data-i18n="eng-mun-engineering">Mun. Engineering</p>
-            </div>
-            <div class="stat-card">
-              <i class="bi bi-clock"></i>
-              <h4 data-i18n="eng-processing">Processing</h4>
-              <p data-i18n="content-ec93f6b578">&lt;placeholder&gt;</p>
-            </div>
-            <div class="stat-card">
-              <i class="bi bi-calendar"></i>
-              <h4 data-i18n="eng-validity">Validity</h4>
-              <p data-i18n="content-8ea59a8ed2">&lt;placeholder&gt;</p>
-            </div>
-            <div class="stat-card">
-              <i class="bi bi-exclamation-triangle"></i>
-              <h4 data-i18n="eng-expiry-note">Expiry Note</h4>
-              <p>&lt;placeholder&gt;</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="meo-section alt-bg">
-        <div class="container">
-          <div class="section-header">
-            <h2>
-              <i class="bi bi-file-earmark-check"></i>
-              <span data-i18n="eng-issuance-of-building-permit">Issuance of Building Permit</span>
-            </h2>
-            <p data-i18n="eng-a-building-permit-is-required-prior-to">
-              A building permit is required prior to construction, alteration, major repair, or
-              renovation of any building/structure
-            </p>
-          </div>
-          <div class="process-grid">
-            <div class="process-card">
-              <div class="step-num">&lt;placeholder&gt;</div>
-              <h4 data-i18n="eng-sign-logbook-secure-forms">Sign Logbook &amp; Secure Forms</h4>
-              <p data-i18n="eng-sign-client-logbook-and-secure-application-forms">
-                Sign client logbook and secure application forms and checklist of requirements
-              </p>
-              <div class="meta"><i class="bi bi-clock"></i>&lt;placeholder&gt;</div>
-            </div>
-            <div class="process-card">
-              <div class="step-num">&lt;placeholder&gt;</div>
-              <h4 data-i18n="eng-submit-application-plans">Submit Application &amp; Plans</h4>
-              <p data-i18n="eng-submit-application-form-and-requirements-for">
-                Submit application form and requirements for verification by engineers. Plans must
-                be signed and sealed.
-              </p>
-              <div class="meta"><i class="bi bi-clock"></i>&lt;placeholder&gt;</div>
-            </div>
-            <div class="process-card">
-              <div class="step-num">&lt;placeholder&gt;</div>
-              <h4 data-i18n="eng-get-order-of-payment">Get Order of Payment</h4>
-              <p data-i18n="eng-receive-order-of-payment-one-day-after-date-of">
-                Receive order of payment (one day after date of submission)
-              </p>
-              <div class="meta"><i class="bi bi-clock"></i>&lt;placeholder&gt;</div>
-            </div>
-            <div class="process-card">
-              <div class="step-num">&lt;placeholder&gt;</div>
-              <h4 data-i18n="eng-pay-fees-at-treasurers-office">Pay Fees at Treasurer's Office</h4>
-              <p data-i18n="eng-pay-building-permit-fee-and-other-fees-at-the">
-                Pay building permit fee and other fees at the Municipal Treasurer's Office
-              </p>
-              <div class="meta"><i class="bi bi-clock"></i>&lt;placeholder&gt;</div>
-            </div>
-            <div class="process-card">
-              <div class="step-num">&lt;placeholder&gt;</div>
-              <h4 data-i18n="eng-get-first-endorsement">Get First Endorsement</h4>
-              <p data-i18n="eng-secure-first-endorsement-with-official-receipt">
-                Secure first endorsement with official receipt
-              </p>
-              <div class="meta"><i class="bi bi-clock"></i>&lt;placeholder&gt;</div>
-            </div>
-            <div class="process-card final">
-              <div class="step-num">&lt;placeholder&gt;</div>
-              <h4 data-i18n="eng-get-building-permit">Get Building Permit</h4>
-              <p data-i18n="content-6ce26edd15">&lt;placeholder&gt;</p>
-              <div class="meta"><i class="bi bi-clock"></i>&lt;placeholder&gt;</div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="meo-section">
-        <div class="container">
-          <div class="section-header">
-            <h2>
-              <i class="bi bi-grid-3x3-gap"></i>
-              <span data-i18n="eng-types-of-permits-available">Types of Permits Available</span>
-            </h2>
-            <p data-i18n="eng-various-permit-types-issued-by-the-municipal">
-              Various permit types issued by the Municipal Engineering Office
-            </p>
-          </div>
-          <div class="permit-grid">
-            <div class="permit-card">
-              <i class="bi bi-building"></i>
-              <h4 data-i18n="eng-building-permit">Building Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-columns-gap"></i>
-              <h4 data-i18n="eng-architectural-permit">Architectural Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-bricks"></i>
-              <h4 data-i18n="eng-civilstructural-permit">Civil/Structural Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-droplet"></i>
-              <h4 data-i18n="eng-sanitary-permit">Sanitary Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-moisture"></i>
-              <h4 data-i18n="eng-plumbing-permit">Plumbing Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-lightning"></i>
-              <h4 data-i18n="eng-electrical-permit">Electrical Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-gear"></i>
-              <h4 data-i18n="eng-mechanical-permit">Mechanical Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-cpu"></i>
-              <h4 data-i18n="eng-electronics-permit">Electronics Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-signpost-2"></i>
-              <h4 data-i18n="eng-sidewalk-dev-permit">Sidewalk Dev. Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-fence"></i>
-              <h4 data-i18n="eng-fencing-permit">Fencing Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-sign-turn-right"></i>
-              <h4 data-i18n="eng-sign-permit">Sign Permit</h4>
-            </div>
-            <div class="permit-card">
-              <i class="bi bi-house-x"></i>
-              <h4 data-i18n="eng-demolition-permit">Demolition Permit</h4>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="meo-section alt-bg">
-        <div class="container">
-          <div class="section-header">
-            <h2>
-              <i class="bi bi-clipboard-check"></i>
-              <span data-i18n="eng-documentary-requirements">Documentary Requirements</span>
-            </h2>
-            <p data-i18n="eng-complete-list-of-requirements-for-building-permit">
-              Complete list of requirements for building permit application
-            </p>
-          </div>
-          <div class="grid grid-2" style="gap: 14px">
-            <div class="req-box">
-              <h4>
-                <i class="bi bi-file-earmark-text"></i>
-                <span data-i18n="content-07cfd83808">&lt;placeholder&gt;</span>
-              </h4>
-              <ul class="req-list single-col">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-architectural-plans">Architectural Plans</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-structural-plans">Structural Plans</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-electrical-plans">Electrical Plans</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-sanitary-plans">Sanitary Plans</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-plumbing-plans">Plumbing Plans</span>
-                </li>
-                <li><i class="bi bi-check-circle-fill"></i> Mechanical Plans</li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-electronics-plans">Electronics Plans</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="content-45a912905b">&lt;placeholder&gt;</span>
-                </li>
-              </ul>
-            </div>
-            <div class="req-box">
-              <h4>
-                <i class="bi bi-folder"></i>
-                <span data-i18n="eng-supporting-documents">Supporting Documents</span>
-              </h4>
-              <ul class="req-list single-col">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="content-83a181d066">&lt;placeholder&gt;</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="content-47e9c6bbbc">&lt;placeholder&gt;</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="content-e5a3ffe24b">&lt;placeholder&gt;</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="content-e4d482d741">&lt;placeholder&gt;</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-certified-true-copy-of-octtct"
-                    >Certified True Copy of OCT/TCT</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-tax-declaration">Tax Declaration</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-latest-real-property-tax-receipt"
-                    >Latest Real Property Tax Receipt</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="eng-brgy-clearance-zoning-clearance"
-                    >Brgy. Clearance &amp; Zoning Clearance</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="meo-section">
-        <div class="container">
-          <div class="section-header">
-            <h2>
-              <i class="bi bi-people"></i>
-              <span data-i18n="eng-office-personnel">Office Personnel</span>
-            </h2>
-            <p data-i18n="eng-key-personnel-handling-building-permit">
-              Key personnel handling building permit applications
-            </p>
-          </div>
-          <div class="staff-grid">
-            <div class="staff-card">
-              <h4>&lt;placeholder&gt;</h4>
-              <p data-i18n="eng-engineering-aide">Engineering Aide</p>
-            </div>
-            <div class="staff-card">
-              <h4>&lt;placeholder&gt;</h4>
-              <p data-i18n="eng-engineer-iii">Engineer III</p>
-            </div>
-            <div class="staff-card">
-              <h4>&lt;placeholder&gt;</h4>
-              <p data-i18n="eng-municipal-engineer">Municipal Engineer</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="meo-section alt-bg">
-        <div class="container">
-          <div class="grid grid-2" style="gap: 14px">
-            <div class="req-box">
-              <h4>
-                <i class="bi bi-exclamation-triangle"></i>
-                <span data-i18n="eng-important-notes">Important Notes</span>
-              </h4>
-              <ul class="req-list single-col">
-                <li>
-                  <i class="bi bi-info-circle"></i>
-                  <span data-i18n="content-ff6b1cf9d7">&lt;placeholder&gt;</span>
-                </li>
-                <li>
-                  <i class="bi bi-info-circle"></i>
-                  <span data-i18n="content-db03bccf62">&lt;placeholder&gt;</span>
-                </li>
-                <li>
-                  <i class="bi bi-info-circle"></i>
-                  <span data-i18n="eng-zoning-clearance-must-be-secured-from-the-zoning"
-                    >Zoning clearance must be secured from the Zoning Administrator</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-info-circle"></i>
-                  <span data-i18n="eng-fees-depend-on-rates-stated-in-revenue-code-and"
-                    >Fees depend on rates stated in Revenue Code and National Building Code</span
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="req-box">
-              <h4>
-                <i class="bi bi-building"></i>
-                <span data-i18n="eng-office-information">Office Information</span>
-              </h4>
-              <ul class="req-list single-col">
-                <li>
-                  <i class="bi bi-geo-alt"></i>
-                  <span data-i18n="content-c2ba03d9c4">&lt;placeholder&gt;</span>
-                </li>
-                <li><i class="bi bi-clock"></i>&lt;placeholder&gt;</li>
-                <li><i class="bi bi-telephone"></i>&lt;placeholder&gt;</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- include:service-review -->
+      <!-- include:service-guide -->
     </main>
     <!-- include:footer -->
-    <script defer="" src="../assets/js/translations.js"></script>
-    <script defer="" src="../assets/js/site-config.js"></script>
-    <script defer="" src="../assets/js/info-bar.js"></script>
-    <script defer="" src="../assets/js/main.js"></script>
-    <script defer="" src="../assets/js/version.js"></script>
+    <script defer src="../assets/js/translations.js"></script>
+    <script defer src="../assets/js/site-config.js"></script>
+    <script defer src="../assets/js/info-bar.js"></script>
+    <script defer src="../assets/js/main.js"></script>
+    <script defer src="../assets/js/version.js"></script>
   </body>
 </html>

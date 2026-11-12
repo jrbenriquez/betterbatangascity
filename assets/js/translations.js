@@ -1,6 +1,35 @@
 /* Template translations. Replace <placeholder> in all supported languages. */
 const translations = {
   en: {
+    'charter-city-council': 'Sangguniang Panlungsod',
+    'charter-transactions': 'Choose the right transaction',
+    'charter-applying': 'Applying for this service',
+    'charter-checklist-question': 'Which requirements, fees and processing time apply?',
+    'charter-checklist-answer':
+      'Open the cited official Charter transaction and follow its complete checklist and fee/time table. Different applicant categories and transaction types can have different requirements. The source links above identify the relevant pages.',
+    'charter-venue-question': 'Is the office address always the service venue?',
+
+    'charter-category-intro':
+      'Use the service-specific Charter reference to check eligibility, documents, fees and processing times before applying.',
+    'charter-location-details': 'Office location and service details →',
+    'charter-hospital-link': 'Hospital phone numbers →',
+
+    'charter-before-visit': 'Before you visit',
+    'charter-office-source': 'Charter office directory:',
+    'charter-service-source': 'Service reference:',
+    'charter-guidance-limit':
+      'The office location and service scope above are based on the 2026 Charter. Use the cited official transaction for its complete requirements, fees and processing times; confirm current arrangements with the office before travelling.',
+    'charter-directory-link': 'View the service map and office directory →',
+    'charter-directory-title': 'Batangas City service map',
+    'charter-directory-subtitle':
+      'Find the responsible office, check service scope, and read the official source before applying.',
+    'charter-review-date':
+      'Reviewed against the 2026 (2nd Edition) Citizen’s Charter on 11 November 2026. Source confirmation does not guarantee today’s schedule, funding or online availability.',
+    'charter-open-source': 'Read the official Citizen’s Charter (PDF, 1,133 pages)',
+    'charter-offices': 'Office locations',
+    'charter-office-limit':
+      'These are administrative office addresses from the Charter. Clinic, inspection, field-service and operating-site locations can differ; follow the service-specific note before travelling.',
+
     'hotline-title': 'City Hotlines',
     'hotline-health': '24/7 EBD Emergency Health Hotline',
     'hotline-mayor': 'Mayor’s Action Center',
@@ -6264,7 +6293,7 @@ const translations = {
     'content-ad3e622c44': 'How well do you know Batangas City?',
     'content-cd96c05ba6': '<placeholder>',
     'home-take-the-quiz': 'Take the Quiz',
-    'ui-unofficial': 'Unofficial community portal',
+    'ui-unofficial': 'Work in Progress - unofficial community portal',
     'ui-verify': 'Verify requirements with the responsible city office.',
     'ui-exchange': 'PHP exchange rate',
     'ui-pause': 'Pause updates',
@@ -6294,6 +6323,36 @@ const translations = {
     'ui-social-pending': 'Updates will appear after publication.',
   },
   fil: {
+    'charter-city-council': 'Sangguniang Panlungsod',
+    'charter-transactions': 'Piliin ang tamang transaksyon',
+    'charter-applying': 'Pag-aaplay para sa serbisyong ito',
+    'charter-checklist-question':
+      'Aling mga kinakailangan, bayarin at oras ng pagproseso ang naaangkop?',
+    'charter-checklist-answer':
+      'Buksan ang kaukulang opisyal na transaksyon sa Charter at sundin ang kumpletong listahan ng mga dokumento, bayarin at oras. Maaaring magkaiba ang mga kinakailangan ayon sa uri ng aplikante at transaksyon. Nasa mga link sa itaas ang mga kaukulang pahina.',
+    'charter-venue-question': 'Sa address ba ng tanggapan palaging ibinibigay ang serbisyo?',
+
+    'charter-category-intro':
+      'Basahin ang kaukulang bahagi ng Charter para sa mga kwalipikasyon, dokumento, bayarin at oras ng pagproseso bago mag-apply.',
+    'charter-location-details': 'Lokasyon ng tanggapan at detalye ng serbisyo →',
+    'charter-hospital-link': 'Mga numero ng ospital →',
+
+    'charter-before-visit': 'Bago pumunta sa tanggapan',
+    'charter-office-source': 'Talaan ng mga tanggapan sa Charter:',
+    'charter-service-source': 'Batayan ng serbisyo:',
+    'charter-guidance-limit':
+      'Batay sa Charter ng 2026 ang lokasyon at saklaw ng serbisyo sa itaas. Basahin ang kaukulang opisyal na transaksyon para sa kumpletong kinakailangan, bayarin at oras ng pagproseso; kumpirmahin ang kasalukuyang detalye sa tanggapan bago pumunta.',
+    'charter-directory-link': 'Tingnan ang mga serbisyo at lokasyon ng tanggapan →',
+    'charter-directory-title': 'Mga serbisyo ng Batangas City',
+    'charter-directory-subtitle':
+      'Alamin ang responsableng tanggapan at saklaw ng serbisyo, at basahin ang opisyal na batayan bago mag-apply.',
+    'charter-review-date':
+      'Sinuri batay sa Citizen’s Charter 2026 (2nd Edition) noong 11 Nobyembre 2026. Hindi nito ginagarantiya ang kasalukuyang iskedyul, pondo o pagkakaroon ng online na serbisyo.',
+    'charter-open-source': 'Basahin ang opisyal na Citizen’s Charter (PDF, 1,133 pahina)',
+    'charter-offices': 'Mga lokasyon ng tanggapan',
+    'charter-office-limit':
+      'Ito ang mga address ng tanggapang nakasaad sa Charter. Maaaring iba ang klinika, inspeksyon, lugar ng serbisyo o pasilidad; basahin ang kaukulang tala bago pumunta.',
+
     'hotline-title': 'Mga Hotline ng Lungsod',
     'hotline-health': '24/7 EBD Emergency Health Hotline',
     'hotline-mayor': 'Mayor’s Action Center',
@@ -12647,7 +12706,7 @@ const translations = {
     'content-ad3e622c44': 'Gaano mo kakilala ang Batangas City?',
     'content-cd96c05ba6': '<placeholder>',
     'home-take-the-quiz': 'Subukin ang Quiz',
-    'ui-unofficial': 'Di-opisyal na portal ng komunidad',
+    'ui-unofficial': 'Patuloy na ginagawa - di-opisyal na portal ng komunidad',
     'ui-verify': 'Tiyakin ang mga kinakailangan sa kinauukulang tanggapan ng lungsod.',
     'ui-exchange': 'Palitan ng piso',
     'ui-pause': 'Ihinto ang mga update',
