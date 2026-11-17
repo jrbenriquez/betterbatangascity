@@ -1,6 +1,13 @@
 /* Template translations. Replace <placeholder> in all supported languages. */
 const translations = {
   en: {
+    'hotline-short-health': 'Health',
+    'hotline-short-fire': 'Fire',
+    'hotline-short-police': 'Police',
+    'hotline-show-more': 'Show more',
+    'hotline-show-less': 'Show less',
+    'hotline-call-help': 'Tap a number to call.',
+
     'charter-city-council': 'Sangguniang Panlungsod',
     'charter-transactions': 'Choose the right transaction',
     'charter-applying': 'Applying for this service',
@@ -6323,6 +6330,13 @@ const translations = {
     'ui-social-pending': 'Updates will appear after publication.',
   },
   fil: {
+    'hotline-short-health': 'Kalusugan',
+    'hotline-short-fire': 'Sunog',
+    'hotline-short-police': 'Pulis',
+    'hotline-show-more': 'Ipakita lahat',
+    'hotline-show-less': 'Itago ang detalye',
+    'hotline-call-help': 'Pindutin ang numero upang tumawag.',
+
     'charter-city-council': 'Sangguniang Panlungsod',
     'charter-transactions': 'Piliin ang tamang transaksyon',
     'charter-applying': 'Pag-aaplay para sa serbisyong ito',

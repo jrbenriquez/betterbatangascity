@@ -177,3 +177,30 @@ test('press feedback uses the specified scale and unavailable actions stay stati
   expect(await unavailable.evaluate((el) => getComputedStyle(el).scale)).toBe('1');
   await page.mouse.up();
 });
+
+test('homepage hotlines start compact and expand with keyboard access to calls and directory', async ({
+  page,
+}) => {
+  await prepare(page);
+  await page.goto('/');
+  const disclosure = page.locator('.hotline-disclosure');
+  const summary = disclosure.locator('summary');
+  await expect(disclosure).toHaveJSProperty('open', false);
+  await expect(disclosure.locator('.hotline-quick-numbers')).toBeVisible();
+  await expect(disclosure.locator('.hotline-quick-numbers')).toContainText('0999-222-6626');
+  await expect(disclosure.locator('.city-hotlines-panel')).toBeHidden();
+  await summary.focus();
+  await page.keyboard.press('Space');
+  await expect(disclosure).toHaveJSProperty('open', true);
+  await expect(disclosure.locator('.hotline-quick-numbers')).toBeHidden();
+  await expect(disclosure.getByRole('link', { name: '723-1511', exact: true })).toBeVisible();
+  await expect(
+    disclosure.getByRole('link', { name: '0999-222-6626', exact: true })
+  ).toHaveAttribute('href', 'tel:+639992226626');
+  await expect(
+    disclosure.getByRole('link', { name: 'All contacts & hospitals →' })
+  ).toHaveAttribute('href', 'contact/#city-contacts');
+  await page.keyboard.press('Enter');
+  await expect(disclosure).toHaveJSProperty('open', false);
+  await expect(disclosure.locator('.hotline-quick-numbers')).toBeVisible();
+});

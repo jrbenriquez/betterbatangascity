@@ -127,20 +127,46 @@
       </section>
       <section class="home-hotlines" aria-labelledby="home-hotlines-title">
         <div class="container">
-          <div class="city-hotlines-panel">
-            <div class="city-hotlines-heading">
-              <h2 id="home-hotlines-title" data-i18n="hotline-title">City Hotlines</h2>
-              <a href="contact/#city-contacts" data-i18n="hotline-view-all"
-                >All contacts &amp; hospitals →</a
-              >
+          <details class="hotline-disclosure">
+            <summary class="hotline-disclosure-summary">
+              <h2 id="home-hotlines-title" class="hotline-summary-title">
+                <i class="bi bi-telephone" aria-hidden="true"></i
+                ><span data-i18n="hotline-title">City Hotlines</span>
+              </h2>
+              <span class="hotline-quick-numbers">
+                <span
+                  ><span data-i18n="hotline-short-health">Health</span>
+                  <strong>0999-222-6626</strong></span
+                >
+                <span
+                  ><span data-i18n="hotline-short-fire">Fire</span> <strong>425-7163</strong></span
+                >
+                <span
+                  ><span data-i18n="hotline-short-police">Police</span>
+                  <strong>723-2030</strong></span
+                >
+              </span>
+              <span class="hotline-disclosure-action"
+                ><span class="hotline-show-more" data-i18n="hotline-show-more">Show more</span
+                ><span class="hotline-show-less" data-i18n="hotline-show-less">Show less</span
+                ><i class="bi bi-chevron-down" aria-hidden="true"></i
+              ></span>
+            </summary>
+            <div class="city-hotlines-panel">
+              <div class="city-hotlines-heading">
+                <p data-i18n="hotline-call-help">Tap a number to call.</p>
+                <a href="contact/#city-contacts" data-i18n="hotline-view-all"
+                  >All contacts &amp; hospitals →</a
+                >
+              </div>
+              <!-- include:city-hotlines -->
+              <p class="city-hotlines-source">
+                <a href="https://www.batangascity.gov.ph/web/" data-i18n="hotline-source"
+                  >Source: Batangas City LGU website</a
+                >
+              </p>
             </div>
-            <!-- include:city-hotlines -->
-            <p class="city-hotlines-source">
-              <a href="https://www.batangascity.gov.ph/web/" data-i18n="hotline-source"
-                >Source: Batangas City LGU website</a
-              >
-            </p>
-          </div>
+          </details>
         </div>
       </section>
       <section aria-label="Mayor's Office Appointment Services" class="appointment-cta-section">
