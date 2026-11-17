@@ -1,660 +1,69 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      content="Declaration of Land, Building and Machineries - Complete guide to property tax declaration in Batangas City. Requirements, forms, and procedures from the city Assessor's Office."
       name="description"
+      content="The City Assessor handles tax-declaration and assessment-record transactions for land, buildings, improvements and machinery. A tax-record update does not register or transfer a legal land title."
     />
-    <meta content="&lt;placeholder&gt;" name="author" />
-    <meta
-      content="tax declaration Batangas City, property declaration, land declaration, building declaration, machinery declaration, city Assessor, Batangas, real property tax"
-      name="keywords"
+    <link
+      rel="canonical"
+      href="https://betterbatangascity.org/service-details/property-declaration.html"
     />
-    <meta content="index, follow" name="robots" />
-    <link rel="canonical" href="https://betterbatangascity.org/service-details/property-declaration.html" />
-    <meta content="website" property="og:type" />
-    <meta content="https://betterbatangascity.org/service-details/property-declaration.html" property="og:url" />
-    <meta content="Property Declaration | Batangas City" property="og:title" />
+    <meta property="og:type" content="website" />
     <meta
-      content="Complete guide to property tax declaration for land, building and machineries in Batangas City."
+      property="og:url"
+      content="https://betterbatangascity.org/service-details/property-declaration.html"
+    />
+    <meta
+      property="og:title"
+      content="Tax Declaration and Property Assessment Records | Better Batangas City"
+    />
+    <meta
       property="og:description"
+      content="The City Assessor handles tax-declaration and assessment-record transactions for land, buildings, improvements and machinery. A tax-record update does not register or transfer a legal land title."
     />
-    <meta content="summary_large_image" name="twitter:card" />
-    <title>Property Declaration | Batangas City</title>
+    <title>Tax Declaration and Property Assessment Records | Better Batangas City</title>
     <link href="../assets/images/logo/favicon.svg" rel="icon" type="image/svg+xml" />
-
     <link href="../assets/css/style.css" rel="stylesheet" />
     <link href="../assets/css/responsive.css" rel="stylesheet" />
     <link href="../assets/css/accessibility.css" rel="stylesheet" />
     <link href="../assets/css/footer.css" rel="stylesheet" />
-    <style>
-      .declaration-section {
-        padding: 40px 0;
-      }
-      .declaration-section.alt-bg {
-        background: var(--color-bg-alt);
-      }
-      .section-header {
-        margin-bottom: 24px;
-      }
-      .section-header h2 {
-        font-size: 1.25rem;
-        color: var(--color-text);
-        margin-bottom: 4px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .section-header h2 i {
-        color: var(--color-primary);
-      }
-      .section-header p {
-        color: var(--color-text-light);
-        font-size: 0.875rem;
-        margin: 0;
-      }
-      .info-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-      }
-      .info-card {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 16px;
-      }
-      .info-card h4 {
-        font-size: 0.75rem;
-        color: var(--color-text-light);
-        margin-bottom: 6px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      .info-card p {
-        font-size: 0.875rem;
-        color: var(--color-text);
-        margin: 0;
-        font-weight: 500;
-      }
-      .info-card ul {
-        font-size: 0.8125rem;
-        color: var(--color-text);
-        margin: 0;
-        padding-left: 16px;
-      }
-      .info-card ul li {
-        margin-bottom: 4px;
-      }
-      .form-fields {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-      .field-group {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 16px;
-      }
-      .field-group h4 {
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: var(--color-text);
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-      }
-      .field-group h4 i {
-        color: var(--color-primary);
-        font-size: 1rem;
-      }
-      .field-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .field-list li {
-        font-size: 0.8125rem;
-        color: var(--color-text-light);
-        padding: 6px 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      .field-list li:last-child {
-        border-bottom: none;
-      }
-      .field-list li i {
-        color: var(--color-primary);
-        font-size: 0.75rem;
-        margin-top: 2px;
-        flex-shrink: 0;
-      }
-      .requirements-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-      }
-      .req-card {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 14px;
-      }
-      .req-card h4 {
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: var(--color-text);
-        margin-bottom: 8px;
-      }
-      .req-card ul {
-        font-size: 0.75rem;
-        color: var(--color-text-light);
-        margin: 0;
-        padding-left: 14px;
-      }
-      .req-card ul li {
-        margin-bottom: 3px;
-      }
-      .quick-stats {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        margin-bottom: 24px;
-      }
-      .stat-card {
-        background: white;
-        border: 1px solid rgba(0, 0, 0, 0.06);
-        border-radius: 8px;
-        padding: 14px;
-        text-align: center;
-      }
-      .stat-card i {
-        font-size: 1.125rem;
-        color: var(--color-primary);
-        margin-bottom: 6px;
-      }
-      .stat-card h4 {
-        font-size: 0.6875rem;
-        color: var(--color-text-light);
-        margin-bottom: 2px;
-        font-weight: 500;
-        text-transform: uppercase;
-      }
-      .stat-card p {
-        font-size: 0.875rem;
-        font-weight: 600;
-        color: var(--color-text);
-        margin: 0;
-      }
-      @media (max-width: 992px) {
-        .info-grid,
-        .requirements-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (max-width: 768px) {
-        .form-fields,
-        .quick-stats {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .info-grid,
-        .requirements-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (max-width: 480px) {
-        .quick-stats {
-          grid-template-columns: 1fr;
-        }
-        .form-fields {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
   </head>
   <body>
-    <a class="skip-link" data-i18n="propdec-skip-to-main-content" href="#main-content"
-      >Skip to main content</a
-    >
+    <a class="skip-link" href="#main-content" data-i18n="ui-skip">Skip to main content</a>
     <!-- include:notice -->
     <!-- include:header -->
     <!-- include:info-bar -->
     <main id="main-content">
       <div class="container">
-        <nav aria-label="Breadcrumb" class="breadcrumbs">
-          <a data-i18n="propdec-home" href="../">Home</a><span>/</span>
-          <a data-i18n="propdec-services" href="../services/">Services</a><span>/</span>
-          <a data-i18n="propdec-tax-payments" href="../services/tax-payments.html"
-            >Tax &amp; Payments</a
-          ><span>/</span>
-          <span aria-current="page">Property Declaration</span>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../" data-i18n="nav-home">Home</a><span>/</span
+          ><a href="../services/" data-i18n="nav-services">Services</a><span>/</span
+          ><span aria-current="page" lang="en"
+            >Tax Declaration and Property Assessment Records</span
+          >
         </nav>
       </div>
       <section class="page-header">
         <div class="container">
-          <div class="page-header-content">
-            <span class="page-header-badge"
-              ><i class="bi bi-file-earmark-text"></i>
-              <span data-i18n="propdec-municipal-assessor">Municipal Assessor</span></span
-            >
-            <h1 data-i18n="propdec-declaration-of-land-building-and-machineries">
-              Declaration of Land, Building and Machineries
-            </h1>
-            <p class="page-header-desc" data-i18n="content-7580ee1b44">
-              Tax declaration form for real property assessment in Batangas City
-            </p>
-          </div>
+          <h1 lang="en">Tax Declaration and Property Assessment Records</h1>
+          <p class="page-header-desc" lang="en">
+            The City Assessor handles tax-declaration and assessment-record transactions for land,
+            buildings, improvements and machinery. A tax-record update does not register or transfer
+            a legal land title.
+          </p>
         </div>
       </section>
-      <section class="declaration-section">
-        <div class="container">
-          <div class="quick-stats">
-            <div class="stat-card">
-              <i class="bi bi-building"></i>
-              <h4 data-i18n="propdec-office">Office</h4>
-              <p data-i18n="propdec-municipal-assessor">Municipal Assessor</p>
-            </div>
-            <div class="stat-card">
-              <i class="bi bi-file-text"></i>
-              <h4 data-i18n="propdec-form-type">Form Type</h4>
-              <p data-i18n="propdec-tax-declaration">Tax Declaration</p>
-            </div>
-            <div class="stat-card">
-              <i class="bi bi-clock"></i>
-              <h4 data-i18n="propdec-processing">Processing</h4>
-              <p data-i18n="content-723e82f641">&lt;placeholder&gt;</p>
-            </div>
-            <div class="stat-card">
-              <i class="bi bi-geo-alt"></i>
-              <h4 data-i18n="propdec-location">Location</h4>
-              <p data-i18n="propdec-municipal-hall">Municipal Hall</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="declaration-section alt-bg">
-        <div class="container">
-          <div class="section-header">
-            <h2>
-              <i class="bi bi-info-circle"></i>
-              <span data-i18n="propdec-property-information-required"
-                >Property Information Required</span
-              >
-            </h2>
-            <p data-i18n="propdec-details-needed-for-the-tax-declaration-form">
-              Details needed for the tax declaration form
-            </p>
-          </div>
-          <div class="info-grid">
-            <div class="info-card">
-              <h4 data-i18n="propdec-owner-information">Owner Information</h4>
-              <ul>
-                <li data-i18n="propdec-full-name-of-owner">Full Name of Owner</li>
-                <li data-i18n="propdec-address-telephone-no">Address / Telephone No.</li>
-                <li data-i18n="propdec-tin-tax-identification-number">
-                  TIN (Tax Identification Number)
-                </li>
-                <li data-i18n="propdec-administratorbeneficial-user">
-                  Administrator/Beneficial User
-                </li>
-              </ul>
-            </div>
-            <div class="info-card">
-              <h4 data-i18n="propdec-property-location">Property Location</h4>
-              <ul>
-                <li data-i18n="propdec-barangay">Barangay</li>
-                <li data-i18n="propdec-municipality">Municipality</li>
-                <li data-i18n="propdec-province">Province</li>
-                <li data-i18n="propdec-octtctcloa-no">OCT/TCT/CLOA No.</li>
-              </ul>
-            </div>
-            <div class="info-card">
-              <h4 data-i18n="propdec-assessment-details">Assessment Details</h4>
-              <ul>
-                <li data-i18n="propdec-property-index-number-pin">Property Index Number (PIN)</li>
-                <li data-i18n="propdec-arp-no-assessment-roll">ARP No. (Assessment Roll)</li>
-                <li data-i18n="propdec-effectivity-of-assessment">Effectivity of Assessment</li>
-                <li data-i18n="propdec-previous-arp-no">Previous ARP No.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="declaration-section">
-        <div class="container">
-          <div class="section-header">
-            <h2>
-              <i class="bi bi-layers"></i>
-              <span data-i18n="propdec-types-of-property-declaration"
-                >Types of Property Declaration</span
-              >
-            </h2>
-            <p data-i18n="propdec-different-categories-of-real-property-for-tax">
-              Different categories of real property for tax assessment
-            </p>
-          </div>
-          <div class="form-fields">
-            <div class="field-group">
-              <h4>
-                <i class="bi bi-geo-alt-fill"></i>
-                <span data-i18n="propdec-land-declaration">Land Declaration</span>
-              </h4>
-              <ul class="field-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-classification-agricultural-commercial-industrial"
-                    >Classification (Agricultural, Commercial, Industrial, Residential)</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-area-in-hectaressquare-meters"
-                    >Area in Hectares/Square Meters</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-market-value-per-unit-area"
-                    >Market Value per Unit Area</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-actual-use-of-land">Actual Use of Land</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-subclass-and-assessment-level"
-                    >Sub-class and Assessment Level</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-assessed-value-computation"
-                    >Assessed Value Computation</span
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="field-group">
-              <h4>
-                <i class="bi bi-house-fill"></i>
-                <span data-i18n="propdec-building-declaration">Building Declaration</span>
-              </h4>
-              <ul class="field-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-kind-of-building-residential-commercial-etc"
-                    >Kind of Building (Residential, Commercial, etc.)</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-structural-type-and-materials"
-                    >Structural Type and Materials</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-building-permit-no-and-date-issued"
-                    >Building Permit No. and Date Issued</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-date-constructedcompleted"
-                    >Date Constructed/Completed</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-number-of-storeys-and-floor-area"
-                    >Number of Storeys and Floor Area</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-core-and-additional-items"
-                    >Core and Additional Items</span
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="field-group">
-              <h4>
-                <i class="bi bi-gear-fill"></i>
-                <span data-i18n="propdec-machinery-declaration">Machinery Declaration</span>
-              </h4>
-              <ul class="field-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-kind-of-machinery">Kind of Machinery</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-brand-and-model">Brand and Model</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-capacityhorse-power">Capacity/Horse Power</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-date-acquiredinstalled">Date Acquired/Installed</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-condition-new-good-fair-poor"
-                    >Condition (New, Good, Fair, Poor)</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-estimated-economic-life">Estimated Economic Life</span>
-                </li>
-              </ul>
-            </div>
-            <div class="field-group">
-              <h4>
-                <i class="bi bi-calculator"></i>
-                <span data-i18n="propdec-assessment-summary">Assessment Summary</span>
-              </h4>
-              <ul class="field-list">
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-total-market-value">Total Market Value</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-assessment-level-percentage"
-                    >Assessment Level Percentage</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-total-assessed-value">Total Assessed Value</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-taxableexempt-status">Taxable/Exempt Status</span>
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-effectivity-quarter-and-year"
-                    >Effectivity Quarter and Year</span
-                  >
-                </li>
-                <li>
-                  <i class="bi bi-check-circle-fill"></i>
-                  <span data-i18n="propdec-approving-authority-signature"
-                    >Approving Authority Signature</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="declaration-section alt-bg">
-        <div class="container">
-          <div class="section-header">
-            <h2>
-              <i class="bi bi-clipboard-check"></i>
-              <span data-i18n="propdec-documentary-requirements">Documentary Requirements</span>
-            </h2>
-            <p data-i18n="propdec-documents-needed-for-property-declaration">
-              Documents needed for property declaration
-            </p>
-          </div>
-          <div class="requirements-grid">
-            <div class="req-card">
-              <h4 data-i18n="propdec-for-new-declaration">For New Declaration</h4>
-              <ul>
-                <li data-i18n="propdec-certified-true-copy-of-title-octtctcloa">
-                  Certified True Copy of Title (OCT/TCT/CLOA)
-                </li>
-                <li data-i18n="propdec-tax-clearance-certificate">Tax Clearance Certificate</li>
-                <li data-i18n="propdec-deed-of-saletransfer-documents">
-                  Deed of Sale/Transfer Documents
-                </li>
-                <li data-i18n="propdec-sketch-planlocation-map">Sketch Plan/Location Map</li>
-                <li data-i18n="propdec-valid-id-of-owner">Valid ID of Owner</li>
-              </ul>
-            </div>
-            <div class="req-card">
-              <h4 data-i18n="propdec-for-building-declaration">For Building Declaration</h4>
-              <ul>
-                <li>Building Permit</li>
-                <li data-i18n="propdec-occupancy-permit">Occupancy Permit</li>
-                <li data-i18n="propdec-building-plansspecifications">
-                  Building Plans/Specifications
-                </li>
-                <li data-i18n="propdec-certificate-of-completion">Certificate of Completion</li>
-                <li data-i18n="propdec-land-tax-declaration">Land Tax Declaration</li>
-              </ul>
-            </div>
-            <div class="req-card">
-              <h4 data-i18n="propdec-for-machinery-declaration">For Machinery Declaration</h4>
-              <ul>
-                <li data-i18n="propdec-list-of-machineries-with-specifications">
-                  List of Machineries with Specifications
-                </li>
-                <li data-i18n="propdec-proof-of-acquisitioninvoice">
-                  Proof of Acquisition/Invoice
-                </li>
-                <li data-i18n="propdec-installation-permit-if-applicable">
-                  Installation Permit (if applicable)
-                </li>
-                <li data-i18n="propdec-building-tax-declaration">Building Tax Declaration</li>
-                <li data-i18n="propdec-business-permit">Business Permit</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="declaration-section">
-        <div class="container">
-          <div class="grid grid-2" style="gap: 16px">
-            <div class="card" style="padding: 20px">
-              <h3
-                style="
-                  font-size: 0.9375rem;
-                  margin-bottom: 12px;
-                  display: flex;
-                  align-items: center;
-                  gap: 8px;
-                "
-              >
-                <i class="bi bi-building" style="color: var(--color-primary)"></i>
-                <span data-i18n="propdec-municipal-assessors-office"
-                  >Municipal Assessor's Office</span
-                >
-              </h3>
-              <p
-                data-i18n="propdec-handles-property-assessment-tax-declaration-and"
-                style="font-size: 0.8125rem; color: var(--color-text-light); margin-bottom: 10px"
-              >
-                Handles property assessment, tax declaration, and real property records.
-              </p>
-              <ul
-                style="
-                  font-size: 0.75rem;
-                  color: var(--color-text);
-                  list-style: none;
-                  padding: 0;
-                  margin: 0;
-                "
-              >
-                <li style="margin-bottom: 4px">
-                  <i
-                    class="bi bi-geo-alt"
-                    style="color: var(--color-primary); margin-right: 6px"
-                  ></i>
-                  <span data-i18n="content-2085ef83f0">&lt;placeholder&gt;</span>
-                </li>
-                <li style="margin-bottom: 4px">
-                  <i class="bi bi-clock" style="color: var(--color-primary); margin-right: 6px"></i
-                  >&lt;placeholder&gt;
-                </li>
-              </ul>
-            </div>
-            <div class="card" style="padding: 20px">
-              <h3
-                style="
-                  font-size: 0.9375rem;
-                  margin-bottom: 12px;
-                  display: flex;
-                  align-items: center;
-                  gap: 8px;
-                "
-              >
-                <i class="bi bi-info-circle" style="color: var(--color-primary)"></i>
-                <span data-i18n="propdec-important-notes">Important Notes</span>
-              </h3>
-              <ul
-                style="
-                  font-size: 0.75rem;
-                  color: var(--color-text-light);
-                  list-style: none;
-                  padding: 0;
-                  margin: 0;
-                "
-              >
-                <li style="margin-bottom: 4px">
-                  <i class="bi bi-check" style="color: var(--color-success); margin-right: 6px"></i>
-                  <span data-i18n="content-6f3ec7fbaf">&lt;placeholder&gt;</span>
-                </li>
-                <li style="margin-bottom: 4px">
-                  <i class="bi bi-check" style="color: var(--color-success); margin-right: 6px"></i>
-                  <span data-i18n="propdec-penalties-apply-for-late-declaration"
-                    >Penalties apply for late declaration</span
-                  >
-                </li>
-                <li style="margin-bottom: 4px">
-                  <i class="bi bi-check" style="color: var(--color-success); margin-right: 6px"></i>
-                  <span data-i18n="propdec-keep-copies-of-all-submitted-documents"
-                    >Keep copies of all submitted documents</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- include:service-review -->
+      <!-- include:service-guide -->
     </main>
     <!-- include:footer -->
-    <script defer="" src="../assets/js/translations.js"></script>
-    <script defer="" src="../assets/js/site-config.js"></script>
-    <script defer="" src="../assets/js/info-bar.js"></script>
-    <script defer="" src="../assets/js/main.js"></script>
-    <script defer="" src="../assets/js/version.js"></script>
+    <script defer src="../assets/js/translations.js"></script>
+    <script defer src="../assets/js/site-config.js"></script>
+    <script defer src="../assets/js/info-bar.js"></script>
+    <script defer src="../assets/js/main.js"></script>
+    <script defer src="../assets/js/version.js"></script>
   </body>
 </html>

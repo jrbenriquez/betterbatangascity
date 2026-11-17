@@ -2,6 +2,12 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
+const {
+  renderServiceReview,
+  renderServiceDirectory,
+  renderServiceCategory,
+  renderServiceGuide,
+} = require('./render-service-review');
 const partials = new Set(['header', 'footer', 'notice', 'info-bar', 'city-hotlines']);
 
 function renderPage(file) {
@@ -17,6 +23,16 @@ function renderHtml(source, relative) {
   const content = source.replace(
     /<!--\s*include:([^\s]+)(?:\s+([^\s]+))?\s*-->/g,
     (_, name, modifier) => {
+      const serviceRenderers = {
+        'service-review': renderServiceReview,
+        'service-directory': renderServiceDirectory,
+        'service-category': renderServiceCategory,
+        'service-guide': renderServiceGuide,
+      };
+      if (Object.hasOwn(serviceRenderers, name)) {
+        if (modifier) throw new Error('Service includes do not accept modifiers');
+        return serviceRenderers[name](relative);
+      }
       if (!partials.has(name)) throw new Error(`Unknown shared template "${name}" in ${relative}`);
       if (modifier && !(name === 'footer' && modifier === 'no-margin-top')) {
         throw new Error(`Unknown template modifier "${modifier}" in ${relative}`);

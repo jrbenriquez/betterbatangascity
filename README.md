@@ -68,3 +68,7 @@ See [the interface review](docs/interface-review.md) for the applied skills, evi
 ## GitHub Pages
 
 The deployment configuration targets `https://betterbatangascity.org` and publishes built `dist/` files after successful main validation. Follow [the hosting and DNS setup guide](docs/github-pages.md) before activating it. DNS and repository Pages settings are not changed by a local build.
+
+## Service evidence and office locations
+
+`data/service-review.json` records the 2026 (2nd Edition) Citizen’s Charter source, PDF hash, page citations, office addresses and the applicability of every indexed service. Category pages and the public service map render static HTML from this register. Update evidence here rather than duplicating office addresses. Inherited detail-page process tables have been replaced with source-backed summaries and links to the exact official transaction. Full requirements, fee tables and processing timelines remain in the linked Charter rather than being guessed or partially copied. See [the service review](docs/service-review.md) and [CSV crosswalk](docs/service-register.csv).

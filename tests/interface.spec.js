@@ -104,7 +104,7 @@ test('reduced motion removes movement and narrow RTL/FIL views keep content avai
 test('table scrolling is local and labeled on a narrow screen', async ({ page }) => {
   await prepare(page);
   await page.setViewportSize({ width: 320, height: 844 });
-  await page.goto('/service-details/marriage-certificate.html');
+  await page.goto('/legislative/ordinance-framework.html');
   const region = page.locator('.scrollable-table[tabindex="0"]').first();
   await expect(region).toBeVisible();
   await expect(region).toHaveAttribute('aria-describedby', /table-hint-/);
