@@ -1,6 +1,9 @@
 /* Template translations. Replace <placeholder> in all supported languages. */
 const translations = {
   en: {
+    'popup-work-in-progress': 'This site is still a work in progress.',
+    'popup-contribute-invite': 'Interested in contributing? Email',
+    'popup-contribute-cta': 'I Want to Contribute',
     'charter-city-council': 'Sangguniang Panlungsod',
     'charter-transactions': 'Choose the right transaction',
     'charter-applying': 'Applying for this service',
@@ -6323,6 +6326,9 @@ const translations = {
     'ui-social-pending': 'Updates will appear after publication.',
   },
   fil: {
+    'popup-work-in-progress': 'Patuloy pang binubuo ang website na ito.',
+    'popup-contribute-invite': 'Interesado ka bang mag-ambag? Mag-email sa',
+    'popup-contribute-cta': 'Gusto Kong Mag-ambag',
     'charter-city-council': 'Sangguniang Panlungsod',
     'charter-transactions': 'Piliin ang tamang transaksyon',
     'charter-applying': 'Pag-aaplay para sa serbisyong ito',
