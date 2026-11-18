@@ -57,6 +57,52 @@
     <a class="skip-link" data-i18n="home-skip-to-main-content" href="#main-content"
       >Skip to main content</a
     >
+    <section class="home-hotlines" aria-labelledby="home-hotlines-title">
+      <details class="hotline-disclosure">
+        <summary class="hotline-disclosure-summary">
+          <span class="container hotline-summary-content">
+            <span id="home-hotlines-title" class="hotline-summary-title">
+              <i class="bi bi-telephone" aria-hidden="true"></i
+              ><span data-i18n="hotline-title">City Hotlines</span>
+            </span>
+            <span class="hotline-quick-numbers">
+              <span
+                ><span data-i18n="hotline-short-health">Health</span>
+                <strong>0999-222-6626</strong></span
+              >
+              <span
+                ><span data-i18n="hotline-short-fire">Fire</span> <strong>425-7163</strong></span
+              >
+              <span
+                ><span data-i18n="hotline-short-police">Police</span>
+                <strong>723-2030</strong></span
+              >
+            </span>
+            <span class="hotline-disclosure-action"
+              ><span class="hotline-show-more" data-i18n="hotline-show-more">Show more</span
+              ><span class="hotline-show-less" data-i18n="hotline-show-less">Show less</span
+              ><i class="bi bi-chevron-down" aria-hidden="true"></i
+            ></span>
+          </span>
+        </summary>
+        <div class="hotline-expanded-content">
+          <div class="container city-hotlines-panel">
+            <div class="city-hotlines-heading">
+              <p data-i18n="hotline-call-help">Tap a number to call.</p>
+              <a href="contact/#city-contacts" data-i18n="hotline-view-all"
+                >All contacts &amp; hospitals →</a
+              >
+            </div>
+            <!-- include:city-hotlines -->
+            <p class="city-hotlines-source">
+              <a href="https://www.batangascity.gov.ph/web/" data-i18n="hotline-source"
+                >Source: Batangas City LGU website</a
+              >
+            </p>
+          </div>
+        </div>
+      </details>
+    </section>
     <!-- include:notice -->
     <!-- include:header -->
     <!-- include:info-bar -->
@@ -122,24 +168,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-      <section class="home-hotlines" aria-labelledby="home-hotlines-title">
-        <div class="container">
-          <div class="city-hotlines-panel">
-            <div class="city-hotlines-heading">
-              <h2 id="home-hotlines-title" data-i18n="hotline-title">City Hotlines</h2>
-              <a href="contact/#city-contacts" data-i18n="hotline-view-all"
-                >All contacts &amp; hospitals →</a
-              >
-            </div>
-            <!-- include:city-hotlines -->
-            <p class="city-hotlines-source">
-              <a href="https://www.batangascity.gov.ph/web/" data-i18n="hotline-source"
-                >Source: Batangas City LGU website</a
-              >
-            </p>
           </div>
         </div>
       </section>

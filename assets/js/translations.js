@@ -1,6 +1,13 @@
 /* Template translations. Replace <placeholder> in all supported languages. */
 const translations = {
   en: {
+    'hotline-short-health': 'Health',
+    'hotline-short-fire': 'Fire',
+    'hotline-short-police': 'Police',
+    'hotline-show-more': 'Show more',
+    'hotline-show-less': 'Show less',
+    'hotline-call-help': 'Tap a number to call.',
+
     'popup-work-in-progress': 'This site is still a work in progress.',
     'popup-contribute-invite': 'Interested in contributing? Email',
     'popup-contribute-cta': 'I Want to Contribute',
@@ -6326,6 +6333,13 @@ const translations = {
     'ui-social-pending': 'Updates will appear after publication.',
   },
   fil: {
+    'hotline-short-health': 'Kalusugan',
+    'hotline-short-fire': 'Sunog',
+    'hotline-short-police': 'Pulis',
+    'hotline-show-more': 'Ipakita lahat',
+    'hotline-show-less': 'Itago ang detalye',
+    'hotline-call-help': 'Pindutin ang numero upang tumawag.',
+
     'popup-work-in-progress': 'Patuloy pang binubuo ang website na ito.',
     'popup-contribute-invite': 'Interesado ka bang mag-ambag? Mag-email sa',
     'popup-contribute-cta': 'Gusto Kong Mag-ambag',
