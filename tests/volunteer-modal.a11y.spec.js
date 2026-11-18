@@ -26,7 +26,7 @@ test.describe('Volunteer modal — semantics', () => {
     await waitForOpen(page);
 
     await expect(page.locator(SEL.close)).toHaveAccessibleName(/close/i);
-    await expect(page.locator(SEL.cta)).toHaveAccessibleName(/volunteer/i);
+    await expect(page.locator(SEL.cta)).toHaveAccessibleName(/contribute/i);
     await expect(page.locator(SEL.skip)).toHaveAccessibleName(/later/i);
   });
 

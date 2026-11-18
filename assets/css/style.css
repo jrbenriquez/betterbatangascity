@@ -10476,6 +10476,10 @@ cklist with Icons - Proper Indentation */
   padding: 26px 28px 30px;
 }
 
+.vol-popup-lead a {
+  overflow-wrap: anywhere;
+}
+
 .vol-popup-lead {
   font-size: 0.9375rem;
   color: var(--color-text);
