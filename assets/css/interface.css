@@ -1278,8 +1278,8 @@ body a[aria-disabled='true']:active {
 
 /* Visible city contacts, shared with the complete directory. */
 .home-hotlines {
-  padding-block: var(--space-6, 24px);
-  background: var(--color-bg-alt);
+  padding: 0;
+  background: var(--color-surface-hover);
 }
 .city-hotlines-panel {
   padding: 24px;
@@ -1523,20 +1523,27 @@ body[data-section='service-details'] .breadcrumb a {
 
 /* Native disclosure keeps critical contacts visible without a full-height widget. */
 .hotline-disclosure {
-  border: 1px solid var(--color-border);
-  border-radius: var(--surface-radius);
-  background: var(--color-bg);
+  border: 0;
+  border-block-end: 1px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-surface-hover);
 }
 .hotline-disclosure-summary {
+  display: block;
+  padding: 0;
+  list-style: none;
+  cursor: pointer;
+}
+.hotline-disclosure-summary:focus-visible {
+  outline-offset: -3px;
+}
+.hotline-summary-content {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 16px 24px;
-  padding: 16px 24px;
-  min-block-size: 64px;
-  border-radius: inherit;
-  list-style: none;
-  cursor: pointer;
+  gap: 12px 24px;
+  padding-block: 12px;
+  min-block-size: 48px;
 }
 .hotline-disclosure-summary::-webkit-details-marker {
   display: none;
@@ -1550,6 +1557,7 @@ body[data-section='service-details'] .breadcrumb a {
   gap: 8px;
   margin: 0;
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.5;
 }
 .hotline-summary-title i {
@@ -1595,19 +1603,20 @@ body[data-section='service-details'] .breadcrumb a {
 .hotline-disclosure[open] .hotline-show-less {
   display: inline;
 }
-.hotline-disclosure[open] .hotline-disclosure-summary {
+.hotline-disclosure[open] .hotline-summary-content {
   grid-template-columns: minmax(0, 1fr) auto;
-  border-end-start-radius: 0;
-  border-end-end-radius: 0;
 }
 .hotline-disclosure[open] .hotline-disclosure-action i {
   transform: rotate(180deg);
 }
+.hotline-expanded-content {
+  background: var(--color-bg);
+  border-block-start: 1px solid var(--color-border);
+}
 .hotline-disclosure .city-hotlines-panel {
   border: 0;
-  border-block-start: 1px solid var(--color-border);
-  border-start-start-radius: 0;
-  border-start-end-radius: 0;
+  border-radius: 0;
+  padding-block: 24px;
 }
 .hotline-disclosure .city-hotlines-heading p {
   margin: 0;
@@ -1624,7 +1633,7 @@ body[data-section='service-details'] .breadcrumb a {
   }
 }
 @media (max-width: 1000px) {
-  .hotline-disclosure-summary {
+  .hotline-summary-content {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 12px 16px;
   }
@@ -1638,9 +1647,6 @@ body[data-section='service-details'] .breadcrumb a {
   }
 }
 @media (max-width: 540px) {
-  .hotline-disclosure-summary {
-    padding: 16px 20px;
-  }
   .hotline-quick-numbers {
     gap: 6px 16px;
   }

@@ -185,6 +185,14 @@ test('homepage hotlines start compact and expand with keyboard access to calls a
   await page.goto('/');
   const disclosure = page.locator('.hotline-disclosure');
   const summary = disclosure.locator('summary');
+  const banner = await summary.boundingBox();
+  expect(banner.y).toBe(0);
+  expect(banner.x).toBe(0);
+  expect(banner.width).toBe(await page.evaluate(() => innerWidth));
+  expect(
+    await page.locator('.community-notice').evaluate((e) => e.getBoundingClientRect().top)
+  ).toBeGreaterThan(banner.y);
+
   await expect(disclosure).toHaveJSProperty('open', false);
   await expect(disclosure.locator('.hotline-quick-numbers')).toBeVisible();
   await expect(disclosure.locator('.hotline-quick-numbers')).toContainText('0999-222-6626');
