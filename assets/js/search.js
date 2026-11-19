@@ -763,6 +763,9 @@
           if (firstResult) firstResult.click();
         }
       } else if (e.key === 'Escape') {
+        // Keep the native search-field clear action from reopening suggestions.
+        e.preventDefault();
+        clearTimeout(debounceTimer);
         dropdown.style.display = 'none';
         selectedIndex = -1;
       }

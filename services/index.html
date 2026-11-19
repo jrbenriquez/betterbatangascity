@@ -33,6 +33,7 @@
     <link href="../assets/css/responsive.css" rel="stylesheet" />
     <link href="../assets/css/accessibility.css" rel="stylesheet" />
     <link href="../assets/css/footer.css" rel="stylesheet" />
+    <link href="../assets/css/service-directory.css" rel="stylesheet" />
   </head>
   <body>
     <a class="skip-link" data-i18n="svc-skip-to-main-content" href="#main-content"
@@ -49,32 +50,55 @@
           <span aria-current="page">Services</span>
         </nav>
       </div>
-      <section class="page-header">
+      <section class="page-header service-directory-hero">
         <div class="container">
-          <div class="page-header-content">
+          <div class="page-header-content service-directory-intro">
             <span class="page-header-badge"
               ><i class="bi bi-grid-fill"></i> <span data-i18n="svc-services">Services</span></span
             >
-            <h1>City Services Directory</h1>
+            <h1 data-i18n="directory-title">City Services Directory</h1>
             <p class="page-header-desc" data-i18n="content-ecc11645c8">
               Browse all services offered by the Batangas City
             </p>
-            <div class="page-header-search">
-              <form class="search-form" role="search">
-                <div class="search-input-wrapper">
-                  <i class="bi bi-search search-icon"></i>
-                  <label class="sr-only" for="service-search">Search services</label>
-                  <input
-                    aria-label="Search services"
-                    autocomplete="off"
-                    class="service-search-input"
-                    id="service-search"
-                    placeholder="Search services (e.g., birth certificate, business permit)"
-                    type="search"
-                  />
-                </div>
-              </form>
-            </div>
+          </div>
+          <div class="page-header-search service-finder">
+            <form class="search-form" role="search">
+              <label
+                class="service-finder-label"
+                for="service-search"
+                data-i18n="directory-search-label"
+                >What service do you need?</label
+              >
+              <div class="search-input-wrapper">
+                <i class="bi bi-search search-icon" aria-hidden="true"></i>
+                <input
+                  autocomplete="off"
+                  class="service-search-input"
+                  id="service-search"
+                  placeholder="e.g., birth certificate"
+                  data-i18n-placeholder="directory-search-placeholder"
+                  type="search"
+                />
+              </div>
+            </form>
+            <nav class="service-shortcuts" aria-labelledby="service-shortcuts-label">
+              <span id="service-shortcuts-label" data-i18n="directory-shortcuts">Quick links</span>
+              <div class="service-shortcut-links">
+                <a
+                  href="../service-details/birth-certificate.html"
+                  data-i18n="home-birth-certificate"
+                  >Birth Certificate</a
+                >
+                <a
+                  href="../service-details/business-permits-licensing.html"
+                  data-i18n="home-business-permit"
+                  >Business Permit</a
+                >
+                <a href="social-services.html" data-i18n="directory-financial-help"
+                  >Financial assistance</a
+                >
+              </div>
+            </nav>
           </div>
         </div>
       </section>
@@ -92,8 +116,24 @@
           </div>
         </div>
       </section>
-      <section class="section">
+      <section
+        class="section service-directory-categories"
+        aria-labelledby="service-categories-title"
+      >
         <div class="container">
+          <div class="service-directory-heading">
+            <div>
+              <h2 id="service-categories-title" data-i18n="directory-categories">
+                Browse by category
+              </h2>
+              <p data-i18n="directory-categories-help">
+                Explore services, requirements, and the office that can help.
+              </p>
+            </div>
+            <span class="service-category-count" data-i18n="directory-category-count"
+              >10 categories</span
+            >
+          </div>
           <div class="grid grid-3">
             <a class="service-category-card" href="certificates.html">
               <div class="service-category-icon"><i class="bi bi-file-earmark-text-fill"></i></div>

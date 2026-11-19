@@ -1,6 +1,14 @@
 /* Template translations. Replace <placeholder> in all supported languages. */
 const translations = {
   en: {
+    'directory-title': 'City Services Directory',
+    'directory-search-label': 'What service do you need?',
+    'directory-search-placeholder': 'e.g., birth certificate',
+    'directory-shortcuts': 'Quick links',
+    'directory-financial-help': 'Financial assistance',
+    'directory-categories': 'Browse by category',
+    'directory-categories-help': 'Explore services, requirements, and the office that can help.',
+    'directory-category-count': '10 categories',
     'hotline-short-health': 'Health',
     'hotline-short-fire': 'Fire',
     'hotline-short-police': 'Police',
@@ -6333,6 +6341,15 @@ const translations = {
     'ui-social-pending': 'Updates will appear after publication.',
   },
   fil: {
+    'directory-title': 'Direktoryo ng mga Serbisyo ng Lungsod',
+    'directory-search-label': 'Anong serbisyo ang kailangan mo?',
+    'directory-search-placeholder': 'Hal., birth certificate',
+    'directory-shortcuts': 'Mga direktang link',
+    'directory-financial-help': 'Tulong pinansyal',
+    'directory-categories': 'Maghanap ayon sa kategorya',
+    'directory-categories-help':
+      'Alamin ang mga serbisyo, kinakailangan, at tanggapang makatutulong.',
+    'directory-category-count': '10 kategorya',
     'hotline-short-health': 'Kalusugan',
     'hotline-short-fire': 'Sunog',
     'hotline-short-police': 'Pulis',
