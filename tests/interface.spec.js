@@ -131,7 +131,7 @@ test('search input boundaries retain three-to-one contrast and mobile text stays
   for (const route of ['/', '/services/']) {
     await page.goto(route);
     const style = await page
-      .getByRole('searchbox', { name: 'Search services' })
+      .getByRole('searchbox', { name: /Search services|What service do you need/ })
       .evaluate((input) => {
         const s = getComputedStyle(input);
         return {
